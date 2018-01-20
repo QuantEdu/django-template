@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile.web
     # default command  
-    command: python3 composeexample/manage.py runserver 0.0.0.0:8000
+    command: python3 manage.py runserver 0.0.0.0:8000
     # mount all volumes to the code directory
     volumes:
       - ./django/:/code

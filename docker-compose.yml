@@ -13,13 +13,28 @@ services:
     build:
       # starting path for all commands inside Dockerfile
       context: .
-      dockerfile: docker/Dockerfile.web
+      dockerfile: docker/web/Dockerfile
     # default command  
     command: python3 manage.py runserver 0.0.0.0:8000
     # mount all volumes to the code directory
+    # Path on the host, relative to the Compose file (./django)
     volumes:
       - ./django/:/code
-    ports:
-      - "8000:8000"
+    # ports:
+    #   - '8000:8000'
     depends_on:
       - db
+
+  # service for nginx web server
+  nginx:
+    build: docker/nginx/.
+    ports:
+      - "80:80"
+    # can access to @web@ container files for serving static files
+    volumes:
+      - ./django/static:/static
+    depends_on:
+      - web
+
+volumes:
+  web_data:

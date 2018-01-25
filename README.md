@@ -5,4 +5,5 @@
 3. [Quickstart: Compose and Django](https://docs.docker.com/compose/django/)
 4. Create folder docker for all docker files and Dockerfile.web inside
 6. Create docker-compose.yml file
-7. `docker-compose run web django-admin.py startproject composeexample`
+7. `docker-compose build & docker-compose up`
+8. django-uwsgi-nginx

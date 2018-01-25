@@ -9,8 +9,10 @@ services:
     # Для переменных окружения
     env_file: .env
     # Reacable from outside by port 5433
-    ports:
-      - "5433:5432"
+#    ports:
+#      - "5433:5432"
+#    volumes:
+#      - ./pgdata:/var/lib/postgresql/data/pgdata
 
   # service for python with django
   web:

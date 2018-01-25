@@ -26,3 +26,4 @@ django-template
 1. Открыть проект
 2. Узнать IP docker-machine - это будет ip хоста
 3. подключиться к БД используя данные из .env файла
+4. Консоль ассоциировать c docker-machine при помощи `eval $(docker-machine env default)`

@@ -34,3 +34,4 @@ Docker запускает отдельные контейнеры для каж�
 ## Тематические статьи
 
 ### Docker-django quickstart from [Docker.com](https://docs.docker.com/compose/django/)
+### [Docker-compose file documentation](https://docs.docker.com/compose/compose-file/#context)

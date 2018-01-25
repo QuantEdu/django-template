@@ -6,6 +6,11 @@ services:
   # service for database
   db:
     image: postgres
+    # Для переменных окружения
+    env_file: .env
+    # Reacable from outside by port 5433
+    ports:
+      - "5433:5432"
 
   # service for python with django
   web:
@@ -14,6 +19,8 @@ services:
       # starting path for all commands inside Dockerfile
       context: .
       dockerfile: docker/web/Dockerfile
+    # Для переменных окружения
+    env_file: .env
     # default command  
     command: python3 manage.py runserver 0.0.0.0:8000
     # mount all volumes to the code directory

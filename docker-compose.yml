@@ -34,7 +34,7 @@ services:
     # mount all volumes to the code directory
     # Path on the host, relative to the Compose file (./django)
     volumes:
-      - ./django/:/code
+      - ./web/:/code
     # we should use no ports for access only with nginx server
     # ports:
     #   - '8000:8000'
@@ -50,7 +50,7 @@ services:
       - "80:80"
     # can access to @web@ container files for serving static files
     volumes:
-      - ./django/static:/static
+      - ./web/static:/static
     depends_on:
       - web
 

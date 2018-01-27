@@ -17,10 +17,10 @@ RUN mkdir /code
 WORKDIR /code
 
 # - add file requirements.txt to /code/ inside image
-ADD django/requirements.txt /code/
+ADD web/requirements.txt /code/
 
 # - install all requirements
 RUN pip install -r requirements.txt
 
 # - copy all other files to /code/ directory
-ADD ./django/ /code/
+ADD ./web/ /code/

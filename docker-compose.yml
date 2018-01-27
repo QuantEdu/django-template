@@ -30,6 +30,7 @@ services:
     env_file: .env
     # default command  
     command: python3 manage.py runserver 0.0.0.0:8000
+    # command: uwsgi --socket=0.0.0.0:3031 --plugins=python3 --protocol=uwsgi --wsgi=wsgi:application
     # mount all volumes to the code directory
     # Path on the host, relative to the Compose file (./django)
     volumes:

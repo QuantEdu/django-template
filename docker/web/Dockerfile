@@ -3,8 +3,9 @@ FROM python:3.6
 
 # TODO: run uwsgi
 # install all updates and UWSGI
-#RUN apt-get update && \
-#    apt-get install -y
+RUN apt-get update && \
+    apt-get install -y && \
+    pip3 install uwsgi
 
 # - set PYTHONBUFFERED value to 1
 ENV PYTHONUNBUFFERED 1

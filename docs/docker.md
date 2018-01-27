@@ -23,6 +23,8 @@ Docker запускает отдельные контейнеры для каж�
 5. `docker-machine create -d virtualbox [machine_name];` - создает новую виртуальную машину с выбранным именем
 6. `eval $(docker-machine env [machine_name])` - создает указатель для консоли на виртуальную машину
 7. `docker-machine ip [machine_name]` - показывает список IP, связанных с данной машиной
+8. `docker volume ls` - list of all volumes
+9. `docker volume prune` - remove all volumes, that are not linked now
 
 ## Команды docker-compose
 

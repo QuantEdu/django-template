@@ -6,16 +6,20 @@ services:
   # service for database
   db:
     image: postgres
+    # This container should always be up, and it will restart if it crashes
+    restart: always
     # Для переменных окружения
     env_file: .env
-    # Reacable from outside by port 5433
-#    ports:
-#      - "5433:5432"
-#    volumes:
-#      - ./pgdata:/var/lib/postgresql/data/pgdata
+    # Reacable from outside by port 5432
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
 
   # service for python with django
   web:
+    # This container should always be up, and it will restart if it crashes
+    restart: always
     # path to Dockerfile
     build:
       # starting path for all commands inside Dockerfile
@@ -37,6 +41,8 @@ services:
 
   # service for nginx web server
   nginx:
+    # This container should always be up, and it will restart if it crashes
+    restart: always
     build: docker/nginx/.
     ports:
       - "80:80"
@@ -46,5 +52,7 @@ services:
     depends_on:
       - web
 
+# provide source, that contains data from db
+# now you can remove and rebuild db container without lose data
 volumes:
-  web_data:
+  postgresdata:

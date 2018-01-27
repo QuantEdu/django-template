@@ -1,5 +1,10 @@
 # - start with python image
-FROM python:3
+FROM python:3.6
+
+# TODO: run uwsgi
+# install all updates and UWSGI
+#RUN apt-get update && \
+#    apt-get install -y
 
 # - set PYTHONBUFFERED value to 1
 ENV PYTHONUNBUFFERED 1

@@ -28,5 +28,11 @@ django-template
 3. подключиться к БД используя данные из .env файла
 4. Консоль ассоциировать c docker-machine при помощи `eval $(docker-machine env default)`
 
-## TODOS:
+## Работа с данными
+1. `sudo docker exec djangotemplate_db_1 pg_dump -U postgres postgres > pg_backups/postgres_$(date +%Y-%m-%d).sql`
+
+
+## TO-DO'S:
 - backup postgres data
+- [connect uwsgi instance](https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/) [Docs](http://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html)
+- use pg_dump automatically [pg_dump](https://github.com/istepanov/docker-pg_dump)

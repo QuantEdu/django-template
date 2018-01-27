@@ -1,4 +1,4 @@
-# versio of docker-compose file format
+# version of docker-compose file format
 # https://docs.docker.com/compose/compose-file/
 version: '3'
 
@@ -10,11 +10,12 @@ services:
     restart: always
     # Для переменных окружения
     env_file: .env
-    # Reacable from outside by port 5432
+    # Reachable from outside by port 5432
     ports:
       - '5432:5432'
     volumes:
-      - postgresdata:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data
+      - ./pg_backups:/pg_backups
 
   # service for python with django
   web:
@@ -55,4 +56,5 @@ services:
 # provide source, that contains data from db
 # now you can remove and rebuild db container without lose data
 volumes:
-  postgresdata:
+  pg_data:
+  pg_backups:

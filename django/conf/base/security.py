@@ -1,7 +1,8 @@
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'u#gjdz6vuy(+h(cohx$^na^vf9w68b#nz7dd&5__&ei*hlhuv-'
 
-ALLOWED_HOSTS = ['127.0.0.1', '*']
+# ALLOWED_HOSTS are defined in env.py
+# ALLOWED_HOSTS = ['127.0.0.1', '*']
 
 X_FRAME_OPTIONS = 'DENY'
 

@@ -35,5 +35,6 @@ Docker запускает отдельные контейнеры для каж�
 
 ## Тематические статьи
 
-### Docker-django quickstart from [Docker.com](https://docs.docker.com/compose/django/)
-### [Docker-compose file documentation](https://docs.docker.com/compose/compose-file/#context)
+- Docker-django quickstart from [Docker.com](https://docs.docker.com/compose/django/)
+- [Docker-compose file documentation](https://docs.docker.com/compose/compose-file/#context)
+- [Dockerizing Django in serious way](http://www.eidel.io/2017/07/10/dockerizing-django-uwsgi-postgres/)

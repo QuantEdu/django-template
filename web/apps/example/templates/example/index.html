@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <title>Django-template</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/14d9e3a8b7.js"></script>
 
     <style>
         /* stylelint-disable selector-list-comma-newline-after */
+
+        .pricing-header {
+            max-width: 700px;
+        }
 
         .blog-header {
             line-height: 1;
@@ -67,69 +69,6 @@
             font-size: .875rem;
         }
 
-        .card-img-right {
-            height: 100%;
-            border-radius: 0 3px 3px 0;
-        }
-
-        .flex-auto {
-            -ms-flex: 0 0 auto;
-            -webkit-box-flex: 0;
-            flex: 0 0 auto;
-        }
-
-        .h-250 { height: 250px; }
-        @media (min-width: 768px) {
-            .h-md-250 { height: 250px; }
-        }
-
-        .border-top { border-top: 1px solid #e5e5e5; }
-        .border-bottom { border-bottom: 1px solid #e5e5e5; }
-
-        .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
-
-        /*
-         * Blog name and description
-         */
-        .blog-title {
-            margin-bottom: 0;
-            font-size: 2rem;
-            font-weight: 400;
-        }
-        .blog-description {
-            font-size: 1.1rem;
-            color: #999;
-        }
-
-        @media (min-width: 40em) {
-            .blog-title {
-                font-size: 3.5rem;
-            }
-        }
-
-        /* Pagination */
-        .blog-pagination {
-            margin-bottom: 4rem;
-        }
-        .blog-pagination > .btn {
-            border-radius: 2rem;
-        }
-
-        /*
-         * Blog posts
-         */
-        .blog-post {
-            margin-bottom: 4rem;
-        }
-        .blog-post-title {
-            margin-bottom: .25rem;
-            font-size: 2.5rem;
-        }
-        .blog-post-meta {
-            margin-bottom: 1.25rem;
-            color: #999;
-        }
-
         /*
          * Footer
          */
@@ -143,24 +82,119 @@
         .blog-footer p:last-child {
             margin-bottom: 0;
         }
+
+        /*
+         * Pricing
+         */
+        .card-deck .card {
+            min-width: 220px;
+        }
+
+        a.anchor {
+            display: block;
+            position: relative;
+            top: -150px;
+            visibility: hidden;
+        }
     </style>
 </head>
-<body style="">
+<body>
 
-<div class="container">
-    <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-            <div class="col-4 pt-1">
-                <a class="text-muted" href="#">+7 (343) 288-52-76</a>
-            </div>
-            <div class="col-4 text-center">
-                <a class="blog-header-logo text-dark" href="#">Квант</a>
-            </div>
-            <div class="col-4 d-flex justify-content-end align-items-center">
-                <a class="btn btn-sm btn-outline-secondary" href="#">Вход</a>
+<header class="header-top py-3">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-md-8 mb-3 mb-md-0 text-center text-md-left">
+			<ul class="list-inline mb-0">
+				<li class="list-inline-item mr-3">
+					<span class="icon icon-Phone2 text-primary mr-1"></span> +7 (343) 288-52-75
+				</li>
+                <li class="list-inline-item">
+					<button type="button" class="btn btn-sm btn-outline-secondary">Заказать звонок</button>
+				</li>
+			</ul> <!-- END list-inline-->
+			</div> <!-- END col-md-6 -->
+			<div class="col-md-4 mb-3 mb-md-0">
+				<ul class="list-inline social social-rounded social-default social-sm mb-0 text-center text-md-right">
+					<li class="list-inline-item">
+                        <a><i class="fa fa-vk fa-lg"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a><i class="fa fa-facebook-official fa-lg"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a><i class="fa fa-instagram fa-lg"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a><i class="fa fa-youtube fa-lg"></i></a>
+                    </li>
+				</ul>
+			</div> <!-- END col-md-6 -->
+		</div> <!-- END row-->
+	</div> <!-- END container-->
+</header>
+
+<header class="header header-shadow sticky-top bg-gray-v2">
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container text-center">
+            <a class="navbar-brand" href="index.html">
+                <img src="http://quant.zone/static/images/logo-dark.svg" alt="" height="48">
+            </a>
+
+            <button class="navbar-toggler p-0" data-toggle="collapse" data-target="#navbarNav">
+                <div class="hamburger hamburger--spin js-hamburger">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#video" data-scrollto="video">Видео</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#feedback" data-scrollto="feedback">Отзывы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features" data-scrollto="features">Методика</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing" data-scrollto="pricing">Стоимость</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq" data-scrollto="faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#history" data-scrollto="history">Кто мы?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacts" data-scrollto="contact">Контакты</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </div>
+</header>
+
+<!--<div class="container">-->
+    <!--<header class="blog-header py-3">-->
+        <!--<div class="row flex-nowrap justify-content-between align-items-center">-->
+            <!--<div class="col-4 pt-1">-->
+                <!--<img src="http://quant.zone/static/images/logo-dark.svg" alt="" height="48">-->
+                <!--<br>-->
+                <!--<a class="text-muted">образовательный центр</a>-->
+            <!--</div>-->
+            <!--<div class="col-8 d-flex justify-content-end align-items-center">-->
+                <!--<a class="text-muted lead" href="tel:+73432885276">+7 (343) 288-52-76</a>-->
+                <!--&nbsp;&nbsp;&nbsp;-->
+                <!--<a class="btn btn-sm btn-outline-secondary" href="#">Заказать звонок</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</header>-->
+<!--</div>-->
+
+<div class="container">
 
     <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
@@ -177,108 +211,660 @@
     </div>
 
     <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
-            <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-            <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-            <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+        <div class="col-md-8 px-0">
+            <h1 class="display-4 font-italic">Подготовим ребенка к успешной сдаче экзаменов</h1>
+            <p class="lead my-3">Наши программы по школьным предметам разработаны для успешной сдачи ЕГЭ с любым уровнем начальной подготовки</p>
+            <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Узнать больше...</a></p>
         </div>
     </div>
+</div>
 
-    <div class="row mb-2">
-        <div class="col-md-6">
-            <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-primary">World</strong>
-                    <h3 class="mb-0">
-                        <a class="text-dark" href="#">Featured post</a>
-                    </h3>
-                    <div class="mb-1 text-muted">Nov 12</div>
-                    <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#">Continue reading</a>
-                </div>
-                <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1613d34619c%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A13pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1613d34619c%22%3E%3Crect%20width%3D%22200%22%20height%3D%22250%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2257.0234375%22%20y%3D%22130.7%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="width: 200px; height: 250px;">
+<section id="quote" class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h3 class="d-block mt-4 font-alt title-extra-large">"Попади в среду, мотивирующую на постоянное развитие и совершенствование!"</h3>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-success">Design</strong>
-                    <h3 class="mb-0">
-                        <a class="text-dark" href="#">Post title</a>
-                    </h3>
-                    <div class="mb-1 text-muted">Nov 11</div>
-                    <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#">Continue reading</a>
+    </div>
+</section>
+
+<section class="section py-5">
+    <a class="anchor" id="video"></a>
+    <div class="container">
+        <div class="row">
+            <div class="content col-md-6 col-12 order-md-12 text-center">
+                <h2>Видео о нашем центре</h2>
+                <p>Прежде всего бла-бла бла Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi assumenda consequatur corporis, cum deserunt dolorem, ducimus eum id labore necessitatibus nulla obcaecati odio quibusdam reiciendis sapiente vitae voluptas voluptate.</p>
+            </div>
+            <div id="video-container" class="video-container col-md-6 col-12 order-md-1">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="//player.vimeo.com/video/87044590" width="570" height="320" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
                 </div>
-                <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1613d34619e%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A13pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1613d34619e%22%3E%3Crect%20width%3D%22200%22%20height%3D%22250%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2257.0234375%22%20y%3D%22130.7%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="width: 200px; height: 250px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-light pb-5">
+    <a class="anchor" id="feedback"></a>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="text-center">
+                    <h3 class="pt-5">Наши ученики</h3>
+                    <p class="pt-3 text-muted">Мы обучили уже более 1000 детей.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-4">
+                <div class="testimonial-box pt-5">
+                    <div class="testimonial-desc bg-light p-4">
+                        <p class="text-center text-muted">"Привет) хотел выразить огромную благодарность не только за егэ, но и за кучу жизненных и поучительных советов, я поступил в бауманку, в этом есть твой огромный вклад, огромнейшее спасибо))"</p>
+
+                        <p class="text-center text-muted mb-0">Артем Орешкин</p>
+                        <p class="text-center text-muted">
+                            <a href=""><i class="fa fa-vk fa-lg"></i></a>
+                        </p>
+                        <p class="text-center text-muted">Выпускник 2017 года</p>
+                    </div>
+                    <div class="mt-4 testi-img">
+                        <img src="https://dummyimage.com/80x80/828282.png" width="80" alt="" class="img-fluid rounded-circle d-block mx-auto">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-box pt-5">
+                    <div class="testimonial-desc bg-light p-4">
+                        <p class="text-center text-muted">"Занимались с Виталием всего пару недель, за это время смогли выявить и устранить все пробелы в знаниях, накопившиеся за год, что помогло мне сдать зачёт по физике. Занятия были интересными и эффективными, я очень довольна результатом."</p>
+                        <p class="text-center text-muted mb-0">Надежда Викулова</p>
+                        <p class="text-center text-muted">
+                            <a href=""><i class="fa fa-vk fa-lg"></i></a>
+                        </p>
+                        <p class="text-center text-muted">Ученица гимназии №9</p>
+                    </div>
+                    <div class="mt-4 testi-img">
+                        <img src="https://dummyimage.com/80x80/828282.png" alt="" class="img-fluid rounded-circle d-block mx-auto">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-box pt-5">
+                    <div class="testimonial-desc bg-light p-4">
+                        <p class="text-center text-muted">"Денис Сафронов - отличный преподаватель. Он может найти свой подход к любому, понятно объяснить и указать на ошибки. На его занятиях всегда было интересно, я получал что-то новое. С ним действительно приятно и полезно заниматься."</p>
+                        <p class="text-center text-muted mb-0">Елизавета Овчинникова</p>
+                        <p class="text-center text-muted">
+                            <a href=""><i class="fa fa-vk fa-lg"></i></a>
+                        </p>
+                        <p class="text-center text-muted">Ученица 16-17 учебного года</p>
+                    </div>
+                    <div class="mt-4 testi-img">
+                        <img src="https://dummyimage.com/80x80/828282.png" alt="" class="img-fluid rounded-circle d-block mx-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section pb-5">
+    <a class="anchor" id="features"></a>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h3 class="pt-5">Из чего строится обучение</h3>
+                <p class="text-muted pt-3">Наша команда непрерывно внедряет в рабочий процесс новые технологии и методики работы</p>
+            </div>
+        </div>
+        <div class="row pt-5 align-items-center">
+            <div class="col-md-6">
+                <img src="https://dummyimage.com/540x305/828282.png" alt="" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h5>Учебные материалы</h5>
+                <p class="pt-2">Формат обучения позволяет выявить слабые места и работать над ними индивидуально</p>
+            </div>
+        </div>
+        <div class="row pt-5 align-items-center">
+            <div class="col-md-6">
+                <h5>Обучение в маленьких группах</h5>
+                <p class="pt-2">Формат обучения позволяет выявить слабые места и работать над ними индивидуально</p>
+            </div>
+            <div class="col-md-6 pt-4">
+                <img src="https://dummyimage.com/540x305/828282.png" alt="" class="img-fluid rounded">
+            </div>
+        </div>
+        <div class="row pt-5 align-items-center">
+            <div class="col-md-6">
+                <img src="https://dummyimage.com/540x305/828282.png" alt="" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h5>Много практики</h5>
+                <p class="pt-2">В системе “перевернутого класса” ученик изучает теорию дома, а в классе разбирает сложные моменты и решает практические задачи. Такие занятия позволяют не просто подготовиться к экзамену, а изучить предмет</p>
+            </div>
+        </div>
+        <div class="row pt-5 align-items-center">
+            <div class="col-md-6">
+                <h5>Диагностика</h5>
+                <p class="pt-2">Тестирование на основе образовательного графа помогает точно определить проблемные темы и скорректировать траекторию дальнейшего обучения</p>
+            </div>
+            <div class="col-md-6 pt-4">
+                <img src="https://dummyimage.com/540x305/828282.png" alt="" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-light py-5">
+    <a class="anchor" id="pricing"></a>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="text-center">
+                    <div class="title-icon">
+                        <i class="mdi mdi-note-multiple-outline"></i>
+                    </div>
+                    <h3 class="section-title">Стоимость</h3>
+                    <p class="section-subtitle pt-3 text-muted">Мы предоставляем широкий спектр форм обучения</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 justify-content-center">
+            <div class="col-lg-4 col-8">
+                <div class="price-box p-4 bg-white text-center mt-4">
+                    <div class="plan-price">
+                        <h2>0 ₽</h2>
+                    </div>
+                    <div class="plan-name mt-4">
+                        <h6>Бесплатно</h6>
+                    </div>
+                    <div class="plan-desc mt-4">
+                        <ul class="list-unstyled text-muted">
+                            <li>Telegram-бот</li>
+                            <li>Заочная подготовка</li>
+                            <li>Задания каждый день</li>
+                            <li>В любое время</li>
+                        </ul>
+                    </div>
+                    <div class="mt-5">
+                        <a href="#" class="btn btn-custom btn-rounded">Узнать больше</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-8">
+                <div class="price-box p-4 bg-white text-center mt-lg-1 mt-4">
+                    <div class="plan-lable">
+                        <p class="mb-3 text-uppercase">Популярное</p>
+                    </div>
+                    <div class="plan-price">
+                        <h2>400 ₽/час</h2>
+                    </div>
+                    <div class="plan-name mt-4">
+                        <h6>Группа</h6>
+                    </div>
+                    <div class="mt-4">
+                        <ul class="list-unstyled text-muted">
+                            <li>6 человек максимум</li>
+                            <li>30 интенсивных занятий</li>
+                            <li>3 пробных экзамена</li>
+                            <li>Профориентация</li>
+                        </ul>
+                    </div>
+                    <div class="mt-5">
+                        <!-- Button trigger modal -->
+                        <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
+                            Записаться
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-8">
+                <div class="price-box p-4 bg-white text-center mt-4">
+                    <div class="plan-price">
+                        <h2>1000 ₽/час</h2>
+                    </div>
+                    <div class="plan-name mt-4">
+                        <h6>Индивидуально</h6>
+                    </div>
+                    <div class="plan-desc mt-4">
+                        <ul class="list-unstyled text-muted">
+                            <li>Индивидуальная программа</li>
+                            <li>Максимальная скорость</li>
+                            <li>Поддержка в мессенджерах</li>
+                            <li>Профориентация</li>
+                        </ul>
+                    </div>
+                    <div class="mt-5">
+                        <a href="#" class="btn btn-custom btn-rounded">Записаться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--<section class="section bg-light">
+    <div class="container">
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h3 class="pt-5">Стоимость</h3>
+            <p class="pt-3 text-muted">Мы предоставляем широкий спектр форм обучения</p>
+        </div>
+        <div class="card-deck mb-3 text-center mt-5">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Бесплатно</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">0 ₽</h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Telegram-бот</li>
+                        <li>Заочная подготовка</li>
+                        <li>Задания каждый день</li>
+                        <li>В любое время</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-secondary">Узнать больше</button>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Группа</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">400 ₽<small class="text-muted">/ час</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>6 человек в группе максимум</li>
+                        <li>30 интенсивных занятий</li>
+                        <li>3 пробных экзамена</li>
+                        <li>Профориентация</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-secondary">Записаться</button>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Индивидуально</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">1000 ₽<small class="text-muted">/ час</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Индивидуальная скорость</li>
+                        <li>Максимальная скорость</li>
+                        <li>Поддержка в мессенджерах</li>
+                        <li>Профориентация</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-secondary">Записаться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+
+<section class="section pb-5">
+    <a class="anchor" id="faq"></a>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="text-center">
+                    <div class="title-icon">
+                        <i class="mdi mdi-comment-question-outline"></i>
+                    </div>
+                    <h3 class="section-title pt-5">Часто задаваемые вопросы</h3>
+                    <p class="section-subtitle pt-3 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-6 faq-side">
+                <div class="faq pt-5">
+                    <p class="text-uppercase user-title mb-1">for user</p>
+                    <div class="faq-ans">
+                        <h3 class="faq-title"><i class="mdi mdi-help-circle"></i> What is Lorem Ipsum?</h3>
+                        <p class="faq-sub-title text-muted pt-2">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens, the coupens will be deducted from your coupens account at Clooger.</p>
+                    </div>
+                </div>
+                <div class="faq pt-5">
+                    <p class="text-uppercase user-title mb-1 mb-1">for user</p>
+                    <div class="faq-ans">
+                        <h3 class="faq-title"><i class="mdi mdi-help-circle"></i> Why use Lorem Ipsum?</h3>
+                        <p class="faq-sub-title text-muted pt-2">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens, the coupens will be deducted from your coupens account at Clooger.</p>
+                    </div>
+                </div>
+                <div class="faq pt-5">
+                    <p class="text-uppercase user-title mb-1">for user</p>
+                    <div class="faq-ans">
+                        <h3 class="faq-title"><i class="mdi mdi-help-circle"></i> How many variations exist?</h3>
+                        <p class="faq-sub-title text-muted pt-2">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens, the coupens will be deducted from your coupens account at Clooger.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 faq-side ">
+                <div class="faq pt-5">
+                    <p class="text-uppercase user-title mb-1">for advertiser</p>
+                    <div class="faq-ans">
+                        <h3 class="faq-title"><i class="mdi mdi-help-circle"></i> What is Lorem Ipsum?</h3>
+                        <p class="faq-sub-title text-muted pt-2">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens, the coupens will be deducted from your coupens account at Clooger.</p>
+                    </div>
+                </div>
+                <div class="faq pt-5">
+                    <p class="text-uppercase user-title mb-1">for advertiser</p>
+                    <div class="faq-ans">
+                        <h3 class="faq-title"><i class="mdi mdi-help-circle"></i> Is safe use Lorem Ipsum?</h3>
+                        <p class="faq-sub-title text-muted pt-2">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens, the coupens will be deducted from your coupens account at Clooger.</p>
+                    </div>
+                </div>
+                <div class="faq pt-5">
+                    <p class="text-uppercase user-title mb-1">for advertiser</p>
+                    <div class="faq-ans">
+                        <h3 class="faq-title"><i class="mdi mdi-help-circle"></i> When can be used?</h3>
+                        <p class="faq-sub-title text-muted pt-2">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens, the coupens will be deducted from your coupens account at Clooger.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-light pt-5">
+    <a class="anchor" id="history"></a>
+    <div class="container">
+        <div class="row">
+            <div class="content col-lg-6 col-12 text-center pb-5">
+                <h2 class="title pb-3">Наша история</h2>
+                <p>Aliquam euismod vehicula lacus, non congue ante pulvinar a. Nunc eu posuere risus, ut condimentum ante. Suspendisse at turpis sollicitudin odio congue lobortis vitae nec nisi. Nullam sodales at libero in lacinia. Nullam vel nibh pulvinar, interdum purus tristique, iaculis turpis. Integer imperdiet tincidunt erat vel gravida. Suspendisse tincidunt orci sed leo euismod, quis ultrices ipsum lobortis. Sed viverra dui et elit accumsan accumsan. Donec lorem turpis, iaculis ac fermentum nec, dignissim sed nisi. Nunc condimentum turpis arcu, eu aliquet lorem eleifend ut. Integer at lorem nec diam elementum convallis vel vel nulla.</p>
+                <p>Nullam vel nibh pulvinar, interdum purus tristique, iaculis turpis. Integer imperdiet tincidunt erat vel gravida. eleifend ut. Integer at lorem nec diam elementum convallis vel vel nulla.</p>
+            </div><!--//content-->
+            <div class="team col-lg-5 col-12 mr-auto ml-auto pb-5">
+                <div class="row">
+                    <div class="member col-lg-4 col-4 text-center">
+                        <img src="https://dummyimage.com/150x150/828282.png" alt="" class="img-fluid rounded-circle d-block mx-auto">
+                        <p class="name pt-3">Виталий Харченко</p>
+                        <p class="title">CEO</p>
+                        <ul class="connect list-inline">
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-vk"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                        </ul>
+                    </div><!--//member-->
+                    <div class="member col-lg-4 col-4 text-center">
+                        <img src="https://dummyimage.com/150x150/828282.png" alt="" class="img-fluid rounded-circle d-block mx-auto">
+                        <p class="name pt-3">Екатерина Парамонова</p>
+                        <p class="title">CTO</p>
+                        <ul class="connect list-inline">
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-vk"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                        </ul>
+                    </div><!--//member-->
+                    <div class="member col-lg-4 col-4 text-center">
+                        <img src="https://dummyimage.com/150x150/828282.png" alt="" class="img-fluid rounded-circle d-block mx-auto">
+                        <p class="name pt-3">Екатерина Пирожок</p>
+                        <p class="title">CMO</p>
+                        <ul class="connect list-inline">
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-vk"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                        </ul>
+                    </div><!--//member-->
+                </div>
+            </div><!--//team-->
+        </div><!--//row-->
+    </div><!--//container-->
+</section>
+
+<section class="section py-5">
+    <a class="anchor" id="contacts"></a>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0">
+                <h1 class="display-4 u-fw-600">
+                    <span class="text-muted">Квант</span> Готовим к успешной сдаче ЕГЭ
+                </h1>
+                <p>
+                    Наши программы по школьным предметам разработаны для успешной сдачи ЕГЭ с любым уровнем начальной подготовки
+                </p>
+            </div> <!-- END col-lg-7-->
+
+            <!--<div class="col-lg-5">
+                <div class="card text-center">
+                    <h5 class="card-header">Закажите звонок от преподавателя</h5>
+                    <div class="card-body">
+                        <form action="" method="POST" class="pt-4 px-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-lg" placeholder="Ваше имя">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-lg" placeholder="Телефон">
+                            </div>
+                            <button class="btn btn-secondary btn-lg">
+                                Заказать звонок
+                            </button>
+                            <p class="pt-3">
+                                <small class="text-muted">* перезвоним как только отпустим наших детей по домам</small>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>-->
+            <div class="col-lg-5 px-4 text-center">
+                <h4>Закажите звонок от преподавателя</h4>
+                <form action="" method="POST" class="pt-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Телефон">
+                    </div>
+                    <button class="btn btn-secondary btn-lg">
+                        Заказать звонок
+                    </button>
+                    <p class="pt-3">
+                        <small class="text-muted">* перезвоним как только отпустим наших детей по домам</small>
+                    </p>
+                </form>
+            </div>
+        </div> <!-- END row-->
+    </div> <!-- END container-->
+</section>
+
+<!--<footer class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-2">
+                <img src="http://quant.zone/static/images/logo-dark.svg" alt="" height="20">
+                <small class="d-block mb-3 text-muted">ИП Харченко В.В.</small>
+                <small class="d-block mb-3 text-muted">© 2017-2018</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Документы</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Договор-оферта</a></li>
+                    <li><a class="text-muted" href="#">Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Наши продукты</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Профориентация</a></li>
+                    <li><a class="text-muted" href="#">Бесплатные тестирования</a></li>
+                    <li><a class="text-muted" href="#">ЕГЭ-бот</a></li>
+                    <li><a class="text-muted" href="#">Групповые занятия</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md mb-5">
+                <h5>Контакты</h5>
+                <ul class="list-unstyled">
+                    <li class="">
+                        <a class="text-muted">+7 (343) 288-52-75</a>
+                    </li>
+                    <li class="">
+                        <a class="text-muted">support@echotheme.com</a>
+                    </li>
+                    <li class="">
+                        <a class="text-muted">ул. 8 Марта д.2</a>
+                    </li>
+                </ul>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a><i class="fa fa-vk fa-lg"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a><i class="fa fa-facebook-official fa-lg"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a><i class="fa fa-instagram fa-lg"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a><i class="fa fa-youtube fa-lg"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</footer>-->
+
+<footer>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <img src="http://quant.zone/static/images/logo-dark.svg" alt="" height="20">
+                    <small class="d-block mb-3 text-muted">ИП Харченко В.В. © 2017-2018</small>
+                    <div class="input-group mb-3 pt-2">
+                        <input type="text" class="form-control" placeholder="Ваш email" aria-label="Ваш email" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">Подписаться</button>
+                        </div>
+                    </div>
+                    <p class="small">
+                        Подпишитесь на нашу рассылку с топ-кеками
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 ml-auto mb-5 mb-lg-0">
+                    <h4>Ссылки</h4>
+                    <ul class="list-unstyled pt-2">
+                        <li><a class="text-muted" href="#">Договор-оферта</a></li>
+                        <li><a class="text-muted" href="#">Политика конфиденциальности</a></li>
+                        <li><a class="text-muted" href="#">Бесплатные тестирования</a></li>
+                        <li><a class="text-muted" href="#">ЕГЭ-бот</a></li>
+                        <li><a class="text-muted" href="#">Оплата курсов</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 col-6 ml-auto mb-5 mb-lg-0">
+                    <h4>Контакты</h4>
+                    <ul class="list-unstyled pt-2">
+                        <li class="mb-1">
+                            <a class="text-muted">+7 (343) 288-52-75</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="text-muted">support@echotheme.com</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="text-muted">ул. 8 Марта д.2</a>
+                        </li>
+                    </ul>
+                    <ul class="list-inline mt-2">
+                        <li class="list-inline-item">
+                            <a><i class="fa fa-vk fa-lg"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a><i class="fa fa-facebook-official fa-lg"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a><i class="fa fa-instagram fa-lg"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a><i class="fa fa-youtube fa-lg"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Закажите звонок от преподавателя</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="" method="POST" class="pt-4 px-4 text-center">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Ваше имя">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Телефон">
+                                </div>
+                                <button class="btn btn-secondary btn-lg" data-dismiss="modal">
+                                    Заказать звонок
+                                </button>
+                                <p class="pt-3 text-center">
+                                    <small class="text-muted">* мы перезвоним как только отпустим наших детей по домам</small>
+                                </p>
+                            </form>
+                        </div> <!-- END col-lg-5-->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<footer class="container py-5">
-    <div class="row">
-        <div class="col-12 col-md">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
-            <small class="d-block mb-3 text-muted">© 2017-2018</small>
-        </div>
-        <div class="col-6 col-md">
-            <h5>Features</h5>
-            <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Cool stuff</a></li>
-                <li><a class="text-muted" href="#">Random feature</a></li>
-                <li><a class="text-muted" href="#">Team feature</a></li>
-                <li><a class="text-muted" href="#">Stuff for developers</a></li>
-                <li><a class="text-muted" href="#">Another one</a></li>
-                <li><a class="text-muted" href="#">Last time</a></li>
-            </ul>
-        </div>
-        <div class="col-6 col-md">
-            <h5>Resources</h5>
-            <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Resource</a></li>
-                <li><a class="text-muted" href="#">Resource name</a></li>
-                <li><a class="text-muted" href="#">Another resource</a></li>
-                <li><a class="text-muted" href="#">Final resource</a></li>
-            </ul>
-        </div>
-        <div class="col-6 col-md">
-            <h5>Resources</h5>
-            <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Business</a></li>
-                <li><a class="text-muted" href="#">Education</a></li>
-                <li><a class="text-muted" href="#">Government</a></li>
-                <li><a class="text-muted" href="#">Gaming</a></li>
-            </ul>
-        </div>
-        <div class="col-6 col-md">
-            <h5>About</h5>
-            <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Team</a></li>
-                <li><a class="text-muted" href="#">Locations</a></li>
-                <li><a class="text-muted" href="#">Privacy</a></li>
-                <li><a class="text-muted" href="#">Terms</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../../../../assets/js/vendor/popper.min.js"></script>
-<script src="../../../../dist/js/bootstrap.min.js"></script>
-<script src="../../../../assets/js/vendor/holder.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 <script>
-    Holder.addTheme('thumb', {
-        bg: '#55595c',
-        fg: '#eceeef',
-        text: 'Thumbnail'
-    });
+    // Select all links with hashes
+    $('a[href*="#"]')
+    // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+            // On-page links
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                &&
+                location.hostname == this.hostname
+            ) {
+                // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, function() {
+                        // Callback after animation
+                        // Must change focus!
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) { // Checking if the target was focused
+                            return false;
+                        } else {
+                            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                            $target.focus(); // Set focus again
+                        };
+                    });
+                }
+            }
+        });
 </script>
 
-
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="250" viewBox="0 0 200 250" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="13" style="font-weight:bold;font-size:13pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thumbnail</text></svg></body>
+</body>
 </html>

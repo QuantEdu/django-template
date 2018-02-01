@@ -51,6 +51,7 @@ services:
     # can access to @web@ container files for serving static files
     volumes:
       - ./web/static:/static
+      - ./web/media:/media
     depends_on:
       - web
 

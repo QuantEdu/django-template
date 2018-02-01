@@ -6,5 +6,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'apps.example'
+    # External libraries
+    # Markdown
+    'markdownx',
+
+    # Model layer
+    'polymorphic',
+
+    'apps.example',
+    'apps.custom_admin',
+    'apps.graph.blocks',
 ]

@@ -38,6 +38,7 @@ class TextBlockAdminForm(forms.ModelForm):
 
 
 # TODO: add two columns layout for markdownx
+# TODO: enable auto updating by MathJax
 # Add MathJax javascript to admin page for pre-rendering
 class TextBlockAdmin(MarkdownxModelAdmin):
 

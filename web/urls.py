@@ -24,8 +24,8 @@ from apps.custom_admin.admin import custom_admin
 
 urlpatterns = [
     # Core django paths
-    path('admin/', admin.site.urls),
-    path('custom_admin/', custom_admin.urls),
+    path('super_admin/', admin.site.urls),
+    path('admin/', custom_admin.urls),
 
 
     # Third party

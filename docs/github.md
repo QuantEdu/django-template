@@ -3,6 +3,7 @@
 1. [Project guidelines](https://github.com/wearehive/project-guidelines)
 - Perform work in a feature branch. (Работайте в отдельном бранче)
 - Branch out from develop (Ответвляйтесь от ветки develop)
+- Never push into develop or master branch. Make a Pull Request.
 
 2. [Tuturial from BitBucket](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud)
 

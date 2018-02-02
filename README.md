@@ -1,38 +1,67 @@
-# quant
+![Logo of the project](./images/logo.sample.png)
+
+# Quant
+> Приложение для дистанционного образования. И еще наш сайт.
+
+Quant создается как электронная платформа для нашего учебного центра.
+
+Может быть доступна из браузеров и при помощи бота в Telegram.
+
+## Installing / Getting started
+
+Проект легко разворачивается при помощи docker-compose
+
+```shell
+docker-compose build
+docker-compose up
+```
+
+После чего сайт будет доступен по IP docker-machine или по `localhost`
 
 ## Структура проекта
 
 ```
 django-template
-├─ django (Python+Django-приложение)
 ├─ docker (Все Dockerfile для сборки проекта)
-├─ docs (документация проекта)
+├─ docs (документация проекта и используемых технологий)
+├─ experiments (текущие эксперимент с технологиями)
+├─ src (исходники с фронтендом)
+├─ web (Python+Django-приложение)
+├─ .env Файл с переменными окружения
 └─ docker-compose.yml (сборка и запуск docker-контейнеров)
 ```
 
-Для начала работы нужно:
-1. Установить Docker на компьютер. [официальная документация](https://docs.docker.com)
-2. `docker-compose build && docker-compose up`
+## Developing
 
-или
+### Built With
+- Python
+- Django
+- Docker
+- Bootstrap4
 
+### Prerequisites
+Для начала разработки необходимо установить Docker на свой компьютер. [официальная документация](https://docs.docker.com)
+В дальнейшем рекомендуется использовать IDE PyCharm.
+На компьютере необходимо установить локально Postgres последней версии и Python3.6.
+
+
+### Setting up Dev
+
+Консольные команды, которые необходимо выполнить:
+
+```shell
+git clone https://github.com/QuantEdu/quant.git
+cd quant/
+docker-compose up
+```
+
+Для работы в Pycharm:
 1. В PyCharm - Settings - Build - Docker. Создать указатель на docker-machine с полным путем до docker-compose
 2. Создать remote interpreter для проекта, запускающий docker-compose
-
-Для пересборки проекта
-1. `docker-compose stop && docker-compose rm -f && docker-compose build --no-cache && docker-compose up -d`
-
-Настройка окружения в PyCharm. [как получить бесконечную лицензию](https://vk.com/@maxstern-getting-rid-of-jetbrains-license-crap-forever)
-1. Открыть проект
-2. Узнать IP docker-machine - это будет ip хоста
-3. подключиться к БД используя данные из .env файла
-4. Консоль ассоциировать c docker-machine при помощи `eval $(docker-machine env default)`
-
-## Работа с данными
-1. `sudo docker exec djangotemplate_db_1 pg_dump -U postgres postgres > pg_backups/postgres_$(date +%Y-%m-%d).sql`
+3. Создать run\debug конфигурацию, которая собирает при помощи файла docker-compose.yml
+4. Запускать docker-machine через специальную вкладку и деплоить по инструкции из docker-compose
 
 
-## TO-DO'S:
-- backup postgres data
-- [connect uwsgi instance](https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/) [Docs](http://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html)
-- use pg_dump automatically [pg_dump](https://github.com/istepanov/docker-pg_dump)
+
+> By [project-guideline](https://github.com/wearehive/project-guidelines/blob/master/README.sample.md)
+

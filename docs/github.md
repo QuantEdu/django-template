@@ -55,4 +55,3 @@
 
 `git push -f` - Push your branch. Rebase поменяет историю коммитов, поэтому обычный push не сработает. If someone else is working on your branch, use the less destructive --force-with-lease.
 
-

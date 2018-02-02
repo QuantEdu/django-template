@@ -1,4 +1,4 @@
-# django-template
+# quant
 
 ## Структура проекта
 

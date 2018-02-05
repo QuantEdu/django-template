@@ -44,7 +44,7 @@ class TextBlock(Block):
 
 
 # Define where to store image
-# Instance is an instanse of model, that contains image
+# Instance is an instanсe of model, that contains image
 def choice_block_image_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/...
     return 'blocks/choice_blocks/choice_block_{0}/{1}'.format(
@@ -70,7 +70,7 @@ class ChoiceBlock(Block):
 
 
 # Define where to store image
-# Instance is an instanse of model, that contains image
+# Instance is an instanсe of model, that contains image
 def choice_block_option_image_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/...
     return 'blocks/choice_blocks/choice_block_{0}/options/{1}/{2}'.format(
@@ -105,7 +105,7 @@ class ChoiceBlockOption(models.Model):
 
 
 # Define where to store image
-# Instance is an instanse of model, that contains image
+# Instance is an instanсe of model, that contains image
 def float_block_image_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/...
     return 'blocks/float_blocks/float_block_{0}/{1}'.format(
@@ -132,7 +132,7 @@ class FloatBlock(Block):
 
 
 # Define where to store image
-# Instance is an instanse of model, that contains image
+# Instance is an instanсe of model, that contains image
 def text_answer_block_image_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/...
     return 'blocks/text_answer_blocks/text_answer_block_{0}/{1}'.format(
@@ -156,20 +156,3 @@ class TextAnswerBlock(Block):
 
     def __str__(self):
         return self.question_text[:100]
-
-
-# Включение блоков в урок
-# class NodeBlockRelation(models.Model):
-#     node = models.ForeignKey('nodes.Node')
-#     block = models.ForeignKey(Block)
-#     order = models.IntegerField('Порядковый номер блока внутри узла', default=0)
-#     # TODO
-#     # подумать про order. Когда будет много вершин, порядок не выгоден,
-#     # будет лучше между блоками сделать приоритет
-#
-#     class Meta:
-#         verbose_name = 'включение блока в узел'
-#         verbose_name_plural = 'включения блоков в узел'
-#
-#     def __str__(self):
-#         return "{} in {}".format(self.block, self.node)

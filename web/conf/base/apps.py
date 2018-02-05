@@ -15,5 +15,5 @@ INSTALLED_APPS = [
 
     'apps.example',
     'apps.custom_admin',
-    'apps.graph.blocks',
+    'apps.blocks',
 ]

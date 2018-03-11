@@ -1,0 +1,63 @@
+{% extends 'lms/base.html' %}
+
+{% load markdown_extras %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'lms:index' %}">LMS</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'quiz_list' %}">Тесты</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'quiz_detail' object.quiz.pk %}">{{ object.quiz.title }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Результат #{{ object.pk }}</li>
+        </ol>
+    </nav>
+    <div class="card">
+        <div class="card-body">
+            <p>{{ object.end_time|date:"d E y, H:i" }}</p>
+            <p class="lead">Твой результат: {{ object.get_percent_correct }}% ({{ object.complete_score }}/{{ object.max_score }})</p>
+            <table class="table table-bordered table-sm table-responsive-md">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Содержание блока</th>
+                        <th scope="col">Тип блока</th>
+                        <th scope="col">Ваш ответ</th>
+                        <th scope="col">Верный ответ</th>
+                        <th scope="col">Балл</th>
+                        <th scope="col">Максимум</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in object.get_blocks_results %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ result.block_subclass }}</td>
+                            <td>{{ result.block_subclass.block_type_name }}</td>
+                            <td>
+                                {% if result.block_subclass.get_class_name == 'ChoiceBlock' %}
+                                    {{ result.get_answer.0|join:", " }}
+                                {% else %}
+                                    {{ result.get_answer.0 }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if result.block_subclass.get_class_name == 'ChoiceBlock' %}
+                                    {{ result.get_answer.1|join:", " }}
+                                {% else %}
+                                    {{ result.get_answer.1 }}
+                                {% endif %}
+                            </td>
+                            <td {% if not result.correct %}class="bg-warning"{% endif %}>{{ result.score }}</td>
+                            <td>{{ result.max_score }}</td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5">Итого</td>
+                        <td><b>{{ object.complete_score }}</b></td>
+                        <td><b>{{ object.max_score }}</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,167 @@
+<!-- Doctype HTML5 -->
+<!doctype html>
+<html lang="ru">
+
+<!-- All head tags are from https://github.com/joshbuchea/HEAD -->
+<head>
+    <meta charset="utf-8">
+    <!-- Сообщает Internet Explorer использовать самый новый движок для рендера -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Задание тега Viewport для адаптивного отображения страницы -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {# TODO: set theme color for browsers #}
+    {# TODO: set description section #}
+    {# TODO: add control behavior for search engines #}
+
+    <!-- Tells Google not to show the sitelinks search box -->
+    <meta name="google" content="nositelinkssearchbox">
+
+    <!-- Tells Google not to provide a translation for this document -->
+    <meta name="google" content="notranslate">
+
+    {# TODO: verify site on platforms #}
+    {# TODO: add manifest file #}
+    {# TODO: add copyright statement link #}
+
+    {# TODO: set icons for multiple platforms #}
+    {# TODO: add social OpenGraph properties for reposting #}
+    {# TODO: add Twitter properties for reposting #}
+    {# TODO: add Google+ / Schema.org behavior #}
+
+    <!-- Задание тега Title, короче 65 символов -->
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kurale|Lobster|Lora|Merriweather|Play|Roboto+Slab|Vollkorn"
+          rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="https://use.fontawesome.com/14d9e3a8b7.js"></script>
+
+</head>
+<body>
+
+<header class="header sticky-top">
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container text-center">
+            <a class="navbar-brand" href="{% url 'lms:index' %}">
+                <h1 class="navbar-brand">QUANT LMS</h1>
+            </a>
+
+            <button class="navbar-toggler p-0" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'quiz_list' %}">Тесты</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Welcome, {{ user }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+                            </div>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+<footer class="mt-5">
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <img src="http://quant.zone/static/images/logo-dark.svg" alt="" height="20">
+                    <small class="d-block mb-3 text-muted">ИП Харченко В.В. © 2017-2018</small>
+                    <div class="input-group mb-3 pt-2">
+                        <input type="text" class="form-control" placeholder="Ваш email" aria-label="Ваш email" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">Подписаться</button>
+                        </div>
+                    </div>
+                    <p class="small">
+                        Подпишитесь на нашу рассылку с топ-кеками
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 ml-auto mb-5 mb-lg-0">
+                    <h4>Ссылки</h4>
+                    <ul class="list-unstyled pt-2">
+                        <li><a class="text-muted" href="#">Договор-оферта</a></li>
+                        <li><a class="text-muted" href="#">Политика конфиденциальности</a></li>
+                        <li><a class="text-muted" href="#">Бесплатные тестирования</a></li>
+                        <li><a class="text-muted" href="#">ЕГЭ-бот</a></li>
+                        <li><a class="text-muted" href="#">Оплата курсов</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 col-6 ml-auto mb-5 mb-lg-0">
+                    <h4>Контакты</h4>
+                    <ul class="list-unstyled pt-2">
+                        <li class="mb-1">
+                            <a class="text-muted">+7 (343) 288-52-75</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="text-muted">support@echotheme.com</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="text-muted">ул. 8 Марта д.2</a>
+                        </li>
+                    </ul>
+                    <ul class="list-inline mt-2">
+                        <li class="list-inline-item">
+                            <a><i class="fa fa-vk fa-lg"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a><i class="fa fa-facebook-official fa-lg"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a><i class="fa fa-instagram fa-lg"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a><i class="fa fa-youtube fa-lg"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+</body>
+</html>

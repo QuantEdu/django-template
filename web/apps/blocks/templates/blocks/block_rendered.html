@@ -1,0 +1,11 @@
+{# Accept block and form object and then render it #}
+
+{% if block.get_class_name == 'TextBlock' %}
+    {% include "blocks/block_types/text_block.html" with block=block form=form %}
+{% elif block.get_class_name == 'ChoiceBlock' %}
+    {% include "blocks/block_types/choice_block.html" with block=block form=form %}
+{% elif block.get_class_name == 'FloatBlock' %}
+    {% include "blocks/block_types/float_block.html" with block=block form=form %}
+{% elif block.get_class_name == 'TextAnswerBlock' %}
+    {% include "blocks/block_types/text_answer_block.html" with block=block form=form %}
+{% endif %}

@@ -1,0 +1,73 @@
+{% extends 'lms/base.html' %}
+
+{% load markdown_extras %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'lms:index' %}">LMS</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'quiz_list' %}">Тесты</a></li>
+            {% if fresh %}
+                <li class="breadcrumb-item"><a href="{% url 'quiz_detail' object.pk %}">{{ object.title }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Результат</li>
+            {% else %}
+                <li class="breadcrumb-item active" aria-current="page">{{ object.title }}</li>
+            {% endif %}
+        </ol>
+    </nav>
+    <div class="card">
+        <div class="card-body">
+            <h1>{{ object.title }}</h1>
+            <p class="lead">{{ object.description }}</p>
+            <div class="text-center py-5">
+                {% if progresses %}
+                    {% if progresses.0.complete %}
+                        {% if fresh %}
+                            <p class="lead">Ура! Ты закончил тест</p>
+                            <p class="lead">Твой результат: {{ progresses.0.get_percent_correct }}%, {{ progresses.0.complete_score }}/{{ progresses.0.max_score }}</p>
+                        {% else %}
+                            <p class="lead">Последний результат: {{ progresses.0.get_percent_correct }}%, {{ progresses.0.complete_score }}/{{ progresses.0.max_score }}</p>
+                        {% endif %}
+                    {% else %}
+                        <p>Есть незаконченная попытка</p>
+                    {% endif %}
+                {% endif %}
+
+                {% if progresses and object.single_attempt %}
+                    <p>К сожалению, этот тест можно пройти только один раз</p>
+                {% else %}
+                    {% if progresses %}
+                        {% if has_incomplete_progress %}
+                            <a class="btn btn-primary" href="{% url 'quiz_take' object.pk %}">Продолжить выполнение теста</a>
+                        {% else %}
+                            <a class="btn btn-primary" href="{% url 'quiz_take' object.pk %}">Пройти тест еще раз</a>
+                        {% endif %}
+                    {% else %}
+                        <a class="btn btn-primary" href="{% url 'quiz_take' object.pk %}">Пройти тест</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+
+            <hr>
+
+            <p class="lead">Твои результаты</p>
+            {% if progresses %}
+                <ul>
+                    {% for progress in progresses %}
+                        <li>
+                            {% if progress.complete %}
+                                <a href="{% url 'quiz_progress' progress.pk %}">#{{ progress.pk }}</a>
+                                &nbsp;&nbsp;{{ progress.end_time|date:"d E y" }}, {{ progress.get_percent_correct }}% ({{ progress.complete_score }}/{{ progress.max_score }})
+                            {% else %}
+                                <a>#{{ progress.pk }}</a>
+                                &nbsp;&nbsp;{{ progress.start_time|date:"d E y" }} - незаконченная попытка
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Ты еще не проходил этот тест</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -7,13 +7,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # External libraries
-    # Markdown
+    #  Markdown
     'markdownx',
+    #  Bootstrap
+    'bootstrap4',
 
-    # Model layer
-    'polymorphic',
-
-    'apps.example',
+    # Our apps
+    'apps.blocks',
     'apps.custom_admin',
-    'apps.graph.blocks',
+    'apps.lp',
+    'apps.results',
+    'apps.services',
+    'apps.tags',
+    'apps.quiz',
+    'apps.lms',
 ]

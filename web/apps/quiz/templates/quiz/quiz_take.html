@@ -1,0 +1,28 @@
+{% extends 'lms/base.html' %}
+
+{% load markdown_extras %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'lms:index' %}">LMS</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'quiz_list' %}">Тесты</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ quiz.title }}</li>
+        </ol>
+    </nav>
+    <div class="card mb-3">
+        <div class="card-body">
+            <p class="text-center">Прогресс</p>
+            <div class="progress mb-3">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{ progress.current_block_index }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ progress.get_percent_finished }}%"></div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            {% if block %}
+                {% include "blocks/block_rendered.html" with block=next_block form=block_form %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

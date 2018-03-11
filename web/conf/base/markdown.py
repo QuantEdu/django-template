@@ -1,6 +1,5 @@
 from datetime import datetime
 
-
 MARKDOWNX_MARKDOWN_EXTENSIONS = [
     # 'markdown.extensions.extra',
     'mdx_math',

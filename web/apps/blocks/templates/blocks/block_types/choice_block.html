@@ -1,0 +1,12 @@
+{% load markdown_extras %}
+{% load bootstrap4 %}
+
+<h1>{{ block.question_text|show_markdown|safe }}</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <input type="submit" value="Дальше" class="btn btn-large btn-block btn-warning">
+    {% endbuttons %}
+</form>

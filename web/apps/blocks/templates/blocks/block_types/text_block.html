@@ -1,0 +1,21 @@
+{% load markdown_extras %}
+{% load bootstrap4 %}
+
+<h1 class="text-center">{{ block.title }}</h1>
+<hr>
+
+<style>
+    .paragraph-body img {
+        max-width: 100%;
+    }
+</style>
+
+<div class="paragraph-body">{{ block.body|show_markdown|safe }}</div>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <input type="submit" value="Дальше" class="btn btn-large btn-block btn-warning">
+    {% endbuttons %}
+</form>

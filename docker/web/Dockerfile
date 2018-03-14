@@ -25,6 +25,8 @@ RUN pip install -r requirements.txt
 # - copy all other files to /code/ directory
 ADD ./web/ /code/
 
-# post-install tasks
-# RUN python manage.py migrate
-# RUN python manage.py collectstatic
+# Give access rights to django start scripts
+RUN sed -i 's/\r//' scripts/start.sh
+RUN chmod +x scripts/start.sh
+
+ENTRYPOINT ["/bin/bash", "./scripts/start.sh"]

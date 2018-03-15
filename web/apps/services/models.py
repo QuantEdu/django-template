@@ -1,5 +1,5 @@
 # Django core
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
@@ -57,7 +57,7 @@ class StudentServiceRelation(models.Model):
         on_delete=models.CASCADE
     )
     student = models.ForeignKey(
-        User,
+        settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
 

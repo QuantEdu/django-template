@@ -21,4 +21,5 @@ INSTALLED_APPS = [
     'apps.tags',
     'apps.quiz',
     'apps.lms',
+    'apps.users',
 ]

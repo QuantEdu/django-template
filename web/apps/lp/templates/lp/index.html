@@ -5,13 +5,22 @@
     <title>Django-template</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Kurale|Lobster|Lora|Merriweather|Play|Roboto+Slab|Vollkorn" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kurale|Lobster|Lora|Merriweather|Play|Roboto+Slab|Vollkorn|Montserrat" rel="stylesheet">
 
     <script src="https://use.fontawesome.com/14d9e3a8b7.js"></script>
 
     <style>
+        body {
+            background-color: #F7F6ED;
+        }
+
+        .bg-light {
+            background-color: #edece3 !important;
+        }
+
         h1, h2, h3, h4, h5, h6 {
-            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            /*font-family: "Playfair Display", Georgia, "Times New Roman", serif;*/
+            font-family: 'Montserrat', sans-serif;
             /*font-family: "Vollkorn", serif;*/
             /*font-family: 'Play', sans-serif;*/
             /*font-family: 'Lobster', cursive;*/
@@ -105,10 +114,10 @@
 </header>
 
 <header class="header sticky-top">
-    <div class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="navbar navbar-expand-lg navbar-dark" style="background-color: #19323C !important; color: #fff !important;">
         <div class="container text-center">
             <a class="navbar-brand" href="index_trash.html">
-                <img src="http://quant.zone/static/images/logo-dark.svg" alt="" height="48">
+                <img src="https://psv4.userapi.com/c834600/u17610278/docs/d9/3a25f9be09a3/Horizontal.png?extra=ISqLnrt9IKsBhQI3qcpoEinwhUV1-kgiai8IDHy2IK-Vngtglv7ISDaelCZXRUHwHeA57iprnFJYioyZo55SI9qyniMRQY88EjBm9RtDlOkMl4oNlB7IlwsD6GvQJAypGMm_s8yVng" alt="" height="48">
             </a>
 
             <button class="navbar-toggler p-0" data-toggle="collapse" data-target="#navbarNav">
@@ -171,7 +180,7 @@
                             <label class="text-muted">Ваше имя</label>
                             <input type="text" class="form-control" placeholder="Имя">
                         </div>
-                        <button class="btn btn-secondary w-100 text-uppercase" style="background-color: #EE7C34;">Записаться</button>
+                        <button class="btn btn-secondary w-100 text-uppercase" style="background-color: #F3833C; border-color: #F3833C;">Записаться</button>
                     </form>
                 </div>
             </div>

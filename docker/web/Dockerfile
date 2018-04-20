@@ -30,3 +30,5 @@ RUN sed -i 's/\r//' scripts/start.sh
 RUN chmod +x scripts/start.sh
 
 ENTRYPOINT ["/bin/bash", "./scripts/start.sh"]
+
+# TODO: add collectstatic and other deploy commands: https://www.stavros.io/posts/how-deploy-django-docker/

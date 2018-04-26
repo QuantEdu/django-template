@@ -22,7 +22,7 @@
         }
 
         .bg-orange {
-            background-color: #EE7C34 !important;
+            background-color: #F3833C !important;
             color: white !important;
         }
 
@@ -124,27 +124,24 @@
 			<div class="col-md-8 mb-3 mb-md-0 text-center text-md-left">
 			<ul class="list-inline mb-0">
 				<li class="list-inline-item mr-3">
-					<span class="icon icon-Phone2 text-primary mr-1"></span> +7 (343) 288-52-75
+					<span class="icon icon-Phone2 text-primary mr-1"></span> +7 (343) 288-52-76
 				</li>
-                <li class="list-inline-item">
-					<button type="button" class="btn btn-sm btn-outline-secondary">Заказать звонок</button>
-				</li>
+                <!--<li class="list-inline-item">-->
+					<!--<button type="button" class="btn btn-sm btn-outline-secondary">Заказать звонок</button>-->
+				<!--</li>-->
 			</ul>
 			</div>
 			<div class="col-md-4 mb-3 mb-md-0">
 				<ul class="list-inline social social-rounded social-default social-sm mb-0 text-center text-md-right">
 					<li class="list-inline-item">
-                        <a><i class="fa fa-vk fa-lg"></i></a>
+                        <a href="https://vk.com/quantzone"><i class="fa fa-vk fa-lg"></i></a>
                     </li>
                     <li class="list-inline-item">
-                        <a><i class="fa fa-facebook-official fa-lg"></i></a>
+                        <a href="https://www.instagram.com/quant.ekb/"><i class="fa fa-instagram fa-lg"></i></a>
                     </li>
-                    <li class="list-inline-item">
-                        <a><i class="fa fa-instagram fa-lg"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a><i class="fa fa-youtube fa-lg"></i></a>
-                    </li>
+                    <!--<li class="list-inline-item">-->
+                        <!--<a><i class="fa fa-youtube fa-lg"></i></a>-->
+                    <!--</li>-->
 				</ul>
 			</div>
 		</div>
@@ -155,7 +152,7 @@
     <div class="navbar navbar-expand-lg navbar-dark dark-shades">
         <div class="container text-center">
             <a class="navbar-brand" href="index_trash.html">
-                <img src="https://psv4.userapi.com/c834600/u17610278/docs/d9/3a25f9be09a3/Horizontal.png?extra=ISqLnrt9IKsBhQI3qcpoEinwhUV1-kgiai8IDHy2IK-Vngtglv7ISDaelCZXRUHwHeA57iprnFJYioyZo55SI9qyniMRQY88EjBm9RtDlOkMl4oNlB7IlwsD6GvQJAypGMm_s8yVng" alt="" height="48">
+                <img src="https://psv4.userapi.com/c834600/u17610278/docs/d9/b9d554ad86df/Horizontal.png?extra=Rc5jwNojQMED0adtySoPovcX3747NYaXJxrpDA-9cLMBKBuAIejzIDqB7OIg_5J2j6rx0KkbxQNKQn6WqYb21QVUei5xI12shiOl41kJcA-E9H4CKjdWB04dWgWZFzJdVXtWX0W4qw" alt="" height="48">
             </a>
 
             <button class="navbar-toggler p-0" data-toggle="collapse" data-target="#navbarNav">
@@ -168,9 +165,9 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#video" data-scrollto="video">Видео</a>
-                    </li>
+                    <!--<li class="nav-item">-->
+                        <!--<a class="nav-link" href="#video" data-scrollto="video">Видео</a>-->
+                    <!--</li>-->
                     <li class="nav-item">
                         <a class="nav-link" href="#feedback" data-scrollto="feedback">Отзывы</a>
                     </li>
@@ -184,7 +181,7 @@
                         <a class="nav-link" href="#faq" data-scrollto="faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#history" data-scrollto="history">Кто мы?</a>
+                        <a class="nav-link" href="#team" data-scrollto="team">Кто мы?</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contacts" data-scrollto="contact">Контакты</a>
@@ -201,24 +198,25 @@
             <div class="col-lg-8 mt-3 pl-4">
                 <h1 class="home-title">Подготовим ребенка к успешной сдаче экзаменов</h1>
                 <p class="pt-4">Наши программы по школьным предметам разработаны для успешной сдачи ЕГЭ с любым уровнем начальной подготовки</p>
-                <div class="watch-video pt-4">
-                    <a href="#video" class=""><i class="fa fa-play"></i> <span>Посмотреть видео!</span></a>
-                </div>
+                <!--<div class="watch-video pt-4">-->
+                    <!--<a href="#video" class=""><i class="fa fa-play"></i> <span>Посмотреть видео!</span></a>-->
+                <!--</div>-->
             </div>
             <div class="col-lg-4 mt-3">
                 <div class="card p-md-5 p-4">
                     <h4 class="mb-4 pt-0">Запишитесь на пробное занятие</h4>
                     <h5 class="text-muted form-subtitle mb-4">Встреча-знакомство с преподавателем</h5>
-                    <form>
+                    <form action="" method="post">
+                        {% csrf_token %}
                         <div class="form-group">
                             <label class="text-muted">Телефон</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Введите телефон">
+                            <input type="text" id="id_phone" name="phone" class="form-control" aria-describedby="emailHelp" placeholder="Введите телефон">
                         </div>
                         <div class="form-group">
                             <label class="text-muted">Ваше имя</label>
-                            <input type="text" class="form-control" placeholder="Имя">
+                            <input type="text" id="id_name" name="name" class="form-control" placeholder="Имя">
                         </div>
-                        <button class="btn btn-secondary w-100 text-uppercase" style="background-color: #F3833C; border-color: #F3833C;">Записаться</button>
+                        <button type="submit" class="btn btn-secondary w-100 text-uppercase" style="background-color: #F3833C; border-color: #F3833C;">Записаться</button>
                     </form>
                 </div>
             </div>
@@ -226,79 +224,89 @@
     </div>
 </section>
 
-<section class="section py-5 bg-dark-blue">
+<section class="section py-5 bg-black">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <h2 class="text-center">
-                    Предметы
+                    Наша специализация
                 </h2>
-                <div class="card-columns pt-4">
-                    <div class="card bg-dark text-white">
-                        <img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">
-                        <div class="card-img-overlay d-flex">
-                            <div class="my-auto mx-auto text-center">
-                                <h5 class="card-title align-middle mb-0">Математика</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-white">
-                        <img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">
-                        <div class="card-img-overlay d-flex">
-                            <div class="my-auto mx-auto text-center">
-                                <h5 class="card-title align-middle mb-0">Физика</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-white">
-                        <img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">
-                        <div class="card-img-overlay d-flex">
-                            <div class="my-auto mx-auto text-center">
-                                <h5 class="card-title align-middle mb-0">Русский язык</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-white">
-                        <img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">
-                        <div class="card-img-overlay d-flex">
-                            <div class="my-auto mx-auto text-center">
-                                <h5 class="card-title align-middle mb-0">Химия</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-white">
-                        <img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">
-                        <div class="card-img-overlay d-flex">
-                            <div class="my-auto mx-auto text-center">
-                                <h5 class="card-title align-middle mb-0">Обществознание</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-white">
-                        <img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">
-                        <div class="card-img-overlay d-flex">
-                            <div class="my-auto mx-auto text-center">
-                                <h5 class="card-title align-middle mb-0">Английский язык</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-white">
-                        <img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">
-                        <div class="card-img-overlay d-flex">
-                            <div class="my-auto mx-auto text-center">
-                                <h5 class="card-title align-middle mb-0">Литература</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-white">
-                        <img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">
-                        <div class="card-img-overlay d-flex">
-                            <div class="my-auto mx-auto text-center">
-                                <h5 class="card-title align-middle mb-0">Информатика</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ul class="text-center list-inline mt-4">
+                    <li class="list-inline-item">Математика</li>
+                    <li class="list-inline-item">Русския язык</li>
+                    <li class="list-inline-item">Химия</li>
+                    <li class="list-inline-item">Физика</li>
+                    <li class="list-inline-item">Обществознание</li>
+                    <li class="list-inline-item">Информатика</li>
+                    <li class="list-inline-item">Литература</li>
+                    <li class="list-inline-item">Английский язык</li>
+                </ul>
+                <!--<div class="card-columns pt-4">-->
+                    <!--<div class="card bg-dark text-white">-->
+                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
+                        <!--<div class="card-img-overlay d-flex">-->
+                            <!--<div class="my-auto mx-auto text-center">-->
+                                <!--<h5 class="card-title align-middle mb-0">Математика</h5>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="card bg-dark text-white">-->
+                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
+                        <!--<div class="card-img-overlay d-flex">-->
+                            <!--<div class="my-auto mx-auto text-center">-->
+                                <!--<h5 class="card-title align-middle mb-0">Физика</h5>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="card bg-dark text-white">-->
+                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
+                        <!--<div class="card-img-overlay d-flex">-->
+                            <!--<div class="my-auto mx-auto text-center">-->
+                                <!--<h5 class="card-title align-middle mb-0">Русский язык</h5>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="card bg-dark text-white">-->
+                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
+                        <!--<div class="card-img-overlay d-flex">-->
+                            <!--<div class="my-auto mx-auto text-center">-->
+                                <!--<h5 class="card-title align-middle mb-0">Химия</h5>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="card bg-dark text-white">-->
+                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
+                        <!--<div class="card-img-overlay d-flex">-->
+                            <!--<div class="my-auto mx-auto text-center">-->
+                                <!--<h5 class="card-title align-middle mb-0">Обществознание</h5>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="card bg-dark text-white">-->
+                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
+                        <!--<div class="card-img-overlay d-flex">-->
+                            <!--<div class="my-auto mx-auto text-center">-->
+                                <!--<h5 class="card-title align-middle mb-0">Английский язык</h5>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="card bg-dark text-white">-->
+                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
+                        <!--<div class="card-img-overlay d-flex">-->
+                            <!--<div class="my-auto mx-auto text-center">-->
+                                <!--<h5 class="card-title align-middle mb-0">Литература</h5>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="card bg-dark text-white">-->
+                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
+                        <!--<div class="card-img-overlay d-flex">-->
+                            <!--<div class="my-auto mx-auto text-center">-->
+                                <!--<h5 class="card-title align-middle mb-0">Информатика</h5>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
@@ -314,22 +322,22 @@
     </div>
 </section>
 
-<section class="section py-5 bg-yellow">
-    <a class="anchor" id="video"></a>
-    <div class="container">
-        <div class="row">
-            <div class="content col-md-6 col-12 order-md-12 text-center">
-                <h2>Видео о нашем центре</h2>
-                <p>Образование для нас - не просто работа, а стиль жизни. Каждое занятие наши преподаватели делают ярким, запоминающимся и, конечно же, полезным! </p>
-            </div>
-            <div id="video-container" class="video-container col-md-6 col-12 order-md-1">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//player.vimeo.com/video/87044590" width="570" height="320" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!--<section class="section py-5 bg-yellow">-->
+    <!--<a class="anchor" id="video"></a>-->
+    <!--<div class="container">-->
+        <!--<div class="row">-->
+            <!--<div class="content col-md-6 col-12 order-md-12 text-center">-->
+                <!--<h2>Видео о нашем центре</h2>-->
+                <!--<p>Образование для нас - не просто работа, а стиль жизни. Каждое занятие наши преподаватели делают ярким, запоминающимся и, конечно же, полезным! </p>-->
+            <!--</div>-->
+            <!--<div id="video-container" class="video-container col-md-6 col-12 order-md-1">-->
+                <!--<div class="embed-responsive embed-responsive-16by9">-->
+                    <!--<iframe class="embed-responsive-item" src="http://player.vimeo.com/video/87044590" width="570" height="320" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</section>-->
 
 <section class="section bg-light pb-5">
     <a class="anchor" id="feedback"></a>
@@ -345,47 +353,47 @@
         <div class="row mt-2">
             <div class="col-md-4">
                 <div class="testimonial-box pt-5">
-                    <div class="testimonial-desc bg-light p-4">
+                    <div class="testimonial-desc p-4">
                         <p class="text-center text-muted">"Привет) хотел выразить огромную благодарность не только за егэ, но и за кучу жизненных и поучительных советов, я поступил в бауманку, в этом есть твой огромный вклад, огромнейшее спасибо))"</p>
 
                         <p class="text-center text-muted mb-0">Артем Орешкин</p>
                         <p class="text-center text-muted">
-                            <a href=""><i class="fa fa-vk fa-lg"></i></a>
+                            <a href="https://vk.com/artemoresh"><i class="fa fa-vk fa-lg"></i></a>
                         </p>
                         <p class="text-center text-muted">Выпускник 2017 года</p>
                     </div>
                     <div class="mt-4 testi-img">
-                        <img src="https://dummyimage.com/80x80/828282.png" width="80" alt="" class="img-fluid rounded-circle d-block mx-auto">
+                        <img src="http://quant.zone/static/images/mentions/orechkin.png" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto">
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="testimonial-box pt-5">
-                    <div class="testimonial-desc bg-light p-4">
+                    <div class="testimonial-desc p-4">
                         <p class="text-center text-muted">"Занимались с Виталием всего пару недель, за это время смогли выявить и устранить все пробелы в знаниях, накопившиеся за год, что помогло мне сдать зачёт по физике. Занятия были интересными и эффективными, я очень довольна результатом."</p>
                         <p class="text-center text-muted mb-0">Надежда Викулова</p>
                         <p class="text-center text-muted">
-                            <a href=""><i class="fa fa-vk fa-lg"></i></a>
+                            <a href="https://vk.com/vikulova171"><i class="fa fa-vk fa-lg"></i></a>
                         </p>
                         <p class="text-center text-muted">Ученица гимназии №9</p>
                     </div>
                     <div class="mt-4 testi-img">
-                        <img src="https://dummyimage.com/80x80/828282.png" alt="" class="img-fluid rounded-circle d-block mx-auto">
+                        <img src="http://quant.zone/static/images/mentions/vikulova.png" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto">
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="testimonial-box pt-5">
-                    <div class="testimonial-desc bg-light p-4">
+                    <div class="testimonial-desc p-4">
                         <p class="text-center text-muted">"Денис Сафронов - отличный преподаватель. Он может найти свой подход к любому, понятно объяснить и указать на ошибки. На его занятиях всегда было интересно, я получал что-то новое. С ним действительно приятно и полезно заниматься."</p>
                         <p class="text-center text-muted mb-0">Елизавета Овчинникова</p>
                         <p class="text-center text-muted">
-                            <a href=""><i class="fa fa-vk fa-lg"></i></a>
+                            <a href="https://vk.com/lizasepo"><i class="fa fa-vk fa-lg"></i></a>
                         </p>
                         <p class="text-center text-muted">Ученица 16-17 учебного года</p>
                     </div>
                     <div class="mt-4 testi-img">
-                        <img src="https://dummyimage.com/80x80/828282.png" alt="" class="img-fluid rounded-circle d-block mx-auto">
+                        <img src="http://quant.zone/static/images/mentions/eng_ovshinnikova.png" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto">
                     </div>
                 </div>
             </div>
@@ -404,7 +412,7 @@
         </div>
         <div class="row pt-5 align-items-center">
             <div class="col-md-6">
-                <img src="https://dummyimage.com/540x305/dddddd.png" alt="" class="img-fluid rounded">
+                <!--<img src="http://quant.zone/static/images/icons/read.svg" alt="" class="img-fluid rounded">-->
             </div>
             <div class="col-md-6">
                 <h5>Авторские курсы</h5>
@@ -417,12 +425,12 @@
                 <p class="pt-2">Не нужно покупать никаких учебников - все учебные материалы преподаватели готовят к занятиям самостоятельно</p>
             </div>
             <div class="col-md-6 pt-4">
-                <img src="https://dummyimage.com/540x305/dddddd.png" alt="" class="img-fluid rounded">
+                <!--<img src="https://dummyimage.com/540x305/dddddd.png" alt="" class="img-fluid rounded">-->
             </div>
         </div>
         <div class="row pt-5 align-items-center">
             <div class="col-md-6">
-                <img src="https://dummyimage.com/540x305/dddddd.png" alt="" class="img-fluid rounded">
+                <!--<img src="http://quant.zone/static/images/icons/group.svg" alt="" class="img-fluid rounded">-->
             </div>
             <div class="col-md-6">
                 <h5>Небольшие группы (3-6 человек)</h5>
@@ -435,12 +443,12 @@
                 <p class="pt-2">В системе “перевернутого класса” ученик изучает теоретический материал дома, а в классе задает вопросы по теории и применяет полученные знания на практике - от решения тестовых заданий до разбора олимпиадных задач. </p>
             </div>
             <div class="col-md-6 pt-4">
-                <img src="https://dummyimage.com/540x305/dddddd.png" alt="" class="img-fluid rounded">
+                <!--<img src="http://quant.zone/static/images/icons/touch-screen.svg" alt="" class="img-fluid rounded">-->
             </div>
         </div>
         <div class="row pt-5 align-items-center">
             <div class="col-md-6">
-                <img src="https://dummyimage.com/540x305/dddddd.png" alt="" class="img-fluid rounded">
+                <!--<img src="http://quant.zone/static/images/icons/seo.svg" alt="" class="img-fluid rounded">-->
             </div>
             <div class="col-md-6">
                 <h5>Диагностика знаний</h5>
@@ -453,7 +461,7 @@
                 <p class="pt-2">Мы поддерживаем в детях осознанный подход к учебе и помогаем осознать, как образование поможет в дальнейшей жизни. Поэтому мы создали систему профориентационных мероприятий, чтобы помочь ребятам сориентироваться в выборе профессии.</p>
             </div>
             <div class="col-md-6 pt-4">
-                <img src="https://dummyimage.com/540x305/dddddd.png" alt="" class="img-fluid rounded">
+                <!--<img src="https://dummyimage.com/540x305/dddddd.png" alt="" class="img-fluid rounded">-->
             </div>
         </div>
     </div>
@@ -491,7 +499,7 @@
                         </ul>
                     </div>
                     <div class="mt-5">
-                        <a href="#" class="btn btn-custom btn-rounded">Узнать больше</a>
+                        <a href="https://t.me/quant_rus" target="blank" class="btn btn-custom btn-rounded">Посмотреть пример</a>
                     </div>
                 </div>
             </div>
@@ -501,7 +509,7 @@
                         <p class="mb-3 text-uppercase">Популярное</p>
                     </div>
                     <div class="plan-price">
-                        <h2>400 ₽/час</h2>
+                        <h2>от 400 ₽/час</h2>
                     </div>
                     <div class="plan-name mt-4">
                         <h6>Группа</h6>
@@ -525,7 +533,7 @@
             <div class="col-lg-4 col-8">
                 <div class="price-box p-4 bg-white text-center mt-4">
                     <div class="plan-price">
-                        <h2>1000 ₽/час</h2>
+                        <h2>от 1000 ₽/час</h2>
                     </div>
                     <div class="plan-name mt-4">
                         <h6>Индивидуально</h6>
@@ -539,7 +547,10 @@
                         </ul>
                     </div>
                     <div class="mt-5">
-                        <a href="#" class="btn btn-custom btn-rounded">Записаться</a>
+                        <!-- Button trigger modal -->
+                        <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
+                            Записаться
+                        </button>
                     </div>
                 </div>
             </div>
@@ -598,61 +609,62 @@
                 <div class="pt-5">
                     <p class="text-uppercase mb-1">оплата</p>
                     <h3><i class="fa fa-circle"></i> Какова стоимость занятия?</h3>
-                    <p class="text-white pt-2">Групповое занятие стоит 400₽/60 минут, индивидуальное - 1000₽/60 минут. Стоимость групповых индивидуальных занятий и скидки - здесь. (ссылка на калькулятор стоимости)</p>
+                    <p class="text-white pt-2">Групповое занятие стоит от 400 ₽/60 минут, индивидуальное - от 1000 ₽/60 минут. Стоимость групповых индивидуальных занятий и скидки смотрите выше.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section bg-light pt-5">
-    <a class="anchor" id="history"></a>
-    <div class="container">
-        <div class="row">
-            <div class="content col-lg-6 col-12 text-center pb-5">
-                <h2 class="pb-3">Наша история</h2>
-                <p>Aliquam euismod vehicula lacus, non congue ante pulvinar a. Nunc eu posuere risus, ut condimentum ante. Suspendisse at turpis sollicitudin odio congue lobortis vitae nec nisi. Nullam sodales at libero in lacinia. Nullam vel nibh pulvinar, interdum purus tristique, iaculis turpis. Integer imperdiet tincidunt erat vel gravida. Suspendisse tincidunt orci sed leo euismod, quis ultrices ipsum lobortis. Sed viverra dui et elit accumsan accumsan. Donec lorem turpis, iaculis ac fermentum nec, dignissim sed nisi. Nunc condimentum turpis arcu, eu aliquet lorem eleifend ut. Integer at lorem nec diam elementum convallis vel vel nulla.</p>
-                <p>Nullam vel nibh pulvinar, interdum purus tristique, iaculis turpis. Integer imperdiet tincidunt erat vel gravida. eleifend ut. Integer at lorem nec diam elementum convallis vel vel nulla.</p>
-            </div>
-            <div class="col-lg-5 col-12 mr-auto ml-auto pb-5">
-                <div class="row">
-                    <div class="col-lg-4 col-4 text-center">
-                        <img src="https://dummyimage.com/150x150/828282.png" alt="" class="img-fluid rounded-circle mx-auto">
-                        <p class="pt-3">Виталий Харченко</p>
-                        <p>CEO</p>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-vk"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                        </ul>
-                    </div><!--//member-->
-                    <div class="col-lg-4 col-4 text-center">
-                        <img src="https://dummyimage.com/150x150/828282.png" alt="" class="img-fluid rounded-circle mx-auto">
-                        <p class="pt-3">Екатерина Парамонова</p>
-                        <p>CTO</p>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-vk"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                        </ul>
-                    </div><!--//member-->
-                    <div class="col-lg-4 col-4 text-center">
-                        <img src="https://dummyimage.com/150x150/828282.png" alt="" class="img-fluid rounded-circle mx-auto">
-                        <p class="pt-3">Екатерина Пирожок</p>
-                        <p>CMO</p>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-vk"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                        </ul>
-                    </div><!--//member-->
-                </div>
-            </div><!--//team-->
-        </div><!--//row-->
-    </div><!--//container-->
-</section>
+<!--<section class="section bg-light pt-5">-->
+    <!--<a class="anchor" id="history"></a>-->
+    <!--<div class="container">-->
+        <!--<div class="row">-->
+            <!--<div class="content col-lg-6 col-12 text-center pb-5">-->
+                <!--<h2 class="pb-3">Наша история</h2>-->
+                <!--<p>Aliquam euismod vehicula lacus, non congue ante pulvinar a. Nunc eu posuere risus, ut condimentum ante. Suspendisse at turpis sollicitudin odio congue lobortis vitae nec nisi. Nullam sodales at libero in lacinia. Nullam vel nibh pulvinar, interdum purus tristique, iaculis turpis. Integer imperdiet tincidunt erat vel gravida. Suspendisse tincidunt orci sed leo euismod, quis ultrices ipsum lobortis. Sed viverra dui et elit accumsan accumsan. Donec lorem turpis, iaculis ac fermentum nec, dignissim sed nisi. Nunc condimentum turpis arcu, eu aliquet lorem eleifend ut. Integer at lorem nec diam elementum convallis vel vel nulla.</p>-->
+                <!--<p>Nullam vel nibh pulvinar, interdum purus tristique, iaculis turpis. Integer imperdiet tincidunt erat vel gravida. eleifend ut. Integer at lorem nec diam elementum convallis vel vel nulla.</p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-5 col-12 mr-auto ml-auto pb-5">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-lg-4 col-4 text-center">-->
+                        <!--<img src="https://dummyimage.com/150x150/828282.png" alt="" class="img-fluid rounded-circle mx-auto">-->
+                        <!--<p class="pt-3">Виталий Харченко</p>-->
+                        <!--<p>CEO</p>-->
+                        <!--<ul class="list-inline">-->
+                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-vk"></i></a></li>-->
+                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>-->
+                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>-->
+                        <!--</ul>-->
+                    <!--</div>&lt;!&ndash;//member&ndash;&gt;-->
+                    <!--<div class="col-lg-4 col-4 text-center">-->
+                        <!--<img src="https://dummyimage.com/150x150/828282.png" alt="" class="img-fluid rounded-circle mx-auto">-->
+                        <!--<p class="pt-3">Екатерина Парамонова</p>-->
+                        <!--<p>CTO</p>-->
+                        <!--<ul class="list-inline">-->
+                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-vk"></i></a></li>-->
+                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>-->
+                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>-->
+                        <!--</ul>-->
+                    <!--</div>&lt;!&ndash;//member&ndash;&gt;-->
+                    <!--<div class="col-lg-4 col-4 text-center">-->
+                        <!--<img src="https://dummyimage.com/150x150/828282.png" alt="" class="img-fluid rounded-circle mx-auto">-->
+                        <!--<p class="pt-3">Екатерина Пирожок</p>-->
+                        <!--<p>CMO</p>-->
+                        <!--<ul class="list-inline">-->
+                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-vk"></i></a></li>-->
+                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>-->
+                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>-->
+                        <!--</ul>-->
+                    <!--</div>&lt;!&ndash;//member&ndash;&gt;-->
+                <!--</div>-->
+            <!--</div>&lt;!&ndash;//team&ndash;&gt;-->
+        <!--</div>&lt;!&ndash;//row&ndash;&gt;-->
+    <!--</div>&lt;!&ndash;//container&ndash;&gt;-->
+<!--</section>-->
 
-<section class="section py-5" id="team">
+<section class="section bg-light py-5">
+    <a class="anchor" id="team"></a>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
@@ -660,6 +672,109 @@
                 <p class="pt-3">Наши преподаватели объясняют сложные темы наглядно и простым языком, используя современные образовательные технологии и гаджеты. Они всегда на связи и готовы ответить на ваши вопросы - например, во ВКонтакте.</p>
             </div>
         </div>
+        <div class="row mt-4">
+
+            <div class="col-lg-3 col-md-6 mt-4">
+                <div class="card text-center show-onHover-parent">
+                    <img class="w-100" src="https://dummyimage.com/150x150/828282.png" alt="">
+                    <ul class="list-inline pt-3">
+                        <li class="list-inline-item">
+                            <a href=""><i class="fa fa-vk"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href=""><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href=""><i class="fa fa-phone"></i></a>
+                        </li>
+                    </ul>
+                    <div class="pb-4">
+                        <h5>
+                            Екатерина <br> Пирожок
+                        </h5>
+                        <p class="mb-0">
+                            Русский язык
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-4">
+                <div class="card text-center show-onHover-parent">
+                    <img class="w-100" src="https://dummyimage.com/150x150/828282.png" alt="">
+                    <ul class="list-inline pt-3">
+                        <li class="list-inline-item">
+                            <a href=""><i class="fa fa-vk"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href=""><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href=""><i class="fa fa-phone"></i></a>
+                        </li>
+                    </ul>
+                    <div class="pb-4">
+                        <h5>
+                            Екатерина <br> Парамонова
+                        </h5>
+                        <p class="mb-0">
+                            Математика
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-4">
+                <div class="card text-center show-onHover-parent">
+                    <img class="w-100" src="https://dummyimage.com/150x150/828282.png" alt="">
+                    <ul class="list-inline pt-3">
+                        <li class="list-inline-item">
+                            <a href=""><i class="fa fa-vk"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href=""><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href=""><i class="fa fa-phone"></i></a>
+                        </li>
+                    </ul>
+                    <div class="pb-4">
+                        <h5>
+                            Владислав <br> Киселев
+                        </h5>
+                        <p class="mb-0">
+                            Математика
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-4">
+                <div class="card text-center show-onHover-parent">
+                    <img class="w-100" src="https://dummyimage.com/150x150/828282.png" alt="">
+                    <ul class="list-inline pt-3">
+                        <li class="list-inline-item">
+                            <a href=""><i class="fa fa-vk"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href=""><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href=""><i class="fa fa-phone"></i></a>
+                        </li>
+                    </ul>
+                    <div class="pb-4">
+                        <h5>
+                            Виталий <br> Харченко
+                        </h5>
+                        <p class="mb-0">
+                            Физика
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div><!--END row-->
+
         <div class="row mt-4">
             <div class="col-lg-3 col-md-6 mt-4">
                 <div class="card text-center show-onHover-parent">
@@ -677,10 +792,10 @@
                     </ul>
                     <div class="pb-4">
                         <h5>
-                            Екатерина Парамонова
+                            Светлана <br> Лесогорова
                         </h5>
                         <p class="mb-0">
-                            Математика
+                            Химия
                         </p>
                     </div>
                 </div>
@@ -702,10 +817,10 @@
                     </ul>
                     <div class="pb-4">
                         <h5>
-                            Екатерина Пирожок
+                            Вячеслав <br> Глазырин
                         </h5>
                         <p class="mb-0">
-                            Математика
+                            Литература
                         </p>
                     </div>
                 </div>
@@ -727,10 +842,10 @@
                     </ul>
                     <div class="pb-4">
                         <h5>
-                            Владислав Киселев
+                            Полина <br> Носкова
                         </h5>
                         <p class="mb-0">
-                            Математика
+                            Биология
                         </p>
                     </div>
                 </div>
@@ -752,15 +867,14 @@
                     </ul>
                     <div class="pb-4">
                         <h5>
-                            Екатерина Парамонова
+                            Екатерина <br> Новоселова
                         </h5>
                         <p class="mb-0">
-                            Математика
+                            Обществознание
                         </p>
                     </div>
                 </div>
             </div>
-
         </div><!--END row-->
     </div> <!-- END container-->
 </section>
@@ -770,7 +884,7 @@
         <div class="row">
             <div class="col-12 text-center pb-5">
                 <h2>
-                    Почему мы <span class="text-secondary">лучшие</span>
+                    Почему мы <span style="color: #F3833C !important;">лучшие</span>
                 </h2>
             </div>
         </div>
@@ -789,11 +903,15 @@
                     </li>
                     <li class="d-flex align-items-center mb-2">
                         <span class="fa fa-check-circle-o pr-1 fa-lg"></span>
-                        &nbsp;применяем различные современные методики обучения
+                        &nbsp;применяем передовые методики обучения
                     </li>
                     <li class="d-flex align-items-center mb-2">
                         <span class="fa fa-check-circle-o pr-1 fa-lg"></span>
                         &nbsp;все время находимся на связи с нашими учениками
+                    </li>
+                    <li class="d-flex align-items-center mb-2">
+                        <span class="fa fa-check-circle-o pr-1 fa-lg"></span>
+                        &nbsp;заботимся об атмосфере в нашем центре
                     </li>
                 </ul>
             </div> <!-- END col-lg-6-->
@@ -801,22 +919,28 @@
                 <div class="progress-item mb-5">
                     <span>Cредний балл наших учеников на экзамене</span>
                     <h4 class="float-right text-secondary">75%</h4>
+                    <p class="text-muted">
+                        <small>На 25% больше, чем в среднем по России</small>
+                    </p>
                     <div class="progress w-100">
-                        <div class="progress-bar" style="width: 75%; background-color: #EE7C34;"></div>
+                        <div class="progress-bar" style="width: 75%; background-color: #F3833C;"></div>
                     </div>
                 </div>
                 <div class="progress-item mb-5">
                     <span>Доля практики на занятиях</span>
                     <h4 class="float-right text-secondary">85%</h4>
+                    <p class="text-muted">
+                        <small>Благодаря системе "перевернутого класса"</small>
+                    </p>
                     <div class="progress w-100">
-                        <div class="progress-bar" style="width: 85%; background-color: #EE7C34;"></div>
+                        <div class="progress-bar" style="width: 85%; background-color: #F3833C;"></div>
                     </div>
                 </div>
                 <div class="progress-item mb-5">
                     <span>Вовлеченность детей в учебный процесс</span>
                     <h4 class="float-right text-secondary">100%</h4>
                     <div class="progress w-100">
-                        <div class="progress-bar" style="width: 100%; background-color: #EE7C34;"></div>
+                        <div class="progress-bar" style="width: 100%; background-color: #F3833C;"></div>
                     </div>
                 </div>
             </div> <!-- END col-lg-6-->
@@ -832,7 +956,7 @@
                 <p class="lead">пройдите бесплатное тестирование, которое займет не больше 30 минут, и получите комментарий преподавателя</p>
             </div>
             <div class="col-md-3 mt-3 mb-3 text-md-right">
-                <a href="#" class="btn btn-outline-light">Перейти к тестированию</a>
+                <a href="http://quant.zone/landings/testing" class="btn btn-outline-light">Перейти к тестированию</a>
             </div>
         </div>
     </div>
@@ -882,20 +1006,21 @@
         <div class="row align-items-center">
             <div class="col-lg-7 mb-5 mb-lg-0">
                 <h1 class="display-4">
-                    <span class="text-muted" style="color: #EE7C34 !important;">Квант</span> Готовим к успешной сдаче ЕГЭ
+                    <span class="text-muted" style="color: #F3833C !important;">Квант</span> Готовим к успешной сдаче ЕГЭ
                 </h1>
                 <p>Наши программы по школьным предметам разработаны для успешной сдачи ЕГЭ с любым уровнем начальной подготовки</p>
             </div>
             <div class="col-lg-5 px-4 text-center">
                 <h4>Закажите звонок от преподавателя</h4>
                 <form action="" method="POST" class="pt-4">
+                    {% csrf_token %}
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" placeholder="Ваше имя">
+                        <input type="text" id="id_name" name="name" class="form-control form-control-lg" placeholder="Ваше имя">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" placeholder="Телефон">
+                        <input type="text" id="id_phone" name="phone" class="form-control form-control-lg" placeholder="Телефон">
                     </div>
-                    <button class="btn btn-secondary btn-lg" style="background-color: #EE7C34; border-color: #EE7C34">
+                    <button type="submit" class="btn btn-secondary btn-lg" style="background-color: #F3833C; border-color: #F3833C">
                         Заказать звонок
                     </button>
                     <p class="pt-3">
@@ -913,25 +1038,25 @@
             <div class="row">
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <img src="http://quant.zone/static/images/logo-dark.svg" alt="" height="20">
-                    <small class="d-block mb-3 text-muted">ИП Харченко В.В. © 2017-2018</small>
-                    <div class="input-group mb-3 pt-2">
-                        <input type="text" class="form-control" placeholder="Ваш email" aria-label="Ваш email" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button">Подписаться</button>
-                        </div>
-                    </div>
-                    <p class="small">
-                        Подпишитесь на нашу рассылку с топ-кеками
-                    </p>
+                    <small class="d-block mb-3 text-muted">ИП Харченко В.В. © 2015-2018</small>
+                    <!--<div class="input-group mb-3 pt-2">-->
+                        <!--<input type="text" class="form-control" placeholder="Ваш email" aria-label="Ваш email" aria-describedby="basic-addon2">-->
+                        <!--<div class="input-group-append">-->
+                            <!--<button class="btn btn-outline-secondary" type="button">Подписаться</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<p class="small">-->
+                        <!--Подпишитесь на нашу рассылку с топ-кеками-->
+                    <!--</p>-->
                 </div>
                 <div class="col-lg-3 col-md-6 col-6 ml-auto mb-5 mb-lg-0">
                     <h4>Ссылки</h4>
                     <ul class="list-unstyled pt-2">
-                        <li><a class="text-muted" href="#">Договор-оферта</a></li>
-                        <li><a class="text-muted" href="#">Политика конфиденциальности</a></li>
-                        <li><a class="text-muted" href="#">Бесплатные тестирования</a></li>
-                        <li><a class="text-muted" href="#">ЕГЭ-бот</a></li>
-                        <li><a class="text-muted" href="#">Оплата курсов</a></li>
+                        <li><a class="text-muted" href="https://docs.google.com/document/d/1mg595kfdLyZrzXZdmdXuqtwVbWSHTtgOOv66MmGdNWw/edit">Договор-оферта</a></li>
+                        <!--<li><a class="text-muted" href="#">Политика конфиденциальности</a></li>-->
+                        <li><a class="text-muted" href="http://quant.zone/landings/testing">Бесплатные тестирования</a></li>
+                        <!--<li><a class="text-muted" href="#">ЕГЭ-бот</a></li>-->
+                        <li><a class="text-muted" href="https://tochka.com/my/quant">Оплата курсов</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-6 col-6 ml-auto mb-5 mb-lg-0">
@@ -941,7 +1066,7 @@
                             <a class="text-muted">+7 (343) 288-52-75</a>
                         </li>
                         <li class="mb-1">
-                            <a class="text-muted">support@echotheme.com</a>
+                            <a class="text-muted">ceo@quant.zone</a>
                         </li>
                         <li class="mb-1">
                             <a class="text-muted">ул. 8 Марта д.2</a>
@@ -949,17 +1074,17 @@
                     </ul>
                     <ul class="list-inline mt-2">
                         <li class="list-inline-item">
-                            <a><i class="fa fa-vk fa-lg"></i></a>
+                            <a href="https://vk.com/quantzone"><i class="fa fa-vk fa-lg"></i></a>
                         </li>
+                        <!--<li class="list-inline-item">-->
+                            <!--<a><i class="fa fa-facebook-official fa-lg"></i></a>-->
+                        <!--</li>-->
                         <li class="list-inline-item">
-                            <a><i class="fa fa-facebook-official fa-lg"></i></a>
+                            <a href="https://www.instagram.com/quant.ekb/"><i class="fa fa-instagram fa-lg"></i></a>
                         </li>
-                        <li class="list-inline-item">
-                            <a><i class="fa fa-instagram fa-lg"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a><i class="fa fa-youtube fa-lg"></i></a>
-                        </li>
+                        <!--<li class="list-inline-item">-->
+                            <!--<a><i class="fa fa-youtube fa-lg"></i></a>-->
+                        <!--</li>-->
                     </ul>
                 </div>
             </div>
@@ -982,13 +1107,14 @@
                     <div class="row">
                         <div class="col-12">
                             <form action="" method="POST" class="pt-4 px-4 text-center">
+                                {% csrf_token %}
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" placeholder="Ваше имя">
+                                    <input type="text" id="id_name" name="name" class="form-control form-control-lg" placeholder="Ваше имя">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" placeholder="Телефон">
+                                    <input type="text" id="id_phone" name="phone" class="form-control form-control-lg" placeholder="Телефон">
                                 </div>
-                                <button class="btn btn-secondary btn-lg" data-dismiss="modal">
+                                <button type="submit" class="btn btn-secondary btn-lg">
                                     Заказать звонок
                                 </button>
                                 <p class="pt-3 text-center">
@@ -1028,7 +1154,8 @@
                 var target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 // Does a scroll target exist? and prevent bootstrap conflicts
-                if (target.length && (target[0].attributes.role.nodeValue != 'tabpanel')) {
+                // if (target.length && (target[0].attributes.role.nodeValue != 'tabpanel')) {
+                if (target.length) {
                     // Only prevent default if animation is actually gonna happen
                     event.preventDefault();
                     $('html, body').animate({

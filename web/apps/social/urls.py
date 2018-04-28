@@ -7,5 +7,5 @@ from apps.social import views
 app_name = 'social'
 urlpatterns = [
     path('vk/complete', views.vk_complete, name='vk_complete'),
-    path('vk/reg', views.RegistrationView.as_view(), name='vk_reg'),
+    path('vk/reg', views.vk_reg, name='vk_reg'),
 ]

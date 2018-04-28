@@ -9,13 +9,18 @@
         <div class="row justify-content-center">
             <div class="col-6">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body pb-2">
                         <h2>Registration</h2>
                         <form method="post">
                             {% csrf_token %}
+                            <div class="form-group">
+                                <label for="id_avatar">Avatar</label>
+                                <br>
+                                <img class="img-thumbnail" src="{{ photo }}" alt="">
+                            </div>
                             {% bootstrap_form form %}
                             {% buttons %}
-                                <input type="submit" value="Login" class="btn btn-outline-primary">
+                                <input type="submit" value="Зарегистрироваться" class="btn btn-outline-primary">
                             {% endbuttons %}
                         </form>
                     </div>

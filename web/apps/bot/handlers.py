@@ -1,4 +1,4 @@
-import vkapi
+from . import vkapi
 
 
 def get_answer(body):

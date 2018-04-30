@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 # Url, where user redirects after success vk authorization
 def callback(request):
-    if request.method == 'POST'
+    if request.method == 'POST':
         data = json.loads(request.data)
         print(data)
         if 'type' not in data.keys():

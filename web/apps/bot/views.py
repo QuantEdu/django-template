@@ -1,28 +1,26 @@
 # Django core
 import json
-import vk
+from .handlers import create_answer
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
 VK_GROUP_TOKEN = '67888d06aa888f4c9dc0a09cea3538dc0ec664967c08ed87a36613a82dcdddb174355b39172c7dfdf9bbb'
+VK_GROUP_CONFIRMATION_TOKEN = 'b609300d'
 
 # Url, where user redirects after success vk authorization
 @csrf_exempt
 def callback(request):
     if request.method == 'POST':
         data = json.loads(request.body)
-        if 'type' not in data.keys():
-            return 'not vk'
-        if data['type'] == 'confirmation':
-            return HttpResponse('b609300d')
-        elif data['type'] == 'message_new':
-            session = vk.Session()
-            api = vk.API(session, v=5.0)
-            user_id = data['object']['user_id']
-            api.messages.send(access_token=VK_GROUP_TOKEN, user_id=str(user_id), message='Привет, я новый бот! Не шли мне больше {}'.format(data['object']['body']))
-            return HttpResponse('ok')
-        else:
-            print('Data: {}'.format(data))
 
+        if 'type' not in data.keys():
+            print('Data: {}'.format(data))
+            return HttpResponse('not vk')
+        if data['type'] == 'confirmation':
+            return HttpResponse(VK_GROUP_CONFIRMATION_TOKEN)
+        elif data['type'] == 'message_new':
+            create_answer(data['object'], VK_GROUP_TOKEN)
+            return HttpResponse('ok')
     else:
         return HttpResponse('not post')
+

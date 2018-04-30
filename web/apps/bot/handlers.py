@@ -11,6 +11,7 @@ def get_answer(body):
     # Сообщение по умолчанию если распознать не удастся
     message = "Прости, не понимаю тебя. Напиши 'помощь', чтобы узнать мои команды"
     attachment = ''
+    print(commands.command_list)
     for c in commands.command_list:
         if body in c.keys:
             message, attachment = c.process()

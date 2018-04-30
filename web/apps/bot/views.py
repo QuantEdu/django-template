@@ -14,7 +14,7 @@ def callback(request):
         if 'type' not in data.keys():
             return 'not vk'
         if data['type'] == 'confirmation':
-            return 'b609300d'
+            return HttpResponse('b609300d')
         else:
             return HttpResponse('ok')
     else:

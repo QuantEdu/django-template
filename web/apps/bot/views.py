@@ -1,9 +1,11 @@
 # Django core
 import json
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Url, where user redirects after success vk authorization
+@csrf_exempt
 def callback(request):
     if request.method == 'POST':
         data = json.loads(request.data)

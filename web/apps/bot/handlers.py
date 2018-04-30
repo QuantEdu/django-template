@@ -2,7 +2,7 @@ from . import vkapi
 
 
 def get_answer(body):
-   message = 'Привет, я новый бот! Не шли мне больше {}'.format(data['object']['body'])
+   message = 'Привет, я новый бот! Не шли мне больше {}'.format(body)
    return message
 
 def create_answer(data, token):

@@ -151,6 +151,8 @@
     </section>
 </footer>
 
+<div id="vk_community_messages"></div>
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -162,6 +164,20 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+<!-- VK Dialog -->
+<script type="text/javascript">
+VK.Widgets.CommunityMessages("vk_community_messages", 165396328, {
+    welcomeScreen: 1,
+    tooltipButtonText: 'Я ЕГЭБот',
+    disableTitleChange: 1
+});
+</script>
+
+<!-- VK Widget -->
+<script type="text/javascript">
+VK.Widgets.AllowMessagesFromCommunity("vk_allow_messages_from_community", {height: 30}, 165396328);
+</script>
 
 {% block media_extra %}
 {% endblock %}

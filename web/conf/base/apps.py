@@ -14,6 +14,7 @@ INSTALLED_APPS = [
 
     # Our apps
     'apps.blocks',
+    'apps.bot',
     'apps.custom_admin',
     'apps.lp',
     'apps.results',

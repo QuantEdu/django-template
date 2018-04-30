@@ -8,7 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def callback(request):
     if request.method == 'POST':
-        data = request.POST
+        data = request.body
         # print(data)
         print('Request: {}'.format(data))
         # if 'type' not in data.keys():

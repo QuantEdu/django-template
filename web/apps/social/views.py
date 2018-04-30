@@ -1,8 +1,7 @@
 # Django core
 from django import forms
 from django.shortcuts import redirect, render
-from django.views.generic.edit import FormView
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 
 from .models import VKAuth
 from apps.users.models import User
@@ -12,25 +11,31 @@ class RegistrationForm(forms.Form):
     first_name = forms.CharField()
     last_name = forms.CharField()
     photo = forms.CharField(widget=forms.HiddenInput)
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput)
     uid = forms.CharField(widget=forms.HiddenInput)
 
 
+# Url, where user redirects after success vk authorization
 def vk_complete(request):
+    uid = request.GET.get('uid', '')
+    first_name = request.GET.get('first_name', '')
+    last_name = request.GET.get('last_name', '')
+    photo = request.GET.get('photo', '')
+    hash = request.GET.get('hash', '')
+    # if only redirects, detect current authorization and existing of vk auth
     if request.method == 'GET':
-        uid = request.GET.get('uid', '')
-        first_name = request.GET.get('first_name', '')
-        last_name = request.GET.get('last_name', '')
-        photo = request.GET.get('photo', '')
-        photo_rec = request.GET.get('photo_rec', '')
-        hash = request.GET.get('hash', '')
-
         try:
+            # if user is authenticated and already have vk integration - do nothing
             vk_auth = VKAuth.objects.get(uid=uid)
             if request.user.is_authenticated:
-                return redirect('lms:index')
+                if request.user == vk_auth.user:
+                    return redirect('lms:index')
+                else:
+                    logout(request)
+                    return redirect('login')
             else:
-                user = vk_auth.user
-                login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+                login(request, vk_auth.user, backend='django.contrib.auth.backends.ModelBackend')
                 return redirect('lms:index')
         except VKAuth.DoesNotExist:
             if request.user.is_authenticated:
@@ -55,22 +60,34 @@ def vk_complete(request):
                     'photo': photo
                 }
                 return render(request, 'social/registration.html', context)
-
-
-def vk_reg(request):
-    if request.method == 'POST':
+    elif request.method == 'POST':
         form = RegistrationForm(request.POST)
 
         if form.is_valid():
-            User
-            progress.go_to_next_block()
-            if progress.complete:
-                return redirect('quiz_result', pk)
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            uid = form.cleaned_data['uid']
+
+            new_user = User.objects.create_user(email, password, first_name=first_name, last_name=last_name)
+
+            vk_auth = VKAuth.objects.create(
+                uid=uid,
+                user=new_user,
+                hash=hash,
+                first_name=first_name,
+                last_name=last_name,
+                photo=photo
+            )
+            vk_auth.save()
+
+            login(request, new_user, backend='django.contrib.auth.backends.ModelBackend')
+            return redirect('lms:index')
         else:
+            form = RegistrationForm(request.POST)
             context = {
-                'quiz': quiz,
-                'progress': progress,
-                'next_block': current_block,
-                'block_form': form
+                'form': form,
+                'photo': photo
             }
-            return render(request, 'quiz/quiz_take.html', context)
+            return render(request, 'social/registration.html', context)

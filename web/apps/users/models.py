@@ -17,8 +17,11 @@ class UserManager(BaseUserManager):
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
-        user.save(using=self._db)
-        return user
+        try:
+            user.save(using=self._db)
+            return user
+        except Exception:
+            raise ValueError('Duplicate email')
 
     def create_user(self, email, password=None, **extra_fields):
         extra_fields.setdefault('is_superuser', False)

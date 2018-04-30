@@ -9,13 +9,12 @@ from django.views.decorators.csrf import csrf_exempt
 def callback(request):
     if request.method == 'POST':
         data = json.loads(request.body)
-        print('Request: {}'.format(request))
-        print('Data: {}'.format(data))
         if 'type' not in data.keys():
             return 'not vk'
         if data['type'] == 'confirmation':
             return HttpResponse('b609300d')
         else:
+            print('Data: {}'.format(data))
             return HttpResponse('ok')
     else:
         return HttpResponse('not post')

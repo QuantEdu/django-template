@@ -10,7 +10,7 @@ def callback(request):
     if request.method == 'POST':
         # data = json.loads(request.data)
         # print(data)
-        print('Request:'.format(json.loads(request.body)))
+        print('Request:'.format(json.loads(request.body.decode("utf-8"))))
         # if 'type' not in data.keys():
         #     return 'not vk'
         # if data['type'] == 'confirmation':

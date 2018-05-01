@@ -11,7 +11,7 @@ def create_answer(data, token):
     if body in ['help', 'помощь']:
         message = 'Привет, я новый бот! Ты выбрал команду help'
     if body in ['задача']:
-        message = 'Привет, я новый бот! Ты выбрал команду help'
+        message = 'Привет, я новый бот! Ты выбрал команду задача'
         attachment = 'photo-165396328_456239018'
     else:
         message = 'Привет, я новый бот! Я тебя не понял. Поэтому не шли мне больше {}'.format(body)

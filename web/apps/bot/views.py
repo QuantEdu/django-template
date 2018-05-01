@@ -1,6 +1,6 @@
 # Django core
 import json
-from .handlers import create_answer
+from . import handlers
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
@@ -19,7 +19,7 @@ def callback(request):
         if data['type'] == 'confirmation':
             return HttpResponse(VK_GROUP_CONFIRMATION_TOKEN)
         elif data['type'] == 'message_new':
-            create_answer(data['object'], VK_GROUP_TOKEN)
+            handlers.create_answer(data['object'], VK_GROUP_TOKEN)
             return HttpResponse('ok')
     else:
         return HttpResponse('not post')

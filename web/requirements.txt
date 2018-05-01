@@ -21,3 +21,6 @@ django-bootstrap4
 
 # VK
 vk
+
+# DialogFlow API
+apiai

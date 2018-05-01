@@ -12,7 +12,7 @@ def create_answer(data, token):
 
     if body in ['help', 'помощь']:
         message = 'Привет, я новый бот! Ты выбрал команду help'
-    if body in ['задача']:
+    elif body in ['задача']:
         message = 'Привет, я новый бот! Ты выбрал команду задача'
         attachment = 'photo-165396328_456239018'
     else:

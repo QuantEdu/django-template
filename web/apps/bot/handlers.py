@@ -8,6 +8,8 @@ def create_answer(data, token):
     # Default values
     message, attachment = 'Непонятно', ''
 
+    print(body)
+
     if body in ['help', 'помощь']:
         message = 'Привет, я новый бот! Ты выбрал команду help'
     if body in ['задача']:

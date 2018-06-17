@@ -1,5 +1,6 @@
 # Django core
 from django.db import models
+
 # External libraries
 from model_utils.managers import InheritanceManager
 

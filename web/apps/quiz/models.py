@@ -1,5 +1,5 @@
 # Django core
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.utils import timezone
@@ -97,7 +97,7 @@ class QuizProgressManager(models.Manager):
 # TODO: quiz progress may be a task analog
 class QuizProgress(models.Model):
     user = models.ForeignKey(
-        User,
+        settings.AUTH_USER_MODEL,
         verbose_name=u'Ученик',
         on_delete=models.CASCADE
     )

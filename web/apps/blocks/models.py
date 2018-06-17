@@ -86,6 +86,7 @@ def choice_block_image_directory_path(instance, filename):
 # Block, that contains mono- or multiple choice
 class ChoiceBlock(Block):
     question_text = MarkdownxField(verbose_name='Текст вопроса')
+    answer_text = MarkdownxField(verbose_name='Решение')
     image = models.ImageField(
         verbose_name='Картинка',
         upload_to=choice_block_image_directory_path,

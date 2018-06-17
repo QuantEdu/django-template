@@ -1,5 +1,5 @@
 # Django core
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.utils import timezone
@@ -10,7 +10,7 @@ from model_utils.managers import InheritanceManager
 # Main model for all results
 class Result(models.Model):
     user = models.ForeignKey(
-        User,
+        settings.AUTH_USER_MODEL,
         verbose_name=u'Ученик',
         on_delete=models.CASCADE
     )

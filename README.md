@@ -61,6 +61,15 @@ docker-compose up
 3. Создать run\debug конфигурацию, которая собирает при помощи файла docker-compose.yml
 4. Запускать docker-machine через специальную вкладку и деплоить по инструкции из docker-compose
 
+## Deploy
+
+Проект деплоится на http://quant.study
+```
+IP-адрес: 188.127.249.128
+Пользователь: root
+Пароль: oGWRAKrle8so
+```
+
 
 
 > By [project-guideline](https://github.com/wearehive/project-guidelines/blob/master/README.sample.md)

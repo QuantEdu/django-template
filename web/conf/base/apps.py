@@ -14,6 +14,7 @@ INSTALLED_APPS = [
 
     # Our apps
     'apps.blocks',
+    'apps.bot',
     'apps.custom_admin',
     'apps.lp',
     'apps.results',
@@ -21,4 +22,6 @@ INSTALLED_APPS = [
     'apps.tags',
     'apps.quiz',
     'apps.lms',
+    'apps.social',
+    'apps.users',
 ]

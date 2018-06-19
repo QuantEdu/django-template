@@ -75,19 +75,14 @@ class DialogManager():
         # Найти пользователя , собрать дефолтные задачи, выставить стэйт
         try:
             user = User.objects.get(pk=user_vk_id)
-            dialog = self.create(user=user, state='NEED_NEXT_BOT_STATE')
+            dialog = self.create(user_vk_id=user_vk_id, state='NEED_NEXT_BOT_STATE')
             return dialog
         except Exception: # TODO посмотреть исключения
             raise ValueError('User with id {} not found'.format(user_vk_id))
 
 
 class Dialog(models.Model):
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        verbose_name=u'Ученик',
-        on_delete=models.CASCADE,
-        primary_key=True
-    )
+    user_vk_id = models.IntegerField('vk id', unique=True, blank=False, primary_key=True)
 
     objects = DialogManager()
 

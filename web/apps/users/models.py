@@ -88,8 +88,8 @@ class Dialog(models.Model):
 
     STATES = (
         ('DEFAULT_BOT_STATE', 'Wait for any command'),
-        ('NEED_NEXT_BOT_STATE', 'Wait for answer the question "Need the next block?"')
-        ('WAIT_ANSWER_BOT_STATE', 'Wait for current block answer')
+        ('NEED_NEXT_BOT_STATE', 'Wait for answer the question "Need the next block?"'),
+        ('WAIT_ANSWER_BOT_STATE', 'Wait for current block answer'),
     )
 
     state = models.CharField(choices=STATES)

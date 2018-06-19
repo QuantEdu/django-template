@@ -3,7 +3,7 @@ import apiai
 import json
 
 
-from apps.user.models import Dialog
+from apps.users.models import Dialog
 
 """
 Прмер клавиатуры, которая прилетает

@@ -16,7 +16,7 @@ VK_GROUP_ID = 167796316
 def callback(request):
     if request.method == 'POST':
         data = json.loads(request.body)
-
+        print(data)
         if 'type' not in data.keys():
             print('Data: {}'.format(data))
             return HttpResponse('not vk')

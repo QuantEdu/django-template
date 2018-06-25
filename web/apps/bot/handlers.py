@@ -93,6 +93,8 @@ def create_answer(data, token):
     user_id = data['user_id']
     payload = data['payload']
 
+    print('create_answer ', data)
+
     # Default values
     message, attachment, keyboard = 'Непонятно', '', ''
 

@@ -93,7 +93,7 @@ class Dialog(models.Model):
         ('WAIT_ANSWER_BOT_STATE', 'Wait for current block answer'),
     )
 
-    state = models.CharField(choices=STATES)
+    state = models.CharField(choices=STATES, max_length=128)
 
     blocks_ids = ArrayField(
         models.IntegerField(),
@@ -110,5 +110,5 @@ class Dialog(models.Model):
 
     def update_pointer(self):
         """Перемещает указатель на следующую задачу в списке"""
-        if current_block_pointer < blocks_ids.count() - 1:
-            current_block_pointer += 1
+        if self.current_block_pointer < self.blocks_ids.count() - 1:
+            self.current_block_pointer += 1

@@ -101,7 +101,7 @@ def create_answer(data, token):
     # Пользователь первый раз начал переписку с сообществом
     if payload == '{"command":"start"}':
         # Создать диалог и выставить состояние, отправить приветствие, затем клавиатуру из двух кнопок
-        current_dialog = Dialog.objects.create_dialog(user_id)
+        # current_dialog = Dialog.objects.create_dialog(user_id)
         message = 'Привет! Ты только что нажал на кнопку старт! Давай решать задачи :)'
         keyboard = create_next_block_need_keyboard()
 

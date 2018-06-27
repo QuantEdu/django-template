@@ -41,7 +41,6 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField('email address', unique=True, blank=True)
-    vkid = models.IntegerField('vk id', unique=True, blank=False, primary_key=True)
     first_name = models.CharField('first name', max_length=30, blank=True)  # WHY blank=True used?
     last_name = models.CharField('last name', max_length=30, blank=True)
     date_joined = models.DateTimeField('date joined', auto_now_add=True)

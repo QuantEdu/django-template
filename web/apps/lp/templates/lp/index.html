@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +7,10 @@
     <meta name="description" content="Подготовим ребенка к успешной сдаче экзаменов. Наши программы по школьным предметам разработаны для успешной сдачи ЕГЭ с любым уровнем начальной подготовки">
     <title>Подготовка к ЕГЭ в образовательном центре Квант</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Kurale|Lobster|Lora|Merriweather|Play|Roboto+Slab|Vollkorn|Montserrat" rel="stylesheet">
 
-    <script src="https://use.fontawesome.com/14d9e3a8b7.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
 
     <style>
 
@@ -125,7 +127,7 @@
 			<div class="col-md-8 mb-3 mb-md-0 text-center text-md-left">
 			<ul class="list-inline mb-0">
 				<li class="list-inline-item mr-3">
-					<span class="icon icon-Phone2 text-primary mr-1"></span> +7 (343) 288-52-76
+					+7 (343) 288-52-76
 				</li>
                 <!--<li class="list-inline-item">-->
 					<!--<button type="button" class="btn btn-sm btn-outline-secondary">Заказать звонок</button>-->
@@ -135,14 +137,17 @@
 			<div class="col-md-4 mb-3 mb-md-0">
 				<ul class="list-inline social social-rounded social-default social-sm mb-0 text-center text-md-right">
 					<li class="list-inline-item">
-                        <a href="https://vk.com/quantzone"><i class="fa fa-vk fa-lg"></i></a>
+                        <a href="https://vk.com/quantzone"><i class="fab fa-vk fa-lg"></i></a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="https://www.instagram.com/quant.ekb/"><i class="fa fa-instagram fa-lg"></i></a>
+                        <a href="https://www.instagram.com/quant.ekb/"><i class="fab fa-instagram fa-lg"></i></a>
                     </li>
-                    <!--<li class="list-inline-item">-->
-                        <!--<a><i class="fa fa-youtube fa-lg"></i></a>-->
-                    <!--</li>-->
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/quantzone"><i class="fab fa-facebook fa-lg"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.youtube.com/channel/UCoUKlSnccos27LFxJiVs5lA"><i class="fab fa-youtube fa-lg"></i></a>
+                    </li>
 				</ul>
 			</div>
 		</div>
@@ -359,7 +364,7 @@
 
                         <p class="text-center text-muted mb-0">Артем Орешкин</p>
                         <p class="text-center text-muted">
-                            <a href="https://vk.com/artemoresh"><i class="fa fa-vk fa-lg"></i></a>
+                            <a href="https://vk.com/artemoresh"><i class="fab fa-vk fa-lg"></i></a>
                         </p>
                         <p class="text-center text-muted">Выпускник 2017 года</p>
                     </div>
@@ -374,7 +379,7 @@
                         <p class="text-center text-muted">"Занимались с Виталием всего пару недель, за это время смогли выявить и устранить все пробелы в знаниях, накопившиеся за год, что помогло мне сдать зачёт по физике. Занятия были интересными и эффективными, я очень довольна результатом."</p>
                         <p class="text-center text-muted mb-0">Надежда Викулова</p>
                         <p class="text-center text-muted">
-                            <a href="https://vk.com/vikulova171"><i class="fa fa-vk fa-lg"></i></a>
+                            <a href="https://vk.com/vikulova171"><i class="fab fa-vk fa-lg"></i></a>
                         </p>
                         <p class="text-center text-muted">Ученица гимназии №9</p>
                     </div>
@@ -389,7 +394,7 @@
                         <p class="text-center text-muted">"Денис Сафронов - отличный преподаватель. Он может найти свой подход к любому, понятно объяснить и указать на ошибки. На его занятиях всегда было интересно, я получал что-то новое. С ним действительно приятно и полезно заниматься."</p>
                         <p class="text-center text-muted mb-0">Елизавета Овчинникова</p>
                         <p class="text-center text-muted">
-                            <a href="https://vk.com/lizasepo"><i class="fa fa-vk fa-lg"></i></a>
+                            <a href="https://vk.com/lizasepo"><i class="fab fa-vk fa-lg"></i></a>
                         </p>
                         <p class="text-center text-muted">Ученица 16-17 учебного года</p>
                     </div>
@@ -680,13 +685,13 @@
                     <img class="w-100" src="https://dummyimage.com/150x150/828282.png" alt="">
                     <ul class="list-inline pt-3">
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-vk"></i></a>
+                            <a href=""><i class="fab fa-vk"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-phone"></i></a>
+                            <a href=""><i class="fas fa-phone"></i></a>
                         </li>
                     </ul>
                     <div class="pb-4">
@@ -705,13 +710,13 @@
                     <img class="w-100" src="https://dummyimage.com/150x150/828282.png" alt="">
                     <ul class="list-inline pt-3">
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-vk"></i></a>
+                            <a href=""><i class="fab fa-vk"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-phone"></i></a>
+                            <a href=""><i class="fas fa-phone"></i></a>
                         </li>
                     </ul>
                     <div class="pb-4">
@@ -730,13 +735,13 @@
                     <img class="w-100" src="https://dummyimage.com/150x150/828282.png" alt="">
                     <ul class="list-inline pt-3">
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-vk"></i></a>
+                            <a href=""><i class="fab fa-vk"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-phone"></i></a>
+                            <a href=""><i class="fas fa-phone"></i></a>
                         </li>
                     </ul>
                     <div class="pb-4">
@@ -755,13 +760,13 @@
                     <img class="w-100" src="https://dummyimage.com/150x150/828282.png" alt="">
                     <ul class="list-inline pt-3">
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-vk"></i></a>
+                            <a href=""><i class="fab fa-vk"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-phone"></i></a>
+                            <a href=""><i class="fas fa-phone"></i></a>
                         </li>
                     </ul>
                     <div class="pb-4">
@@ -782,13 +787,13 @@
                     <img class="w-100" src="https://dummyimage.com/150x150/828282.png" alt="">
                     <ul class="list-inline pt-3">
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-vk"></i></a>
+                            <a href=""><i class="fab fa-vk"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-phone"></i></a>
+                            <a href=""><i class="fas fa-phone"></i></a>
                         </li>
                     </ul>
                     <div class="pb-4">
@@ -807,13 +812,13 @@
                     <img class="w-100" src="https://dummyimage.com/150x150/828282.png" alt="">
                     <ul class="list-inline pt-3">
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-vk"></i></a>
+                            <a href=""><i class="fab fa-vk"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-phone"></i></a>
+                            <a href=""><i class="fas fa-phone"></i></a>
                         </li>
                     </ul>
                     <div class="pb-4">
@@ -832,13 +837,13 @@
                     <img class="w-100" src="https://dummyimage.com/150x150/828282.png" alt="">
                     <ul class="list-inline pt-3">
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-vk"></i></a>
+                            <a href=""><i class="fab fa-vk"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-phone"></i></a>
+                            <a href=""><i class="fas fa-phone"></i></a>
                         </li>
                     </ul>
                     <div class="pb-4">
@@ -857,13 +862,13 @@
                     <img class="w-100" src="https://dummyimage.com/150x150/828282.png" alt="">
                     <ul class="list-inline pt-3">
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-vk"></i></a>
+                            <a href=""><i class="fab fa-vk"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href=""><i class="fa fa-phone"></i></a>
+                            <a href=""><i class="fas fa-phone"></i></a>
                         </li>
                     </ul>
                     <div class="pb-4">
@@ -968,7 +973,7 @@
 		<div class="row">
 			<div class="col-lg-4 mb-4">
 				<div class="media align-items-center justify-content-center">
-					<span class="fa fa-phone fa-4x pr-4"></span>
+					<span class="fas fa-phone fa-4x pr-4"></span>
 					<div class="media-body">
 						<p class="lead mb-0">+7 (343) 288-52-76</p>
 						<p class="mb-0 text-muted">В любой день с 10 до 22</p>
@@ -978,7 +983,7 @@
 
 			<div class="col-lg-4 mb-4">
 				<div class="media align-items-center">
-					<span class="fa fa-whatsapp fa-4x pr-4"></span>
+					<span class="fab fa-whatsapp fa-4x pr-4"></span>
 					<div class="media-body">
 						<p class="lead mb-0">+7 (982) 646-94-54</p>
 						<p class="mb-0 text-muted">WhatsApp</p>
@@ -988,7 +993,7 @@
 
 			<div class="col-lg-4 mb-4">
 				<div class="media align-items-center">
-					<span class="fa fa-map-marker fa-4x pr-4"></span>
+					<span class="fas fa-map-marker-alt fa-4x pr-4"></span>
 					<div class="media-body">
 						<p class="lead mb-0">ул. 8 Марта, д.2</p>
 						<p class="mb-0 text-muted">вход с ул. Володарского</p>
@@ -1075,17 +1080,17 @@
                     </ul>
                     <ul class="list-inline mt-2">
                         <li class="list-inline-item">
-                            <a href="https://vk.com/quantzone"><i class="fa fa-vk fa-lg"></i></a>
+                            <a href="https://vk.com/quantzone"><i class="fab fa-vk fa-lg"></i></a>
                         </li>
-                        <!--<li class="list-inline-item">-->
-                            <!--<a><i class="fa fa-facebook-official fa-lg"></i></a>-->
-                        <!--</li>-->
                         <li class="list-inline-item">
-                            <a href="https://www.instagram.com/quant.ekb/"><i class="fa fa-instagram fa-lg"></i></a>
+                            <a href="https://www.instagram.com/quant.ekb/"><i class="fab fa-instagram fa-lg"></i></a>
                         </li>
-                        <!--<li class="list-inline-item">-->
-                            <!--<a><i class="fa fa-youtube fa-lg"></i></a>-->
-                        <!--</li>-->
+                        <li class="list-inline-item">
+                            <a href="https://www.youtube.com/channel/UCoUKlSnccos27LFxJiVs5lA"><i class="fab fa-youtube fa-lg"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/quantzone"><i class="fab fa-facebook fa-lg"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div>

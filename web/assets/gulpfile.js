@@ -14,7 +14,8 @@ var path = {
         js:    'src/js/main.js',
         style: 'src/style/main.scss',
         img:   'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
+        fonts: 'src/fonts/**/*.*',
+        fa:    'node_modules/@fortawesome/fontawesome-free/webfonts/*.*'
     },
     watch: {
         html:  'src/**/*.html',
@@ -117,7 +118,7 @@ gulp.task('js:build', function () {
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts));
-    gulp.src('node_modules/font-awesome/fonts/*')
+    gulp.src(path.src.fa)
         .pipe(gulp.dest(path.build.fonts));
 });
 

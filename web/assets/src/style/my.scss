@@ -2,3 +2,105 @@
 img {
   max-width: 100%;
 }
+
+// Fonts
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+// Landing
+
+.dark-shades {
+    background-color: #19323B !important;
+    color: white !important;
+}
+
+.bg-light {
+    background-color: #F3F7F0 !important;
+    color: black !important;
+}
+
+.bg-orange {
+    background-color: #F3833C !important;
+    color: white !important;
+}
+
+.bg-yellow {
+    background-color: #FFC353 !important;
+    color: #19323C !important;
+}
+
+.bg-green {
+    background-color: #13B084 !important;
+    color: #fff !important;
+}
+
+.bg-blue {
+    background-color: #28A4C1 !important;
+    color: #fff !important;
+}
+
+.bg-dark-blue {
+    background-color: #0A72BF !important;
+    color: #fff !important;
+}
+
+.bg-magenta {
+    background-color: #464B8E !important;
+    color: #fff !important;
+}
+
+.bg-black {
+    background-color: #19323C !important;
+    color: #fff !important;
+}
+
+.display-4 {
+    font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .display-4 {
+        font-size: 3rem;
+    }
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav-scroller .nav-link {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: .875rem;
+}
+
+.card-deck .card {
+    min-width: 220px;
+}
+
+
+// For page scroller
+a.anchor {
+    display: block;
+    position: relative;
+    top: -150px;
+    visibility: hidden;
+}

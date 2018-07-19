@@ -67,7 +67,7 @@ def create_keyboard_for_block(labels, one_time=False):
 
 def create_next_block_need_keyboard(one_time=False):
     two_buttons_template = [
-        {
+        [{
             "action": {
                 "type": "text",
                 "payload": "{\"next_block_button\": \"1\"}",
@@ -82,7 +82,7 @@ def create_next_block_need_keyboard(one_time=False):
                 "label": "На сегодня хватит"
             },
             "color": "default"
-        }
+        }]
     ]
 
     keyboard = {"one_time": one_time, "buttons": two_buttons_template}

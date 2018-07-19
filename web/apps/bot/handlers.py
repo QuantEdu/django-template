@@ -96,7 +96,7 @@ def create_answer(data, token):
     print('create_answer ', data)
 
     # Default values
-    message, attachment, keyboard = 'Непонятно', '', ''
+    message, attachment, keyboard = 'Непонятно', None, None
 
     # Пользователь первый раз начал переписку с сообществом
     if payload == '{"command":"start"}':

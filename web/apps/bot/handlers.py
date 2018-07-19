@@ -125,4 +125,5 @@ def create_answer(data, token):
     #         message = 'Привет, я новый бот! Я тебя не понял. Поэтому не шли мне больше {}'.format(body)
 
     vkapi.send_message(user_id, token, message, attachment, keyboard)
+    print('exit create answer')
 

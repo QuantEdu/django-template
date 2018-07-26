@@ -1,4 +1,7 @@
+import os
 from split_settings.tools import include, optional
+
+ENVIRONMENT = os.getenv('DJANGO_ENV') or 'development'
 
 include(
     # Load environment settings
@@ -12,6 +15,9 @@ include(
 
     # Load all other settings
     'base/*.py',
+
+    # Select the right env:
+    'environments/%s.py' % ENVIRONMENT,
 
     optional('local/*.py'),  # we can load any other settings from local folder
 )

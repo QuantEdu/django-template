@@ -24,3 +24,6 @@ vk
 
 # DialogFlow API
 apiai
+
+# Deployment
+gunicorn  # https://github.com/benoitc/gunicorn

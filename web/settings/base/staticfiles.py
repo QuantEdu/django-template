@@ -18,6 +18,10 @@ if os.getenv('DJANGO_ENV') == 'development':
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'assets/build'),
     )
+else:
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 

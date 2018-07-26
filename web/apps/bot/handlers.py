@@ -25,7 +25,7 @@ from apps.users.models import Dialog
 DIALOG_FLOW_TOKEN = '281dbfa163e343fdba0368f4857c84d4' # ???
 
 
-def create_keyboard_for_block(labels, one_time=False):
+def create_keyboard_for_block(labels, one_time=True):
     four_buttons_template = [
         {
             "action": {
@@ -67,7 +67,7 @@ def create_keyboard_for_block(labels, one_time=False):
 
 def create_next_block_need_keyboard(one_time=False):
     two_buttons_template = [
-        {
+        [{
             "action": {
                 "type": "text",
                 "payload": "{\"next_block_button\": \"1\"}",
@@ -82,7 +82,7 @@ def create_next_block_need_keyboard(one_time=False):
                 "label": "На сегодня хватит"
             },
             "color": "default"
-        }
+        }]
     ]
 
     keyboard = {"one_time": one_time, "buttons": two_buttons_template}
@@ -96,14 +96,14 @@ def create_answer(data, token):
     print('create_answer ', data)
 
     # Default values
-    message, attachment, keyboard = 'Непонятно', '', ''
+    message, attachment, keyboard = 'Непонятно', None, None
 
     # Пользователь первый раз начал переписку с сообществом
     if payload == '{"command":"start"}':
         # Создать диалог и выставить состояние, отправить приветствие, затем клавиатуру из двух кнопок
         # current_dialog = Dialog.objects.create_dialog(user_id)
         message = 'Привет! Ты только что нажал на кнопку старт! Давай решать задачи :)'
-        # keyboard = create_next_block_need_keyboard()
+        keyboard = create_next_block_need_keyboard()
 
     # print(body)
     #
@@ -125,4 +125,5 @@ def create_answer(data, token):
     #         message = 'Привет, я новый бот! Я тебя не понял. Поэтому не шли мне больше {}'.format(body)
 
     vkapi.send_message(user_id, token, message, attachment, keyboard)
+    print('exit create answer')
 

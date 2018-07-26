@@ -24,7 +24,8 @@ def callback(request):
             return HttpResponse(VK_GROUP_CONFIRMATION_TOKEN)
         elif data['type'] == 'message_new':
             handlers.create_answer(data['object'], VK_GROUP_TOKEN)
-            return HttpResponse('ok')
+            print('under return line')
+            return HttpResponse("ok")
     else:
         return HttpResponse('not post')
 

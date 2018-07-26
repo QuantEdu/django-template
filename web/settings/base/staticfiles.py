@@ -19,6 +19,8 @@ if os.getenv('DJANGO_ENV') == 'development':
         os.path.join(BASE_DIR, 'assets/build'),
     )
 
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
 # В режиме разработки — python manage.py runserver — Django ищет статичные файлы с помощью них
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',

@@ -9,7 +9,7 @@ STATIC_URL = '/static/'
 
 # Сюда упадут все файлы на production после collectstatic
 # Важно не использовать STATICFILES_FINDERS на production, а например nginx
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_ROOT = os.path.join(BASE_DIR, "/static/")
 
 if os.getenv('DJANGO_ENV') == 'development':
     # В этих директориях django ищет статические файлы.

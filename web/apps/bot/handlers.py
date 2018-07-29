@@ -1,9 +1,9 @@
 from . import vkapi
-import apiai
 import json
 
 
-from apps.users.models import Dialog
+from models import Dialog
+from apps.social.models import VKAuth
 
 """
 Прмер клавиатуры, которая прилетает
@@ -86,7 +86,7 @@ def create_next_block_need_keyboard(one_time=False):
     ]
 
     keyboard = {"one_time": one_time, "buttons": two_buttons_template}
-    return json.dumps(keyboard)
+    return json.dumps(keyboard).encode('utf-8')
 
 
 def create_answer(data, token):
@@ -105,25 +105,18 @@ def create_answer(data, token):
         message = 'Привет! Ты только что нажал на кнопку старт! Давай решать задачи :)'
         keyboard = create_next_block_need_keyboard()
 
-    # print(body)
-    #
-    # if body in ['help', 'помощь']:
-    #     message = 'Привет, я новый бот! Ты выбрал команду help'
-    # elif body in ['задача']:
-    #     message = 'Привет, я новый бот! Ты выбрал команду задача'
-    #     attachment = 'photo-165396328_456239018'
-    # else:
-    #     request = apiai.ApiAI(DIALOG_FLOW_TOKEN).text_request()  # Токен API к Dialogflow
-    #     request.lang = 'ru'  # На каком языке будет послан запрос
-    #     request.session_id = user_id  # ID Сессии диалога (нужно, чтобы потом учить бота)
-    #     request.query = body  # Посылаем запрос к ИИ с сообщением от юзера
-    #     responseJson = json.loads(request.getresponse().read().decode('utf-8'))
-    #     response = responseJson['result']['fulfillment']['speech']  # Разбираем JSON и вытаскиваем ответ
-    #     if response:
-    #         message = response
-    #     else:
-    #         message = 'Привет, я новый бот! Я тебя не понял. Поэтому не шли мне больше {}'.format(body)
-
     vkapi.send_message(user_id, token, message, attachment, keyboard)
     print('exit create answer')
+
+
+def create_dialog(user_id, token):
+    current_dialog = Dialog.objects.create_dialog(user_id)
+    return current_dialog
+
+def get_dialog(user_id, token):
+    try:
+        current_dialog = Dialog.objects.get(user=VKAuth.objects.get(uid=str(user_id)).user)
+    except Exception as e:
+        print('get_dialog exception', e)
+
 

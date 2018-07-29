@@ -11,6 +11,7 @@ VK_GROUP_CONFIRMATION_TOKEN = 'bcc75ce1'
 VK_GROUP_ID = 167796316
 
 
+
 # Url, where user redirects after success vk authorization
 @csrf_exempt
 def callback(request):
@@ -20,11 +21,25 @@ def callback(request):
         if 'type' not in data.keys():
             print('Data: {}'.format(data))
             return HttpResponse('not vk')
+        # gropup settings, used to confirm server address
         if data['type'] == 'confirmation':
             return HttpResponse(VK_GROUP_CONFIRMATION_TOKEN)
+
+        # user - bot conversation
         elif data['type'] == 'message_new':
-            handlers.create_answer(data['object'], VK_GROUP_TOKEN)
-            print('under return line')
+            user_id = data['user_id']
+            payload = data['payload']
+
+            # Пользователь первый раз начал переписку с сообществом
+            if payload == '{"command":"start"}':
+                # TODO заполнять данные, кроме id, например first_name, last_name
+                dialog = handlers.create_new_dialog(user_id, VK_GROUP_TOKEN)
+            else:
+                # get dialog to user
+                dialog = handlers.get_dialog(user_id, VK_GROUP_TOKEN)
+
+                handlers.create_answer(data['object'], VK_GROUP_TOKEN)
+
             return HttpResponse("ok")
     else:
         return HttpResponse('not post')

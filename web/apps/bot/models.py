@@ -5,6 +5,8 @@ from django.db import models
 from apps.users.models import User
 from apps.social.models import VKAuth
 
+from . import vkapi
+
 class DialogManager():
     def create_dialog(self, user_vk_id):
         # Найти пользователя , собрать дефолтные задачи, выставить стэйт
@@ -14,20 +16,21 @@ class DialogManager():
             dialog = self.create(user=user, state='NEED_NEXT_BOT_STATE')
             return dialog
         except VKAuth.DoesNotExist:
-            # получить данные пользователя от  vk по  vk_id
-            new_user = User.objects.create_user(first_name=first_name, last_name=last_name)
+            # TODO сделать нормально
+            new_user = User.objects.create_user(email='test@email.ru')
+
+            # TODO получить данные пользователя от  vk по  vk_id
 
             vk_auth = VKAuth.objects.create(
-                uid=uid,
-                user=new_user,
-                hash=hash,
-                first_name=first_name,
-                last_name=last_name,
-                photo=photo
+                uid=user_vk_id,
+                user=new_user
             )
             vk_auth.save()
+            dialog = self.create(user=new_user, state='NEED_NEXT_BOT_STATE')
+            return dialog
 
-        except Exception: # TODO посмотреть исключения
+        except Exception:
+            # TODO посмотреть исключения
             raise ValueError('User with id {} not found'.format(user_vk_id))
 
 

@@ -38,7 +38,7 @@ def callback(request):
                 # get dialog to user
                 dialog = handlers.get_dialog(user_id, VK_GROUP_TOKEN)
 
-                handlers.create_answer(data['object'], VK_GROUP_TOKEN)
+            handlers.create_answer(data['object'], VK_GROUP_TOKEN, dialog)
 
             return HttpResponse("ok")
     else:

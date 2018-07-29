@@ -2,7 +2,7 @@ from . import vkapi
 import json
 
 
-from models import Dialog
+from .models import Dialog
 from apps.social.models import VKAuth
 
 """
@@ -89,7 +89,7 @@ def create_next_block_need_keyboard(one_time=False):
     return json.dumps(keyboard).encode('utf-8')
 
 
-def create_answer(data, token):
+def create_answer(data, token, dialog):
     user_id = data['user_id']
     payload = data['payload']
 
@@ -116,6 +116,7 @@ def create_dialog(user_id, token):
 def get_dialog(user_id, token):
     try:
         current_dialog = Dialog.objects.get(user=VKAuth.objects.get(uid=str(user_id)).user)
+        return current_dialog
     except Exception as e:
         print('get_dialog exception', e)
 

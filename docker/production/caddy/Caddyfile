@@ -4,7 +4,7 @@ www.{$DOMAIN_NAME} {
 
 {$DOMAIN_NAME} {
     proxy / web:5000 {
-        except /static /media
+        transparent
 
         header_upstream Host {host}
         header_upstream X-Real-IP {remote}

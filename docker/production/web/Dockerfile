@@ -35,12 +35,12 @@ RUN chmod +x /start
 RUN chown django /start
 
 # - copy all other files to /code/ directory
-ADD ./web/ /code/
+# ADD ./web/ /code/
 
 RUN chown -R django /code
 
 USER django
 
-WORKDIR /app
+# WORKDIR /app
 
 ENTRYPOINT ["/entrypoint"]

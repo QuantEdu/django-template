@@ -34,7 +34,7 @@ def callback(request):
                 # Пользователь первый раз начал переписку с сообществом
                 if payload == '{"command":"start"}':
                     # TODO заполнять данные, кроме id, например first_name, last_name
-                    dialog = handlers.create_new_dialog(user_id, VK_GROUP_TOKEN)
+                    dialog = handlers.create_dialog(user_id, VK_GROUP_TOKEN)
                 else:
                     # get dialog to user
                     dialog = handlers.get_dialog(user_id, VK_GROUP_TOKEN)
@@ -46,7 +46,7 @@ def callback(request):
                 # потом можно будет выпилить
                 if data['object']['payload'] == '{"command":"start"}':
                     # TODO заполнять данные, кроме id, например first_name, last_name
-                    dialog = handlers.create_new_dialog(user_id, VK_GROUP_TOKEN)
+                    dialog = handlers.create_dialog(user_id, VK_GROUP_TOKEN)
                 else:
                     dialog = handlers.get_dialog(user_id, VK_GROUP_TOKEN)
 

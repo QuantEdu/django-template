@@ -71,7 +71,7 @@ def create_next_block_need_keyboard(one_time=False):
             "action": {
                 "type": "text",
                 "payload": "{\"next_block_button\": \"1\"}",
-                "label": "Следующая задача".encode('utf-8')
+                "label": "Следующая задача"
             },
             "color": "default"
         },
@@ -79,14 +79,14 @@ def create_next_block_need_keyboard(one_time=False):
             "action": {
                 "type": "text",
                 "payload": "{\"next_block_button\": \"2\"}",
-                "label": "На сегодня хватит".encode('utf-8')
+                "label": "На сегодня хватит"
             },
             "color": "default"
         }]
     ]
 
     keyboard = {"one_time": one_time, "buttons": two_buttons_template}
-    return json.dumps(keyboard).encode('utf-8')
+    return json.dumps(keyboard, ensure_ascii=False).encode('utf-8')
 
 
 def create_answer(data, token, dialog):

@@ -69,8 +69,24 @@ def create_test_keyboard(one_time=True):
         [{
             "action": {
                 "type": "text",
-                "payload": "{\"test_button\": \"1\"}",
+                "payload": '{"test_button": "1"}',
                 "label": "Тест"
+            },
+            "color": "default"
+        }
+        ]
+    ]
+    keyboard = {"one_time": one_time, "buttons": one_button_template}
+    return json.dumps(keyboard, ensure_ascii=False).encode('utf-8')
+
+
+def create_start_keyboard(one_time=True):
+    one_button_template = [
+        [{
+            "action": {
+                "type": "text",
+                "payload": '{"command":"start"}',
+                "label": "Начать"
             },
             "color": "default"
         }
@@ -85,7 +101,7 @@ def create_next_block_need_keyboard(one_time=False):
         [{
             "action": {
                 "type": "text",
-                "payload": "{\"next_block_button\": \"1\"}",
+                "payload": '{"next_block_button": "1"}',
                 "label": "Следующая задача"
             },
             "color": "default"
@@ -93,7 +109,7 @@ def create_next_block_need_keyboard(one_time=False):
         {
             "action": {
                 "type": "text",
-                "payload": "{\"next_block_button\": \"2\"}",
+                "payload": '{"next_block_button": "2"}',
                 "label": "На сегодня хватит"
             },
             "color": "default"
@@ -111,7 +127,7 @@ def create_answer(data, token, dialog):
     print('create_answer ', data)
 
     # Default values
-    message, attachment, keyboard = 'Непонятно', None, create_test_keyboard()
+    message, attachment, keyboard = 'Непонятно', None, create_start_keyboard()
 
     # Пользователь первый раз начал переписку с сообществом
     if payload == '{"command":"start"}':

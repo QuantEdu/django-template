@@ -71,7 +71,7 @@ def create_next_block_need_keyboard(one_time=False):
             "action": {
                 "type": "text",
                 "payload": "{\"next_block_button\": \"1\"}",
-                "label": "Следующая задача"
+                "label": "Следующая задача".encode('utf-8')
             },
             "color": "default"
         },
@@ -79,7 +79,7 @@ def create_next_block_need_keyboard(one_time=False):
             "action": {
                 "type": "text",
                 "payload": "{\"next_block_button\": \"2\"}",
-                "label": "На сегодня хватит"
+                "label": "На сегодня хватит".encode('utf-8')
             },
             "color": "default"
         }]

@@ -41,7 +41,14 @@ def callback(request):
 
             else:
                 user_id = data['object']['user_id']
-                dialog = handlers.get_dialog(user_id, VK_GROUP_TOKEN)
+
+                # код ниже, чтобы обработать свою кнопку Начать
+                # потом можно будет выпилить
+                if data['object']['payload'] == '{"command":"start"}':
+                    # TODO заполнять данные, кроме id, например first_name, last_name
+                    dialog = handlers.create_new_dialog(user_id, VK_GROUP_TOKEN)
+                else:
+                    dialog = handlers.get_dialog(user_id, VK_GROUP_TOKEN)
 
             handlers.create_answer(data['object'], VK_GROUP_TOKEN, dialog)
             return HttpResponse("ok")

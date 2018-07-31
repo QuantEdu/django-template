@@ -110,10 +110,12 @@ def create_answer(data, token, dialog):
 
 
 def create_dialog(user_id, token):
+    print('handlers.py create_dialog')
     current_dialog = Dialog.objects.create_dialog(user_id)
     return current_dialog
 
 def get_dialog(user_id, token):
+    print('handlers.py get_dialog')
     try:
         current_dialog = Dialog.objects.get(user=VKAuth.objects.get(uid=str(user_id)).user)
         return current_dialog

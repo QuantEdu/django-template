@@ -41,7 +41,7 @@ def callback(request):
 
             else:
                 user_id = data['object']['user_id']
-
+                print(f'user_id: {user_id}')
                 # код ниже, чтобы обработать свою кнопку Начать
                 # потом можно будет выпилить
                 if data['object']['payload'] == '{"command":"start"}':

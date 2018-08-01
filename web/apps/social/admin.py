@@ -2,6 +2,6 @@
 from django.contrib import admin
 
 # Our apps
-from .models import VKAuth
+from .models import UserSocialAuth
 
-admin.site.register(VKAuth)
+admin.site.register(UserSocialAuth)

@@ -3,7 +3,7 @@ import json
 
 
 from .models import Dialog
-from apps.social.models import VKAuth
+from apps.social.models import UserSocialAuth
 
 """
 Прмер клавиатуры, которая прилетает
@@ -63,6 +63,7 @@ def create_keyboard_for_block(labels, one_time=True):
 
     keyboard = {"one_time" : one_time, "buttons" : four_buttons_template}
     return json.dumps(keyboard)
+
 
 def create_test_keyboard(one_time=True):
     one_button_template = [
@@ -148,12 +149,11 @@ def create_dialog(user_id, token):
     except Exception as e:
         print('create_dialog exception', e)
 
+
 def get_dialog(user_id, token):
     print('handlers.py get_dialog')
     try:
-        current_dialog = Dialog.objects.get(user=VKAuth.objects.get(uid=str(user_id)).user)
+        current_dialog = Dialog.objects.get(user=UserSocialAuth.objects.get(uid=str(user_id)).user, provider='vk')
         return current_dialog
     except Exception as e:
         print('get_dialog exception', e)
-
-

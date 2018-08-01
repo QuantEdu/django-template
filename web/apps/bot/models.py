@@ -3,27 +3,29 @@ from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
 from apps.users.models import User
-from apps.social.models import VKAuth
+from apps.social.models import UserSocialAuth
 
 from . import vkapi
+
 
 class DialogManager():
     def create_dialog(self, user_vk_id):
         # Найти пользователя , собрать дефолтные задачи, выставить стэйт
         try:
-            vk_auth = VKAuth.objects.get(uid=user_vk_id)
+            vk_auth = UserSocialAuth.objects.get(uid=user_vk_id, provider='vk')
             user = vk_auth.user
             dialog = self.create(user=user, state='NEED_NEXT_BOT_STATE')
             return dialog
-        except VKAuth.DoesNotExist:
+        except UserSocialAuth.DoesNotExist:
             # TODO сделать нормально
             new_user = User.objects.create_user(email='test@email.ru')
 
             # TODO получить данные пользователя от  vk по  vk_id
 
-            vk_auth = VKAuth.objects.create(
+            vk_auth = UserSocialAuth.objects.create(
                 uid=user_vk_id,
-                user=new_user
+                user=new_user,
+                provider='vk'
             )
             vk_auth.save()
             dialog = self.create(user=new_user, state='NEED_NEXT_BOT_STATE')

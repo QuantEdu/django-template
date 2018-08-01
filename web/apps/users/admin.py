@@ -10,5 +10,10 @@ class ProfileInline(admin.StackedInline):
 class CustomUserAdmin(admin.ModelAdmin):
     inlines = [ProfileInline]
 
+    def get_inline_instances(self, request, obj=None):
+        if not obj:
+            return list()
+        return super(CustomUserAdmin, self).get_inline_instances(request, obj)
+
 
 admin.site.register(User, CustomUserAdmin)

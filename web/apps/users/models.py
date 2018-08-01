@@ -25,6 +25,18 @@ class UserManager(BaseUserManager):
         except Exception:
             raise ValueError('Duplicate email')
 
+    def _create_user_without_email(self, **extra_fields):
+        """
+        Creates and saves a User with the given email and password.
+        """
+        user = self.model(**extra_fields)
+        user.set_password('nopassword')
+        try:
+            user.save(using=self._db)
+            return user
+        except Exception:
+            raise ValueError('No email user creation password')
+
     def create_user(self, email, password=None, **extra_fields):
         extra_fields.setdefault('is_superuser', False)
         extra_fields.setdefault('is_staff', False)

@@ -37,7 +37,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField('email address', unique=True, blank=True)
+    email = models.EmailField('email address', unique=True, null=True)
     date_joined = models.DateTimeField('date joined', auto_now_add=True)
     is_active = models.BooleanField('active', default=True)
     is_staff = models.BooleanField('staff status', default=False)
@@ -50,6 +50,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = 'пользователь'
         verbose_name_plural = 'пользователи'
+
+    def __str__(self):
+        if not self.email:
+            return u'No email, id:{}'.format(self.pk)
+        else:
+            return self.email
 
     def get_full_name(self):
         full_name = '%s %s' % (self.profile.first_name, self.profile.last_name)

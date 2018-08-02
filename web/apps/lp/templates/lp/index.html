@@ -1052,7 +1052,16 @@
     </div>
 </div>
 
-<script src="{% static 'js/main.js' %}" async></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+<script>
+    $(".nav-link").click(function(e) {
+        e.preventDefault();
+        var aid = $(this).attr("href");
+        var aTag = $(aid);
+        $('html,body').animate({scrollTop: aTag.offset().top}, 'slow');
+    });
+</script>
 
 </body>
 </html>

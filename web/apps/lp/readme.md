@@ -2,7 +2,8 @@
 
 - Main landing
     - Digits (students, years, баллы, teachers)
-    - Price (лучше, чем у репиков)
+    - Price (лучше, чем у репиков), скидки?
+    - Предметы
     - Teachers (с занимательными фактами)
     - Results
     - Groups or one-on-one
@@ -15,6 +16,7 @@
     - достижения
     - video
     - отзывы
+    - истории учеников с университетами, куда они поступили
     - courses
     - documents
     - о себе
@@ -34,6 +36,7 @@
     - form for contacts
 - Landing for events
 - Landing for webinars
+- Landing for fake exams
 - Landing with contact form
 - Landing for repetitors?
 - Landing for proforientation

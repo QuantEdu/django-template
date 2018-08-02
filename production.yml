@@ -11,6 +11,7 @@ services:
       context: .
       dockerfile: ./docker/production/web/Dockerfile
     image: quant_web
+    restart: always
     depends_on:
       - postgres
       - redis
@@ -24,6 +25,7 @@ services:
       context: .
       dockerfile: ./docker/production/postgres/Dockerfile
     image: quant_postgres
+    restart: always
     volumes:
       - production_postgres_data:/var/lib/postgresql/data
       - production_postgres_data_backups:/backups
@@ -35,6 +37,7 @@ services:
       context: .
       dockerfile: docker/production/caddy/Dockerfile
     image: quant_caddy
+    restart: always
     depends_on:
       - web
     volumes:

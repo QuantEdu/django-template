@@ -9,6 +9,7 @@
     - Преимущества
     - Отзывы общего плана
     - Заявка (класс, предмет, контакты)
+    - Подобрать курс
 - Landing for teachers
     - photo
     - достижения
@@ -32,6 +33,7 @@
     - results
     - form for contacts
 - Landing for events
+- Landing for webinars
 - Landing with contact form
 - Landing for repetitors?
 - Landing for proforientation

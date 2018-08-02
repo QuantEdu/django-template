@@ -1,0 +1,39 @@
+# Landing pages
+
+- Main landing
+    - Digits (students, years, баллы, teachers)
+    - Price (лучше, чем у репиков)
+    - Teachers (с занимательными фактами)
+    - Results
+    - Groups or one-on-one
+    - Преимущества
+    - Отзывы общего плана
+    - Заявка (класс, предмет, контакты)
+- Landing for teachers
+    - photo
+    - достижения
+    - video
+    - отзывы
+    - courses
+    - documents
+    - о себе
+- Landing for courses
+    - search for groups
+- Landing for course
+    - teacher big
+    - about course
+    - start time
+    - map
+    - отзывы
+    - program
+    - price
+    - other courses
+    - some digits
+    - results
+    - form for contacts
+- Landing for events
+- Landing with contact form
+- Landing for repetitors?
+- Landing for proforientation
+- Вакансии
+- Отзывы

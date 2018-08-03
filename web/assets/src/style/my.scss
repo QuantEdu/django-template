@@ -63,7 +63,18 @@ a, p, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .bg-library{
-    background: url('/static/img/index/background-library.png') 0 0 no-repeat;
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('/static/img/index/background-library.jpg') 0 0 no-repeat;
+    color: #fff !important;
+}
+
+.bg-library-1{
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('/static/img/index/background-library-1.jpg') 0 0 no-repeat;
+    color: #fff !important;
+}
+
+.bg-computer{
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('/static/img/index/background-computer.jpg') 0 0 no-repeat;
+    color: #fff !important;
 }
 
 .display-4 {

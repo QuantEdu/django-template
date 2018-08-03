@@ -8,7 +8,7 @@ from apps.social.models import UserSocialAuth
 from . import vkapi
 
 
-class DialogManager():
+class DialogManager(models.Manager):
     def create_dialog(self, user_vk_id):
         # Найти пользователя , собрать дефолтные задачи, выставить стэйт
         try:
@@ -18,14 +18,15 @@ class DialogManager():
             return dialog
         except UserSocialAuth.DoesNotExist:
             # TODO сделать нормально
-            new_user = User.objects.create_user(email='test@email.ru')
+            new_user = User.objects.create_user(email=str(user_vk_id) + '@email.ru')
 
             # TODO получить данные пользователя от  vk по  vk_id
 
             vk_auth = UserSocialAuth.objects.create(
                 uid=user_vk_id,
                 user=new_user,
-                provider='vk'
+                provider='vk',
+                extra_data=None,
             )
             vk_auth.save()
             dialog = self.create(user=new_user, state='NEED_NEXT_BOT_STATE')

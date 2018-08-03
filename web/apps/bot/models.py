@@ -25,8 +25,7 @@ class DialogManager(models.Manager):
             vk_auth = UserSocialAuth.objects.create(
                 uid=user_vk_id,
                 user=new_user,
-                provider='vk',
-                extra_data=None,
+                provider='vk'
             )
             vk_auth.save()
             dialog = self.create(user=new_user, state='NEED_NEXT_BOT_STATE')

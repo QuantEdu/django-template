@@ -8,7 +8,7 @@ from apps.social.models import UserSocialAuth
 from . import vkapi
 
 
-class DialogManager():
+class DialogManager(models.Manager):
     def create_dialog(self, user_vk_id):
         # Найти пользователя , собрать дефолтные задачи, выставить стэйт
         try:

@@ -1,2 +1,2 @@
-ADMINS = [('Vitaliy', 'harchenko.grape@gmail.com'), ('Ekaterina', 'teleport19@gmail.com')]
+ADMINS = [('Vitaliy', 'harchenko.grape@gmail.com')]
 MANAGERS = ADMINS

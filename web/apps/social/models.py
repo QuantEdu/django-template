@@ -15,7 +15,7 @@ class UserSocialAuth(models.Model):
     provider = models.CharField(max_length=32)
     uid = models.CharField(verbose_name="Uid", max_length=60, blank=False)
     hash = models.CharField(verbose_name="hash", max_length=60, blank=True)
-    extra_data = JSONField()
+    extra_data = JSONField(null=True)
 
     def __str__(self):
         return str(self.user)

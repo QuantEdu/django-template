@@ -2,9 +2,9 @@
 
 - Main landing
     - Digits (students, years, баллы, teachers)
-    - Price (лучше, чем у репиков), скидки?
+    - ✅ Price (лучше, чем у репиков), скидки?
     - Предметы
-    - Teachers (с занимательными фактами)
+    - ✅ Teachers (с занимательными фактами) 
     - Results
     - Groups or one-on-one
     - Преимущества

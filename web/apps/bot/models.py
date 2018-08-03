@@ -18,7 +18,7 @@ class DialogManager(models.Manager):
             return dialog
         except UserSocialAuth.DoesNotExist:
             # TODO сделать нормально
-            new_user = User.objects.create_user(email='test@email.ru')
+            new_user = User.objects.create_user(email=str(user_vk_id) + '@email.ru')
 
             # TODO получить данные пользователя от  vk по  vk_id
 

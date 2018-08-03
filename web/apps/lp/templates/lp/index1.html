@@ -130,7 +130,7 @@
 
 <section class="section bg-library py-5" id="home">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row justify-content-center">
             <div class="col-12 py-5 text-center">
                 <h1 class="display-4">Квант — образовательный центр <br> подготовки к ЕГЭ, ОГЭ и олимпиадам</h1>
                 <p class="py-4 lead">Наши программы по школьным предметам разработаны для успешной сдачи ЕГЭ с любым уровнем начальной подготовки</p>
@@ -409,8 +409,8 @@
 
 <section class="bg-library">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 py-5">
+        <div class="row justify-content-center pt-5">
+            <div class="col-10 col-lg-8 pb-5">
                 <h2 class="mt-0 h1">Харченко Виталий</h2>
                 <ul class="list-unstyled pt-3">
                     <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Призёр всероссийских олимпиад по физике и математике</li>
@@ -420,18 +420,18 @@
                     <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Умеет привить интерес к предмету, развить абстрактное техническое мышление, помочь в выборе ВУЗа и профессии.</li>
                 </ul>
             </div>
-            <div class="col-lg-4 align-self-end">
+            <div class="col-12 col-lg-4 align-self-end">
                 <img class="w-100" src="{% static 'img/teachers/харченко-nobg.png' %}" alt="">
             </div>
         </div>
     </div>
 </section>
 
-<section id="quote" class="py-5 bg-white">
+<section id="quote" class="py-5 bg-magenta">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
-                <p class="h3 d-block mt-4 font-alt title-extra-large">"Попади в среду, мотивирующую на постоянное развитие и совершенствование!"</p>
+                <p class="display-4 my-4">"Попади в среду, мотивирующую на постоянное развитие и совершенствование!"</p>
             </div>
         </div>
     </div>
@@ -597,7 +597,7 @@
             </div>
         </div>
         <div class="row mt-5 justify-content-center">
-            <div class="col-lg-4 col-8">
+            <div class="col-lg-4 col-10">
                 <div class="card card-body p-4 bg-white text-center mt-4">
                     <p class="h2 pt-3">0 ₽</p>
                     <p class="h6 mt-4">Бесплатно</p>
@@ -610,7 +610,7 @@
                     <a href="https://vk.com/quantzone" target="blank" class="btn btn-outline-secondary btn-rounded mt-5">Посмотреть пример</a>
                 </div>
             </div>
-            <div class="col-lg-4 col-8">
+            <div class="col-lg-4 col-10">
                 <div class="card card-body p-4 bg-white text-center mt-lg-1 mt-4">
                     <p class="mb-3 text-uppercase">Популярное</p>
                     <p class="h2 pt-3">от 400 ₽/час</p>
@@ -626,7 +626,7 @@
                     </button>
                 </div>
             </div>
-            <div class="col-lg-4 col-8">
+            <div class="col-lg-4 col-10">
                 <div class="card card-body p-4 bg-white text-center mt-4">
                     <p class="h2 pt-3">от 1000 ₽/час</p>
                     <p class="h6 mt-4">Индивидуально</p>
@@ -1047,41 +1047,39 @@
 
 <div class="modal fade" id="pirozhokModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
+        <div class="modal-content bg-library">
             <div class="modal-header">
                 <h5 class="modal-title">Закажите звонок от преподавателя</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <section class="bg-library">
-                    <div class="container px-4">
-                        <div class="row justify-content-center text-white">
-                            <div class="col-lg-6 py-5">
-                                <h2 class="mt-0 h1">Екатерина Пирожок</h2>
-                                <ul class="list-unstyled pt-3">
-                                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2012 года -
-                                        воспитатель в Школе Успешного Абитуриента УрФУ
-                                    </li>
-                                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2015 года - учитель
-                                        филологии в СУНЦ УрФУ
-                                    </li>
-                                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Окончила
-                                        филологический факультет УрФУ с красным дипломом
-                                    </li>
-                                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Практикует
-                                        деятельностно-ориентированный подход к изучению русского языка, помогает развить
-                                        критическое мышление и любовь к великому и могучему!
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6 align-self-end">
-                                <img class="w-100" src="{% static 'img/teachers/пирожок-nobg.png' %}" alt="">
-                            </div>
+            <div class="modal-body pb-0">
+                <div class="container px-4">
+                    <div class="row justify-content-center text-white">
+                        <div class="col-lg-6 py-5">
+                            <h2 class="mt-0 h1">Екатерина Пирожок</h2>
+                            <ul class="list-unstyled pt-3">
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2012 года -
+                                    воспитатель в Школе Успешного Абитуриента УрФУ
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2015 года - учитель
+                                    филологии в СУНЦ УрФУ
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Окончила
+                                    филологический факультет УрФУ с красным дипломом
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Практикует
+                                    деятельностно-ориентированный подход к изучению русского языка, помогает развить
+                                    критическое мышление и любовь к великому и могучему!
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 align-self-end">
+                            <img class="w-100" src="{% static 'img/teachers/пирожок-nobg.png' %}" alt="">
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
         </div>
     </div>

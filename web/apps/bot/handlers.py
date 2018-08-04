@@ -153,7 +153,7 @@ def create_dialog(user_id, token):
 def get_dialog(user_id, token):
     print('handlers.py get_dialog')
     try:
-        current_dialog = Dialog.objects.get(user=UserSocialAuth.objects.get(uid=str(user_id)).user, provider='vk')
+        current_dialog = Dialog.objects.get(user=UserSocialAuth.objects.get(uid=str(user_id), provider='vk').user)
         return current_dialog
     except Exception as e:
         print('get_dialog exception', e)

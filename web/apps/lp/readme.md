@@ -1,5 +1,7 @@
 # Landing pages
 
+TODO: quiz on lp
+
 - Main landing
     - Digits (students, years, баллы, teachers)
     - ✅ Price (лучше, чем у репиков), скидки?

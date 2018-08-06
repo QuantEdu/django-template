@@ -143,12 +143,14 @@ def create_answer(data, token, dialog):
 
 def create_dialog(user_id, token):
     print('handlers.py create_dialog')
-    try:
-        current_dialog = Dialog.objects.create_dialog(user_id)
-        return current_dialog
-    except Exception as e:
-        print('create_dialog exception', e)
-
+    current_dialog = get_dialog(user_id, token)
+    if current_dialog is None:
+        try:
+            current_dialog = Dialog.objects.create_dialog(user_id)
+        except Exception as e:
+            print('create_dialog exception', e)
+            current_dialog = None
+    return current_dialog
 
 def get_dialog(user_id, token):
     print('handlers.py get_dialog')
@@ -157,3 +159,4 @@ def get_dialog(user_id, token):
         return current_dialog
     except Exception as e:
         print('get_dialog exception', e)
+        return None

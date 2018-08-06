@@ -128,7 +128,7 @@ def create_answer(data, token, dialog):
     print('create_answer ', data)
 
     # Default values
-    message, attachment, keyboard = 'Непонятно', None, create_start_keyboard()
+    message, attachment, keyboard = 'Непонятно', 'photo167796316_456239017', create_start_keyboard()
 
     # Пользователь первый раз начал переписку с сообществом
     if payload == '{"command":"start"}':

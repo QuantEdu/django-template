@@ -16,7 +16,7 @@
     <meta name="msapplication-TileColor" content="#19323c">
     <meta name="theme-color" content="#ffffff">
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="{% static 'css/main.css' %}" type="text/css" rel="stylesheet">
 
     <!-- Yandex.Metrika counter -->
@@ -62,37 +62,26 @@
 </head>
 <body>
 
-<header class="header-top py-3 bg-light">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-md-8 mb-3 mb-md-0 text-center text-md-left">
-			<ul class="list-inline mb-0">
-				<li class="list-inline-item mr-3">
-                    <a href="tel:+73432885276">+7 (343) 288-52-76</a>
-				</li>
-                <!--<li class="list-inline-item">-->
-					<!--<button type="button" class="btn btn-sm btn-outline-secondary">Заказать звонок</button>-->
-				<!--</li>-->
-			</ul>
-			</div>
-			<div class="col-md-4 mb-3 mb-md-0">
-				<ul class="list-inline social social-rounded social-default social-sm mb-0 text-center text-md-right">
-					<li class="list-inline-item">
-                        <a href="https://vk.com/quantzone"><i class="fab fa-vk fa-lg"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.instagram.com/quant.ekb/"><i class="fab fa-instagram fa-lg"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com/quantzone"><i class="fab fa-facebook fa-lg"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.youtube.com/channel/UCoUKlSnccos27LFxJiVs5lA"><i class="fab fa-youtube fa-lg"></i></a>
-                    </li>
-				</ul>
-			</div>
-		</div>
-	</div>
+<header class="header">
+    <div class="navbar navbar-expand-sm navbar-dark dark-shades">
+        <div class="container justify-content-center">
+            <a class="navbar-brand" href="tel:+73432885276">+7 (343) 288-52-76</a>
+            <ul class="navbar-nav ml-auto d-none d-sm-flex">
+                <li class="nav-item">
+                    <a href="https://vk.com/quantzone" class="nav-link"><i class="fab fa-vk fa-lg"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.instagram.com/quant.ekb/" class="nav-link"><i class="fab fa-instagram fa-lg"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.facebook.com/quantzone" class="nav-link"><i class="fab fa-facebook fa-lg"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.youtube.com/channel/UCoUKlSnccos27LFxJiVs5lA" class="nav-link"><i class="fab fa-youtube fa-lg"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </header>
 
 <header class="header sticky-top">
@@ -116,22 +105,22 @@
                         <!--<a class="nav-link" href="#video" data-scrollto="video">Видео</a>-->
                     <!--</li>-->
                     <li class="nav-item">
-                        <a class="nav-link" href="#feedback" data-scrollto="feedback">Отзывы</a>
+                        <a class="nav-link" href="#feedback">Отзывы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#features" data-scrollto="features">Методика</a>
+                        <a class="nav-link" href="#features">Методика</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#pricing" data-scrollto="pricing">Стоимость</a>
+                        <a class="nav-link" href="#pricing">Стоимость</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#faq" data-scrollto="faq">FAQ</a>
+                        <a class="nav-link" href="#faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#team" data-scrollto="team">Кто мы?</a>
+                        <a class="nav-link" href="#team">Кто мы?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contacts" data-scrollto="contact">Контакты</a>
+                        <a class="nav-link" href="#contacts">Контакты</a>
                     </li>
                 </ul>
             </div>
@@ -139,33 +128,34 @@
     </div>
 </header>
 
-<section class="section bg-light pb-5 pt-3" id="home">
+<section class="section bg-library py-5" id="home">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8 mt-3 pl-4">
-                <h1 class="home-title">Подготовим к успешной сдаче экзаменов</h1>
-                <p class="pt-4">Наши программы по школьным предметам разработаны для успешной сдачи ЕГЭ с любым уровнем начальной подготовки</p>
-                <!--<div class="watch-video pt-4">-->
-                    <!--<a href="#video" class=""><i class="fa fa-play"></i> <span>Посмотреть видео!</span></a>-->
-                <!--</div>-->
-            </div>
-            <div class="col-lg-4 mt-3">
-                <div class="card p-md-5 p-4">
-                    <h4 class="mb-4 pt-0">Запишитесь на пробное занятие</h4>
-                    <h5 class="text-muted form-subtitle mb-4">Встреча-знакомство с преподавателем</h5>
-                    <form action="" method="post">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <label class="text-muted">Телефон</label>
-                            <input type="text" id="id_phone" name="phone" class="form-control" aria-describedby="emailHelp" placeholder="Введите телефон">
-                        </div>
-                        <div class="form-group">
-                            <label class="text-muted">Ваше имя</label>
-                            <input type="text" id="id_name" name="name" class="form-control" placeholder="Имя">
-                        </div>
-                        <button type="submit" class="btn btn-secondary w-100 text-uppercase" style="background-color: #F3833C; border-color: #F3833C;">Записаться</button>
-                    </form>
+        <div class="row justify-content-center">
+            <div class="col-12 py-5 text-center">
+                <h1 class="display-4">Квант — образовательный центр <br> подготовки к ЕГЭ, ОГЭ и олимпиадам</h1>
+                <p class="py-4 lead">Наши программы по школьным предметам разработаны для успешной сдачи ЕГЭ с любым уровнем начальной подготовки</p>
+                <hr class="border-secondary">
+                <div class="row py-3">
+                    <div class="col-6 col-md-3 text-center">
+                        <p class="h1">100</p>
+                        <p>Выпускников ежегодно</p>
+                    </div>
+                    <div class="col-6 col-md-3 text-center">
+                        <p class="h1">10</p>
+                        <p>Предметов</p>
+                    </div>
+                    <div class="col-6 col-md-3 text-center">
+                        <p class="h1">3</p>
+                        <p>Года работы</p>
+                    </div>
+                    <div class="col-6 col-md-3 text-center">
+                        <p class="h1">100%</p>
+                        <p>Поступлений</p>
+                    </div>
                 </div>
+                <button type="button" class="btn btn-lg btn-success my-3 p-3" data-toggle="modal" data-target="#formModal">
+                    Получите консультацию
+                </button>
             </div>
         </div>
     </div>
@@ -176,171 +166,349 @@
         <div class="row">
             <div class="col-12">
                 <h2 class="text-center">
-                    Наша специализация
+                    Предметы
                 </h2>
                 <ul class="text-center list-inline mt-4">
-                    <li class="list-inline-item">Математика</li>
-                    <li class="list-inline-item">Русския язык</li>
-                    <li class="list-inline-item">Химия</li>
-                    <li class="list-inline-item">Физика</li>
-                    <li class="list-inline-item">Обществознание</li>
-                    <li class="list-inline-item">Информатика</li>
-                    <li class="list-inline-item">Литература</li>
-                    <li class="list-inline-item">Английский язык</li>
+                    <li class="list-inline-item h4"><span class="badge badge-secondary">Математика</span></li>
+                    <li class="list-inline-item h4"><span class="badge badge-secondary">Русския язык</span></li>
+                    <li class="list-inline-item h4"><span class="badge badge-secondary">Химия</span></li>
+                    <li class="list-inline-item h4"><span class="badge badge-secondary">Физика</span></li>
+                    <li class="list-inline-item h4"><span class="badge badge-secondary">Обществознание</span></li>
+                    <li class="list-inline-item h4"><span class="badge badge-secondary">Информатика</span></li>
+                    <li class="list-inline-item h4"><span class="badge badge-secondary">Литература</span></li>
+                    <li class="list-inline-item h4"><span class="badge badge-secondary">Английский язык</span></li>
                 </ul>
-                <!--<div class="card-columns pt-4">-->
-                    <!--<div class="card bg-dark text-white">-->
-                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
-                        <!--<div class="card-img-overlay d-flex">-->
-                            <!--<div class="my-auto mx-auto text-center">-->
-                                <!--<h5 class="card-title align-middle mb-0">Математика</h5>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="card bg-dark text-white">-->
-                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
-                        <!--<div class="card-img-overlay d-flex">-->
-                            <!--<div class="my-auto mx-auto text-center">-->
-                                <!--<h5 class="card-title align-middle mb-0">Физика</h5>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="card bg-dark text-white">-->
-                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
-                        <!--<div class="card-img-overlay d-flex">-->
-                            <!--<div class="my-auto mx-auto text-center">-->
-                                <!--<h5 class="card-title align-middle mb-0">Русский язык</h5>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="card bg-dark text-white">-->
-                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
-                        <!--<div class="card-img-overlay d-flex">-->
-                            <!--<div class="my-auto mx-auto text-center">-->
-                                <!--<h5 class="card-title align-middle mb-0">Химия</h5>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="card bg-dark text-white">-->
-                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
-                        <!--<div class="card-img-overlay d-flex">-->
-                            <!--<div class="my-auto mx-auto text-center">-->
-                                <!--<h5 class="card-title align-middle mb-0">Обществознание</h5>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="card bg-dark text-white">-->
-                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
-                        <!--<div class="card-img-overlay d-flex">-->
-                            <!--<div class="my-auto mx-auto text-center">-->
-                                <!--<h5 class="card-title align-middle mb-0">Английский язык</h5>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="card bg-dark text-white">-->
-                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
-                        <!--<div class="card-img-overlay d-flex">-->
-                            <!--<div class="my-auto mx-auto text-center">-->
-                                <!--<h5 class="card-title align-middle mb-0">Литература</h5>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="card bg-dark text-white">-->
-                        <!--<img class="card-img" src="https://dummyimage.com/540x305/dddddd.png" alt="Card image">-->
-                        <!--<div class="card-img-overlay d-flex">-->
-                            <!--<div class="my-auto mx-auto text-center">-->
-                                <!--<h5 class="card-title align-middle mb-0">Информатика</h5>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
             </div>
         </div>
     </div>
 </section>
 
-<section id="quote" class="py-5 bg-light">
+<section class="section py-5 bg-white">
+    <a class="anchor" id="team"></a>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="pb-3">Лучшие молодые преподаватели города</h2>
+                <p class="pt-3 lead">Объяснят сложные темы наглядно и простым языком, используя современные образовательные технологии и гаджеты. Они всегда на связи и готовы ответить на ваши вопросы - например, во ВКонтакте.</p>
+            </div>
+        </div>
+        <div class="row pt-4">
+            <div class="col-lg-3 col-6 mt-4">
+                <div class="card text-center show-onHover-parent">
+                    <a href="#" data-toggle="modal" data-target="#pirozhokModal">
+                        <img class="w-100" src="{% static 'img/teachers/пирожок.png' %}" alt="">
+                    </a>
+                    <ul class="list-inline pt-3">
+                        <li class="list-inline-item">
+                            <a href="https://vk.com/shtessel" target="_blank"><i class="fab fa-vk"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="tel:89617754852"><i class="fas fa-phone"></i></a>
+                        </li>
+                    </ul>
+                    <div class="pb-4">
+                        <a href="#" class="btn btn-link py-0" data-toggle="modal" data-target="#pirozhokModal">
+                            <h3 class="h5">
+                                Екатерина <br> Пирожок
+                            </h3>
+                        </a>
+                        <p class="mb-0">
+                            Русский язык
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6 mt-4">
+                <div class="card text-center show-onHover-parent">
+                    <a href="#" data-toggle="modal" data-target="#pirozhokModal">
+                        <img class="w-100" src="{% static 'img/teachers/парамонова.png' %}" alt="">
+                    </a>
+                    <ul class="list-inline pt-3">
+                        <li class="list-inline-item">
+                            <a href="https://vk.com/ekaterinatelepova" target="_blank"><i class="fab fa-vk"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="tel:89021885465"><i class="fas fa-phone"></i></a>
+                        </li>
+                    </ul>
+                    <div class="pb-4">
+                        <a href="#" class="btn btn-link py-0" data-toggle="modal" data-target="#paramonovaModal">
+                            <h3 class="h5">
+                                Екатерина <br> Парамонова
+                            </h3>
+                        </a>
+                        <p class="mb-0">
+                            Информатика
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6 mt-4">
+                <div class="card text-center show-onHover-parent">
+                    <a href="#" data-toggle="modal" data-target="#pirozhokModal">
+                        <img class="w-100" src="{% static 'img/teachers/киселев.png' %}" alt="">
+                    </a>
+                    <ul class="list-inline pt-3">
+                        <li class="list-inline-item">
+                            <a href="https://vk.com/id111898155" target="_blank"><i class="fab fa-vk"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="tel:89920085976"><i class="fas fa-phone"></i></a>
+                        </li>
+                    </ul>
+                    <div class="pb-4">
+                        <a href="#" class="btn btn-link py-0" data-toggle="modal" data-target="#kiselevModal">
+                            <h3 class="h5">
+                                Владислав <br> Киселев
+                            </h3>
+                        </a>
+                        <p class="mb-0">
+                            Математика
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6 mt-4">
+                <div class="card text-center show-onHover-parent">
+                    <a href="#" data-toggle="modal" data-target="#harchenkoModal">
+                        <img class="w-100" src="{% static 'img/teachers/харченко.png' %}" alt="">
+                    </a>
+                    <ul class="list-inline pt-3">
+                        <li class="list-inline-item">
+                            <a href="https://vk.com/vitaliyharchenko" target="_blank"><i class="fab fa-vk"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="tel:89826469454"><i class="fas fa-phone"></i></a>
+                        </li>
+                    </ul>
+                    <div class="pb-4">
+                        <a href="#" class="btn btn-link py-0" data-toggle="modal" data-target="#harchenkoModal">
+                            <h3 class="h5">
+                                Виталий <br> Харченко
+                            </h3>
+                        </a>
+                        <p class="mb-0">
+                            Физика
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row py-4">
+            <div class="col-lg-3 col-6 mt-4">
+                <div class="card text-center show-onHover-parent">
+                    <a href="#" data-toggle="modal" data-target="#pirozhokModal">
+                        <img class="w-100" src="{% static 'img/teachers/лесогорова.png' %}" alt="">
+                    </a>
+                    <ul class="list-inline pt-3">
+                        <li class="list-inline-item">
+                            <a href="https://vk.com/id11650281" target="_blank"><i class="fab fa-vk"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="tel:89028777717"><i class="fas fa-phone"></i></a>
+                        </li>
+                    </ul>
+                    <div class="pb-4">
+                        <a href="#" class="btn btn-link py-0" data-toggle="modal" data-target="#lesogorovaModal">
+                            <h3 class="h5">
+                                Светлана <br> Лесогорова
+                            </h3>
+                        </a>
+                        <p class="mb-0">
+                            Химия
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6 mt-4">
+                <div class="card text-center show-onHover-parent">
+                    <a href="#" data-toggle="modal" data-target="#pirozhokModal">
+                        <img class="w-100" src="{% static 'img/teachers/глазырин.png' %}" alt="">
+                    </a>
+                    <ul class="list-inline pt-3">
+                        <li class="list-inline-item">
+                            <a href="https://vk.com/id249683769" target="_blank"><i class="fab fa-vk"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="tel:89321216402"><i class="fas fa-phone"></i></a>
+                        </li>
+                    </ul>
+                    <div class="pb-4">
+                        <a href="#" class="btn btn-link py-0" data-toggle="modal" data-target="#glazyrinModal">
+                            <h3 class="h5">
+                                Вячеслав <br> Глазырин
+                            </h3>
+                        </a>
+                        <p class="mb-0">
+                            Литература
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6 mt-4">
+                <div class="card text-center show-onHover-parent">
+                    <a href="#" data-toggle="modal" data-target="#pirozhokModal">
+                        <img class="w-100" src="{% static 'img/teachers/носкова.png' %}" alt="">
+                    </a>
+                    <ul class="list-inline pt-3">
+                        <li class="list-inline-item">
+                            <a href="https://vk.com/anwenanariel" target="_blank"><i class="fab fa-vk"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="tel:89022762420"><i class="fas fa-phone"></i></a>
+                        </li>
+                    </ul>
+                    <div class="pb-4">
+                        <a href="#" class="btn btn-link py-0" data-toggle="modal" data-target="#noskovaModal">
+                            <h3 class="h5">
+                                Полина <br> Носкова
+                            </h3>
+                        </a>
+                        <p class="mb-0">
+                            Биология
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6 mt-4">
+                <div class="card text-center show-onHover-parent">
+                    <a href="#" data-toggle="modal" data-target="#pirozhokModal">
+                        <img class="w-100" src="{% static 'img/teachers/новоселова.png' %}" alt="">
+                    </a>
+                    <ul class="list-inline pt-3">
+                        <li class="list-inline-item">
+                            <a href="https://vk.com/id21603705" target="_blank"><i class="fab fa-vk"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="tel:89089077814"><i class="fas fa-phone"></i></a>
+                        </li>
+                    </ul>
+                    <div class="pb-4">
+                        <a href="#" class="btn btn-link py-0" data-toggle="modal" data-target="#novoselovaModal">
+                            <h3 class="h5">
+                                Екатерина <br> Новоселова
+                            </h3>
+                        </a>
+                        <p class="mb-0">
+                            Обществознание
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-library">
+    <div class="container">
+        <div class="row justify-content-center pt-5">
+            <div class="col-10 col-lg-8 pb-5">
+                <h2 class="mt-0 h1">Харченко Виталий</h2>
+                <ul class="list-unstyled pt-3">
+                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Призёр всероссийских олимпиад по физике и математике</li>
+                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2014 года – преподаватель физики категории А в федеральном учебном центре</li>
+                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2016 года – тренирует олимпиадников в СУНЦ УрФУ</li>
+                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Опыт преподавания - с 2011 года</li>
+                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Умеет привить интерес к предмету, развить абстрактное техническое мышление, помочь в выборе ВУЗа и профессии.</li>
+                </ul>
+            </div>
+            <div class="col-12 col-lg-4 align-self-end">
+                <img class="w-100" src="{% static 'img/teachers/харченко-nobg.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="quote" class="py-5 bg-magenta">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
-                <p class="h3 d-block mt-4 font-alt title-extra-large">"Попади в среду, мотивирующую на постоянное развитие и совершенствование!"</p>
+                <p class="lead my-4 d-md-none">"Попади в среду, мотивирующую на постоянное развитие и совершенствование!"</p>
+                <p class="display-4 my-4 d-none d-md-block">"Попади в среду, мотивирующую на постоянное развитие и совершенствование!"</p>
             </div>
         </div>
     </div>
 </section>
 
-<!--<section class="section py-5 bg-yellow">-->
-    <!--<a class="anchor" id="video"></a>-->
-    <!--<div class="container">-->
-        <!--<div class="row">-->
-            <!--<div class="content col-md-6 col-12 order-md-12 text-center">-->
-                <!--<h2>Видео о нашем центре</h2>-->
-                <!--<p>Образование для нас - не просто работа, а стиль жизни. Каждое занятие наши преподаватели делают ярким, запоминающимся и, конечно же, полезным! </p>-->
-            <!--</div>-->
-            <!--<div id="video-container" class="video-container col-md-6 col-12 order-md-1">-->
-                <!--<div class="embed-responsive embed-responsive-16by9">-->
-                    <!--<iframe class="embed-responsive-item" src="http://player.vimeo.com/video/87044590" width="570" height="320" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</section>-->
-
-<section class="section bg-light pb-5">
+<section class="section bg-white pb-5">
     <a class="anchor" id="feedback"></a>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="text-center">
                     <h2 class="pt-5">Наши ученики</h2>
-                    <p class="pt-3 text-muted">Наши дети поступают в 9 гимназию и СУНЦ УрФУ, учатся в УрФУ, МГТУ им. Баумана, МГУ, СПбГУ, свободно говорят на английском языке и отличают Толстого от Достоевского по первому предложению. Почитайте, каких успехов добились наши выпускники.</p>
+                    <p class="pt-3 text-muted lead">Наши дети поступают в 9 гимназию и СУНЦ УрФУ, учатся в УрФУ, МГТУ им. Баумана, МГУ, СПбГУ, свободно говорят на английском языке и отличают Толстого от Достоевского по первому предложению. Почитайте, каких успехов добились наши выпускники.</p>
                 </div>
             </div>
         </div>
-        <div class="row mt-2">
-            <div class="col-md-4">
-                <div class="testimonial-box pt-5">
-                    <div class="testimonial-desc p-4">
-                        <p class="text-center text-muted">"Привет) хотел выразить огромную благодарность не только за егэ, но и за кучу жизненных и поучительных советов, я поступил в бауманку, в этом есть твой огромный вклад, огромнейшее спасибо))"</p>
-
-                        <p class="text-center text-muted mb-0">Артем Орешкин</p>
-                        <p class="text-center text-muted">
-                            <a href="https://vk.com/artemoresh"><i class="fab fa-vk fa-lg"></i></a>
-                        </p>
-                        <p class="text-center text-muted">Выпускник 2017 года</p>
-                    </div>
-                    <div class="mt-4 testi-img">
-                        <img src="http://quant.zone/static/images/mentions/orechkin.png" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="testimonial-box pt-5">
-                    <div class="testimonial-desc p-4">
-                        <p class="text-center text-muted">"Занимались с Виталием всего пару недель, за это время смогли выявить и устранить все пробелы в знаниях, накопившиеся за год, что помогло мне сдать зачёт по физике. Занятия были интересными и эффективными, я очень довольна результатом."</p>
-                        <p class="text-center text-muted mb-0">Надежда Викулова</p>
-                        <p class="text-center text-muted">
-                            <a href="https://vk.com/vikulova171"><i class="fab fa-vk fa-lg"></i></a>
-                        </p>
-                        <p class="text-center text-muted">Ученица гимназии №9</p>
-                    </div>
-                    <div class="mt-4 testi-img">
-                        <img src="http://quant.zone/static/images/mentions/vikulova.png" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto">
+        <div class="row pt-5 pb-3">
+            <div class="col-12 col-lg-4 pb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-3 col-md-2 col-lg-12 col-xl-4 pb-lg-3 pb-xl-0"><img src="http://quant.zone/static/images/mentions/orechkin.png" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto mw-100"></div>
+                            <div class="col-9 col-md-10 col-lg-12 col-xl-8">
+                                <p class="lead mb-1">Артем Орешкин</p>
+                                <p class="mb-1">Выпускник 2017 года</p>
+                                <p class="mb-1">
+                                    <a href="">Отзыв на Facebook</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 pt-3">
+                                <p class="card-text">«Привет) хотел выразить огромную благодарность не только за егэ, но и за кучу жизненных и поучительных советов, я поступил в бауманку, в этом есть твой огромный вклад, огромнейшее спасибо))»</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="testimonial-box pt-5">
-                    <div class="testimonial-desc p-4">
-                        <p class="text-center text-muted">"Денис Сафронов - отличный преподаватель. Он может найти свой подход к любому, понятно объяснить и указать на ошибки. На его занятиях всегда было интересно, я получал что-то новое. С ним действительно приятно и полезно заниматься."</p>
-                        <p class="text-center text-muted mb-0">Елизавета Овчинникова</p>
-                        <p class="text-center text-muted">
-                            <a href="https://vk.com/lizasepo"><i class="fab fa-vk fa-lg"></i></a>
-                        </p>
-                        <p class="text-center text-muted">Ученица 16-17 учебного года</p>
+            <div class="col-12 col-lg-4 pb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-3 col-md-2 col-lg-12 col-xl-4 pb-lg-3 pb-xl-0"><img src="http://quant.zone/static/images/mentions/vikulova.png" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto mw-100"></div>
+                            <div class="col-9 col-md-10 col-lg-12 col-xl-8">
+                                <p class="lead mb-1">Надежда Викулова</p>
+                                <p class="mb-1">Ученица гимназии №9</p>
+                                <p class="mb-1">
+                                    <a href="">Отзыв на Facebook</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 pt-3">
+                                <p class="card-text">«Занимались с Виталием всего пару недель, за это время смогли выявить и устранить все пробелы в знаниях, накопившиеся за год, что помогло мне сдать зачёт по физике. Занятия были интересными и эффективными, я очень довольна результатом.»</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mt-4 testi-img">
-                        <img src="http://quant.zone/static/images/mentions/eng_ovshinnikova.png" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto">
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 pb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-3 col-md-2 col-lg-12 col-xl-4 pb-lg-3 pb-xl-0"><img src="http://quant.zone/static/images/mentions/eng_ovshinnikova.png" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto mw-100"></div>
+                            <div class="col-9 col-md-10 col-lg-12 col-xl-8">
+                                <p class="lead mb-1">Елизавета Овчинникова</p>
+                                <p class="mb-1">Ученица 16-17 года</p>
+                                <p class="mb-1">
+                                    <a href="">Отзыв на Facebook</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 pt-3">
+                                <p class="card-text">«Денис Сафронов - отличный преподаватель. Он может найти свой подход к любому, понятно объяснить и указать на ошибки. На его занятиях всегда было интересно, я получал что-то новое. С ним действительно приятно и полезно заниматься.»</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -354,12 +522,12 @@
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
                 <h2 class="pt-5">Из чего строится обучение</h2>
-                <p class="pt-3 text-white">Наша команда непрерывно внедряет в рабочий процесс новые технологии и методики работы</p>
+                <p class="pt-3 text-white lead">Наша команда непрерывно внедряет в рабочий процесс новые технологии и методики работы</p>
             </div>
         </div>
         <div class="row pt-5 align-items-center">
             <div class="col-md-6">
-                <img src="http://quant.zone/static/images/icons/read.svg" alt="" class="img-fluid rounded d-none d-md-block float-right"  width="200">
+                <img src="https://www.freepngimg.com/download/teacher/35380-8-teacher-hd.png" alt="" class="img-fluid rounded d-none d-md-block float-right"  width="200">
             </div>
             <div class="col-md-6">
                 <h3 class="h5">Авторские курсы</h3>
@@ -371,13 +539,13 @@
                 <h3 class="h5">Учебные материалы</h3>
                 <p class="pt-2">Не нужно покупать никаких учебников - все учебные материалы преподаватели готовят к занятиям самостоятельно</p>
             </div>
-            <div class="col-md-6 pt-4">
-                <img src="http://quant.zone/static/images/icons/read.svg" alt="" class="img-fluid rounded d-none d-md-block"  width="200">
+            <div class="col-md-6">
+                <img src="https://www.freepngimg.com/download/book/6-2-book-png-7.png" alt="" class="img-fluid rounded d-none d-md-block"  width="200">
             </div>
         </div>
         <div class="row pt-5 align-items-center">
             <div class="col-md-6">
-                <img src="http://quant.zone/static/images/icons/group.svg" alt="" class="img-fluid rounded d-none d-md-block float-right"  width="200">
+                <img src="https://www.freepngimg.com/download/school/34071-8-students-learning.png" alt="" class="img-fluid rounded d-none d-md-block float-right"  width="200">
             </div>
             <div class="col-md-6">
                 <h3 class="h5">Небольшие группы (3-6 человек)</h3>
@@ -390,12 +558,12 @@
                 <p class="pt-2">В системе “перевернутого класса” ученик изучает теоретический материал дома, а в классе задает вопросы по теории и применяет полученные знания на практике - от решения тестовых заданий до разбора олимпиадных задач. </p>
             </div>
             <div class="col-md-6 pt-4">
-                <img src="http://quant.zone/static/images/icons/touch-screen.svg" alt="" class="img-fluid rounded d-none d-md-block" width="200">
+                <img src="https://www.freepngimg.com/download/laptop/32-laptop-notebook-png-image.png" alt="" class="img-fluid rounded d-none d-md-block" width="200">
             </div>
         </div>
         <div class="row pt-5 align-items-center">
             <div class="col-md-6">
-                <img src="http://quant.zone/static/images/icons/seo.svg" alt="" class="img-fluid rounded d-none d-md-block float-right" width="200">
+                <img src="https://www.freepngimg.com/download/paper%20sheet/30-paper-sheet-png-image.png" alt="" class="img-fluid rounded d-none d-md-block float-right" width="200">
             </div>
             <div class="col-md-6">
                 <h3 class="h5">Диагностика знаний</h3>
@@ -408,13 +576,13 @@
                 <p class="pt-2">Мы поддерживаем в детях осознанный подход к учебе и помогаем осознать, как образование поможет в дальнейшей жизни. Поэтому мы создали систему профориентационных мероприятий, чтобы помочь ребятам сориентироваться в выборе профессии.</p>
             </div>
             <div class="col-md-6">
-                <img src="http://quant.zone/static/images/icons/seo.svg" alt="" class="img-fluid rounded d-none d-md-block" width="200">
+                <img src="https://www.freepngimg.com/download/money/36013-7-work-file.png" alt="" class="img-fluid rounded d-none d-md-block" width="200">
             </div>
         </div>
     </div>
 </section>
 
-<section class="section bg-light py-5">
+<section class="section bg-white py-5">
     <a class="anchor" id="pricing"></a>
     <div class="container">
         <div class="row justify-content-center">
@@ -424,81 +592,53 @@
                         <i class="mdi mdi-note-multiple-outline"></i>
                     </div>
                     <h2 class="section-title">Стоимость</h2>
-                    <p class="section-subtitle pt-3 text-muted">Мы предоставляем широкий спектр форм обучения</p>
+                    <p class="section-subtitle pt-3 text-muted lead">Мы предоставляем широкий спектр форм обучения</p>
                 </div>
             </div>
         </div>
         <div class="row mt-5 justify-content-center">
-            <div class="col-lg-4 col-8">
-                <div class="price-box p-4 bg-white text-center mt-4">
-                    <div class="plan-price">
-                        <p class="h2 pt-3">0 ₽</p>
-                    </div>
-                    <div class="plan-name mt-4">
-                        <p class="h6">Бесплатно</p>
-                    </div>
-                    <div class="plan-desc mt-4">
-                        <ul class="list-unstyled text-muted">
-                            <li>Telegram-бот</li>
-                            <li>Заочная подготовка</li>
-                            <li>Задания каждый день</li>
-                            <li>В любое время</li>
-                        </ul>
-                    </div>
-                    <div class="mt-5">
-                        <a href="https://t.me/quant_rus" target="blank" class="btn btn-custom btn-rounded">Посмотреть пример</a>
-                    </div>
+            <div class="col-lg-4 col-10">
+                <div class="card card-body p-4 bg-white text-center mt-4">
+                    <p class="h2 pt-3">0 ₽</p>
+                    <p class="h6 mt-4">Бесплатно</p>
+                    <ul class="list-unstyled text-muted mt-4">
+                        <li>Чат-бот ВКонтакте</li>
+                        <li>Заочная подготовка</li>
+                        <li>Задания каждый день</li>
+                        <li>В любое время</li>
+                    </ul>
+                    <a href="https://vk.com/quantzone" target="blank" class="btn btn-outline-secondary btn-rounded mt-5">Посмотреть пример</a>
                 </div>
             </div>
-            <div class="col-lg-4 col-8">
-                <div class="price-box p-4 bg-white text-center mt-lg-1 mt-4">
-                    <div class="plan-lable">
-                        <p class="mb-3 text-uppercase">Популярное</p>
-                    </div>
-                    <div class="plan-price">
-                        <p class="h2 pt-3">от 400 ₽/час</p>
-                    </div>
-                    <div class="plan-name mt-4">
-                        <p class="h6">Группа</p>
-                    </div>
-                    <div class="mt-4">
-                        <ul class="list-unstyled text-muted">
-                            <li>6 человек максимум</li>
-                            <li>30 интенсивных занятий</li>
-                            <li>3 пробных экзамена</li>
-                            <li>Профориентация</li>
-                        </ul>
-                    </div>
-                    <div class="mt-5">
-                        <!-- Button trigger modal -->
-                        <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
-                            Записаться
-                        </button>
-                    </div>
+            <div class="col-lg-4 col-10">
+                <div class="card card-body p-4 bg-white text-center mt-lg-1 mt-4">
+                    <p class="mb-3 text-uppercase">Популярное</p>
+                    <p class="h2 pt-3">от 400 ₽/час</p>
+                    <p class="h6 mt-4">Группа</p>
+                    <ul class="list-unstyled text-muted mt-4">
+                        <li>6 человек максимум</li>
+                        <li>30 интенсивных занятий</li>
+                        <li>3 пробных экзамена</li>
+                        <li>Профориентация</li>
+                    </ul>
+                    <button class="btn btn-success mt-5" data-toggle="modal" data-target="#formModal">
+                        Записаться
+                    </button>
                 </div>
             </div>
-            <div class="col-lg-4 col-8">
-                <div class="price-box p-4 bg-white text-center mt-4">
-                    <div class="plan-price">
-                        <p class="h2 pt-3">от 1000 ₽/час</p>
-                    </div>
-                    <div class="plan-name mt-4">
-                        <p class="h6">Индивидуально</p>
-                    </div>
-                    <div class="plan-desc mt-4">
-                        <ul class="list-unstyled text-muted">
-                            <li>Индивидуальная программа</li>
-                            <li>Максимальная скорость</li>
-                            <li>Поддержка в мессенджерах</li>
-                            <li>Профориентация</li>
-                        </ul>
-                    </div>
-                    <div class="mt-5">
-                        <!-- Button trigger modal -->
-                        <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
-                            Записаться
-                        </button>
-                    </div>
+            <div class="col-lg-4 col-10">
+                <div class="card card-body p-4 bg-white text-center mt-4">
+                    <p class="h2 pt-3">от 1000 ₽/час</p>
+                    <p class="h6 mt-4">Индивидуально</p>
+                    <ul class="list-unstyled text-muted mt-4">
+                        <li>Индивидуальная программа</li>
+                        <li>Максимальная скорость</li>
+                        <li>Поддержка в мессенджерах</li>
+                        <li>Профориентация</li>
+                    </ul>
+                    <button class="btn btn-outline-success mt-5" data-toggle="modal" data-target="#formModal">
+                        Записаться
+                    </button>
                 </div>
             </div>
         </div>
@@ -509,14 +649,14 @@
     <a class="anchor" id="faq"></a>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-9">
+            <div class="col-12 col-md-9">
                 <div class="text-center">
-                    <h2 class="pt-5">Часто задаваемые вопросы</h2>
-                    <p class="pt-3 text-white">Беспокоиться о деталях образования нужно, ведь это такой процесс, где каждая мелочь работает на результат. Поэтому все, что вас волнует касательно образовательного процесса, можно обсудить с преподавателем при встрече или по телефону. А ответы на часто задаваемые вопросы есть здесь:</p>
+                    <h2 class="pt-3">Часто задаваемые вопросы</h2>
+                    <p class="pt-3 text-white lead col-10 offset-1">Беспокоиться о деталях образования нужно, ведь это такой процесс, где каждая мелочь работает на результат. Поэтому все, что вас волнует касательно образовательного процесса, можно обсудить с преподавателем при встрече или по телефону. А ответы на часто задаваемые вопросы есть здесь:</p>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center mt-4">
             <div class="col-lg-6">
                 <div class="pt-5">
                     <p class="text-uppercase mb-1">занятия</p>
@@ -528,7 +668,7 @@
                 <div class="pt-5">
                     <p class="text-uppercase mb-1">преподаватели</p>
                     <h3><i class="far fa-question-circle"></i> Какое образование у преподавателей центра?</h3>
-                    <p class="text-white pt-2">Высшее профильное образование по тому предмету, который они преподают. Не хотим хвастаться, но многие из наших преподавателей закончили школу с медалью, а университет - с красным дипломом.</p>
+                    <p class="text-white pt-2">Высшее профильное образование по тому предмету, который они преподают. Многие из наших преподавателей закончили школу с медалью, а университет - с красным дипломом.</p>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -563,246 +703,7 @@
     </div>
 </section>
 
-<!--<section class="section bg-light pt-5">-->
-    <!--<a class="anchor" id="history"></a>-->
-    <!--<div class="container">-->
-        <!--<div class="row">-->
-            <!--<div class="content col-lg-6 col-12 text-center pb-5">-->
-                <!--<h2 class="pb-3">Наша история</h2>-->
-                <!--<p>Aliquam euismod vehicula lacus, non congue ante pulvinar a. Nunc eu posuere risus, ut condimentum ante. Suspendisse at turpis sollicitudin odio congue lobortis vitae nec nisi. Nullam sodales at libero in lacinia. Nullam vel nibh pulvinar, interdum purus tristique, iaculis turpis. Integer imperdiet tincidunt erat vel gravida. Suspendisse tincidunt orci sed leo euismod, quis ultrices ipsum lobortis. Sed viverra dui et elit accumsan accumsan. Donec lorem turpis, iaculis ac fermentum nec, dignissim sed nisi. Nunc condimentum turpis arcu, eu aliquet lorem eleifend ut. Integer at lorem nec diam elementum convallis vel vel nulla.</p>-->
-                <!--<p>Nullam vel nibh pulvinar, interdum purus tristique, iaculis turpis. Integer imperdiet tincidunt erat vel gravida. eleifend ut. Integer at lorem nec diam elementum convallis vel vel nulla.</p>-->
-            <!--</div>-->
-            <!--<div class="col-lg-5 col-12 mr-auto ml-auto pb-5">-->
-                <!--<div class="row">-->
-                    <!--<div class="col-lg-4 col-4 text-center">-->
-                        <!--<img src="https://dummyimage.com/150x150/828282.png" alt="" class="img-fluid rounded-circle mx-auto">-->
-                        <!--<p class="pt-3">Виталий Харченко</p>-->
-                        <!--<p>CEO</p>-->
-                        <!--<ul class="list-inline">-->
-                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-vk"></i></a></li>-->
-                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>-->
-                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>-->
-                        <!--</ul>-->
-                    <!--</div>&lt;!&ndash;//member&ndash;&gt;-->
-                    <!--<div class="col-lg-4 col-4 text-center">-->
-                        <!--<img src="https://dummyimage.com/150x150/828282.png" alt="" class="img-fluid rounded-circle mx-auto">-->
-                        <!--<p class="pt-3">Екатерина Парамонова</p>-->
-                        <!--<p>CTO</p>-->
-                        <!--<ul class="list-inline">-->
-                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-vk"></i></a></li>-->
-                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>-->
-                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>-->
-                        <!--</ul>-->
-                    <!--</div>&lt;!&ndash;//member&ndash;&gt;-->
-                    <!--<div class="col-lg-4 col-4 text-center">-->
-                        <!--<img src="https://dummyimage.com/150x150/828282.png" alt="" class="img-fluid rounded-circle mx-auto">-->
-                        <!--<p class="pt-3">Екатерина Пирожок</p>-->
-                        <!--<p>CMO</p>-->
-                        <!--<ul class="list-inline">-->
-                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-vk"></i></a></li>-->
-                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>-->
-                            <!--<li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>-->
-                        <!--</ul>-->
-                    <!--</div>&lt;!&ndash;//member&ndash;&gt;-->
-                <!--</div>-->
-            <!--</div>&lt;!&ndash;//team&ndash;&gt;-->
-        <!--</div>&lt;!&ndash;//row&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;//container&ndash;&gt;-->
-<!--</section>-->
-
-<section class="section bg-light py-5">
-    <a class="anchor" id="team"></a>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <h2 class="pb-3">Наши эксперты</h2>
-                <p class="pt-3">Наши преподаватели объясняют сложные темы наглядно и простым языком, используя современные образовательные технологии и гаджеты. Они всегда на связи и готовы ответить на ваши вопросы - например, во ВКонтакте.</p>
-            </div>
-        </div>
-        <div class="row mt-4">
-
-            <div class="col-lg-3 col-md-6 mt-4">
-                <div class="card text-center show-onHover-parent">
-                    <img class="w-100" src="{% static 'img/teachers/пирожок.png' %}" alt="">
-                    <ul class="list-inline pt-3">
-                        <li class="list-inline-item">
-                            <a href="https://vk.com/shtessel" target="_blank"><i class="fab fa-vk"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="tel:89617754852"><i class="fas fa-phone"></i></a>
-                        </li>
-                    </ul>
-                    <div class="pb-4">
-                        <h3 class="h5">
-                            Екатерина <br> Пирожок
-                        </h3>
-                        <p class="mb-0">
-                            Русский язык
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mt-4">
-                <div class="card text-center show-onHover-parent">
-                    <img class="w-100" src="{% static 'img/teachers/парамонова.png' %}" alt="">
-                    <ul class="list-inline pt-3">
-                        <li class="list-inline-item">
-                            <a href="https://vk.com/ekaterinatelepova" target="_blank"><i class="fab fa-vk"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="tel:89021885465"><i class="fas fa-phone"></i></a>
-                        </li>
-                    </ul>
-                    <div class="pb-4">
-                        <h3 class="h5">
-                            Екатерина <br> Парамонова
-                        </h3>
-                        <p class="mb-0">
-                            Математика
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mt-4">
-                <div class="card text-center show-onHover-parent">
-                    <img class="w-100" src="{% static 'img/teachers/киселев.png' %}" alt="">
-                    <ul class="list-inline pt-3">
-                        <li class="list-inline-item">
-                            <a href="https://vk.com/id111898155" target="_blank"><i class="fab fa-vk"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="tel:89920085976"><i class="fas fa-phone"></i></a>
-                        </li>
-                    </ul>
-                    <div class="pb-4">
-                        <h3 class="h5">
-                            Владислав <br> Киселев
-                        </h3>
-                        <p class="mb-0">
-                            Математика
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mt-4">
-                <div class="card text-center show-onHover-parent">
-                    <img class="w-100" src="{% static 'img/teachers/харченко.png' %}" alt="">
-                    <ul class="list-inline pt-3">
-                        <li class="list-inline-item">
-                            <a href="https://vk.com/vitaliyharchenko" target="_blank"><i class="fab fa-vk"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="tel:89826469454"><i class="fas fa-phone"></i></a>
-                        </li>
-                    </ul>
-                    <div class="pb-4">
-                        <h3 class="h5">
-                            Виталий <br> Харченко
-                        </h3>
-                        <p class="mb-0">
-                            Физика
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div><!--END row-->
-
-        <div class="row mt-4">
-            <div class="col-lg-3 col-md-6 mt-4">
-                <div class="card text-center show-onHover-parent">
-                    <img class="w-100" src="{% static 'img/teachers/лесогорова.png' %}" alt="">
-                    <ul class="list-inline pt-3">
-                        <li class="list-inline-item">
-                            <a href="https://vk.com/id11650281" target="_blank"><i class="fab fa-vk"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="tel:89028777717"><i class="fas fa-phone"></i></a>
-                        </li>
-                    </ul>
-                    <div class="pb-4">
-                        <h3 class="h5">
-                            Светлана <br> Лесогорова
-                        </h3>
-                        <p class="mb-0">
-                            Химия
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mt-4">
-                <div class="card text-center show-onHover-parent">
-                    <img class="w-100" src="{% static 'img/teachers/глазырин.png' %}" alt="">
-                    <ul class="list-inline pt-3">
-                        <li class="list-inline-item">
-                            <a href="https://vk.com/id249683769" target="_blank"><i class="fab fa-vk"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="tel:89321216402"><i class="fas fa-phone"></i></a>
-                        </li>
-                    </ul>
-                    <div class="pb-4">
-                        <h3 class="h5">
-                            Вячеслав <br> Глазырин
-                        </h3>
-                        <p class="mb-0">
-                            Литература
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mt-4">
-                <div class="card text-center show-onHover-parent">
-                    <img class="w-100" src="{% static 'img/teachers/носкова.png' %}" alt="">
-                    <ul class="list-inline pt-3">
-                        <li class="list-inline-item">
-                            <a href="https://vk.com/anwenanariel" target="_blank"><i class="fab fa-vk"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="tel:89022762420"><i class="fas fa-phone"></i></a>
-                        </li>
-                    </ul>
-                    <div class="pb-4">
-                        <h3 class="h5">
-                            Полина <br> Носкова
-                        </h3>
-                        <p class="mb-0">
-                            Биология
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mt-4">
-                <div class="card text-center show-onHover-parent">
-                    <img class="w-100" src="{% static 'img/teachers/новоселова.png' %}" alt="">
-                    <ul class="list-inline pt-3">
-                        <li class="list-inline-item">
-                            <a href="https://vk.com/id21603705" target="_blank"><i class="fab fa-vk"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="tel:89089077814"><i class="fas fa-phone"></i></a>
-                        </li>
-                    </ul>
-                    <div class="pb-4">
-                        <h3 class="h5">
-                            Екатерина <br> Новоселова
-                        </h3>
-                        <p class="mb-0">
-                            Обществознание
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div><!--END row-->
-    </div> <!-- END container-->
-</section>
-
-<section class="section py-5 bg-light">
+<section class="section py-5 bg-white">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center pb-5">
@@ -931,7 +832,7 @@
                 <h2 class="display-4">
                     <span class="text-muted" style="color: #F3833C !important;">Квант</span> Готовим к успешной сдаче ЕГЭ
                 </h2>
-                <p>Наши программы по школьным предметам разработаны для успешной сдачи ЕГЭ с любым уровнем начальной подготовки</p>
+                <p class="lead">Наши программы по школьным предметам разработаны для успешной сдачи ЕГЭ с любым уровнем начальной подготовки</p>
             </div>
             <div class="col-lg-5 px-4 text-center">
                 <h3 class="h4">Закажите звонок от преподавателя</h3>
@@ -1016,7 +917,7 @@
 </footer>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -1044,6 +945,309 @@
                                     <small class="text-muted">* мы перезвоним как только отпустим наших детей по домам</small>
                                 </p>
                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="pirozhokModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content dark-shades">
+            <div class="modal-body pb-0">
+                <div class="container">
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row justify-content-center text-white">
+                        <div class="col-lg-6 pb-3">
+                            <h2 class="mt-0 h1">Екатерина Пирожок</h2>
+                            <ul class="list-unstyled pt-3">
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2012 года -
+                                    воспитатель в Школе Успешного Абитуриента УрФУ
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2015 года - учитель
+                                    филологии в СУНЦ УрФУ
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Окончила
+                                    филологический факультет УрФУ с красным дипломом
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Практикует
+                                    деятельностно-ориентированный подход к изучению русского языка, помогает развить
+                                    критическое мышление и любовь к великому и могучему!
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 align-self-end">
+                            <img class="w-100" src="{% static 'img/teachers/пирожок-nobg.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="paramonovaModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content dark-shades">
+            <div class="modal-body pb-0">
+                <div class="container">
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row justify-content-center text-white">
+                        <div class="col-lg-6 pb-3">
+                            <h2 class="mt-0 h1">Екатерина Парамонова</h2>
+                            <ul class="list-unstyled pt-3">
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2017 года - учитель
+                                    информатики 9 гимназии
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Преподаватель
+                                    программирования на матмехе (ИЕНиМ УрФУ).
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Опыт преподавания - с
+                                    2013 года
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Может показать, что
+                                    математика - не просто набор абстрактных символов, формул и алгоритмов, а
+                                    красивая наука, которая учит мыслить логически
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 align-self-end">
+                            <img class="w-100" src="{% static 'img/teachers/парамонова-nobg.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="kiselevModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content dark-shades">
+            <div class="modal-body pb-0">
+                <div class="container">
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row justify-content-center text-white">
+                        <div class="col-lg-6 pb-3">
+                            <h2 class="mt-0 h1">Владислав Киселев</h2>
+                            <ul class="list-unstyled pt-3">
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Опыт преподавания с
+                                    2014 года.
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Призер Всероссийской
+                                    научно-практической конференции студентов, аспирантов и молодых ученых с
+                                    международным участием. "Энерго - и Ресурсосбережение. Энергообеспечение.
+                                    Нетрадиционные и возобновляемые источники энергии"
+
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Кандидат мастера
+                                    спорта по легкой атлетике.
+
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Любимая цитата:
+                                    “Смотри в корень” (Козьма Прутков)
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 align-self-end">
+                            <img class="w-100" src="{% static 'img/teachers/киселев-nobg.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="harchenkoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content dark-shades">
+            <div class="modal-body pb-0">
+                <div class="container">
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row justify-content-center text-white">
+                        <div class="col-lg-6 pb-3">
+                            <h2 class="mt-0 h1">Виталий Харченко</h2>
+                            <ul class="list-unstyled pt-3">
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Призёр всероссийских
+                                    олимпиад по физике и математике
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2016 года –
+                                    тренирует олимпиадников в СУНЦ УрФУ
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2017 года –
+                                    тренирует олимпиадников в гимназии №9
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Опыт преподавания - с
+                                    2011 года
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Умеет привить интерес
+                                    к предмету, развить абстрактное техническое мышление, помочь в выборе ВУЗа и
+                                    профессии.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 align-self-end">
+                            <img class="w-100" src="{% static 'img/teachers/харченко-nobg.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="lesogorovaModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content dark-shades">
+            <div class="modal-body pb-0">
+                <div class="container">
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row justify-content-center text-white">
+                        <div class="col-lg-6 pb-3">
+                            <h2 class="mt-0 h1">Светлана Лесогорова</h2>
+                            <ul class="list-unstyled pt-3">
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Участник международных
+                                    и российских конференций по органической и гетероциклической химии
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2013 года – Кандидат
+                                    химических наук по специальности «органическая химия»
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Уверена, что
+                                    необходимо развивать навык применения полученных знаний не только в теории, но и
+                                    на практике. На ее занятиях ребята также узнают много интересных фактов
+                                    применения химии в жизни. Каждое занятие химией должно быть волнительным и
+                                    увлекательным.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 align-self-end">
+                            <img class="w-100" src="{% static 'img/teachers/лесогорова-nobg.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="glazyrinModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content dark-shades">
+            <div class="modal-body pb-0">
+                <div class="container">
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row justify-content-center text-white">
+                        <div class="col-lg-6 pb-3">
+                            <h2 class="mt-0 h1">Вячеслав Глазырин</h2>
+                            <ul class="list-unstyled pt-3">
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Преподает в частном
+                                    учебном заведении "Открытая школа"
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Читает лекции по
+                                    русской литературе на подготовительных курсах филологического факультета УрФУ
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Окончил филологический
+                                    факультет УрФУ с красным дипломом
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Участник научных
+                                    конференций по лингвистике
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Участвует в проекте
+                                    создания словаря языка О. Э. Мандельштама
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 align-self-end">
+                            <img class="w-100" src="{% static 'img/teachers/глазырин-nobg.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="noskovaModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content dark-shades">
+            <div class="modal-body pb-0">
+                <div class="container">
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row justify-content-center text-white">
+                        <div class="col-lg-6 pb-3">
+                            <h2 class="mt-0 h1">Полина Носкова</h2>
+                            <ul class="list-unstyled pt-3">
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Окончила УГМУ,
+                                    педиатрический факультет, квалификация – врач-педиатр
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Окончила гимназию №9,
+                                    медико-биологический класс в 2012
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Призер олимпиад
+                                    всероссийского уровня по биологии и экологии
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Опыт работы – с 2012
+                                    года
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Может научить думать и
+                                    понимать, а не просто зубрить предмет
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 align-self-end">
+                            <img class="w-100" src="{% static 'img/teachers/носкова-nobg.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="novoselovaModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content dark-shades">
+            <div class="modal-body pb-0">
+                <div class="container">
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row justify-content-center text-white">
+                        <div class="col-lg-6 pb-3">
+                            <h2 class="mt-0 h1">Екатерина Новоселова</h2>
+                            <ul class="list-unstyled pt-3">
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2013 года -
+                                    преподаватель в лицее №110
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Окончила исторический
+                                    факультет УрГПУ (специалист + магистратура), экономический факультет УрФУ
+                                </li>
+                                <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Помогает понять, что
+                                    история - это не только скучные даты, но интересные события, люди, загадки, а
+                                    обществознание способно помочь в реальной жизни
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 align-self-end">
+                            <img class="w-100" src="{% static 'img/teachers/новоселова-nobg.png' %}" alt="">
                         </div>
                     </div>
                 </div>

@@ -161,23 +161,33 @@
     </div>
 </section>
 
-<section class="section py-5 bg-black">
+<section class="section bg-black py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="text-center">
-                    Предметы
-                </h2>
-                <ul class="text-center list-inline mt-4">
-                    <li class="list-inline-item h4"><span class="badge badge-secondary">Математика</span></li>
-                    <li class="list-inline-item h4"><span class="badge badge-secondary">Русския язык</span></li>
-                    <li class="list-inline-item h4"><span class="badge badge-secondary">Химия</span></li>
-                    <li class="list-inline-item h4"><span class="badge badge-secondary">Физика</span></li>
-                    <li class="list-inline-item h4"><span class="badge badge-secondary">Обществознание</span></li>
-                    <li class="list-inline-item h4"><span class="badge badge-secondary">Информатика</span></li>
-                    <li class="list-inline-item h4"><span class="badge badge-secondary">Литература</span></li>
-                    <li class="list-inline-item h4"><span class="badge badge-secondary">Английский язык</span></li>
-                </ul>
+        <div class="row justify-content-center">
+            <div class="col-12 text-center pb-3">
+                <h2>Подготовка по предметам:</h2>
+            </div>
+            <div class="col-10 d-md-none">
+                <div class="btn-group-vertical btn-group-lg btn-block pt-4" role="group" aria-label="Vertical button group">
+                    <button type="button" class="btn btn-orange py-3 text-left">Математика</button>
+                    <button type="button" class="btn btn-orange py-3 text-left">Русский язык</button>
+                    <button type="button" class="btn btn-orange py-3 text-left">Химия</button>
+                    <button type="button" class="btn btn-orange py-3 text-left">Физика</button>
+                    <button type="button" class="btn btn-orange py-3 text-left">Обществознание</button>
+                    <button type="button" class="btn btn-orange py-3 text-left">Информатика</button>
+                    <button type="button" class="btn btn-orange py-3 text-left">Литература</button>
+                    <button type="button" class="btn btn-orange py-3 text-left">Английский язык</button>
+                </div>
+            </div>
+            <div class="col-12 text-center d-none d-md-block">
+                <a href="" class="btn btn-orange m-2">Математика</a>
+                <a href="" class="btn btn-orange m-2">Русский язык</a>
+                <a href="" class="btn btn-orange m-2">Химия</a>
+                <a href="" class="btn btn-orange m-2">Физика</a>
+                <a href="" class="btn btn-orange m-2">Обществознание</a>
+                <a href="" class="btn btn-orange m-2">Информатика</a>
+                <a href="" class="btn btn-orange m-2">Литература</a>
+                <a href="" class="btn btn-orange m-2">Английский язык</a>
             </div>
         </div>
     </div>
@@ -189,7 +199,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
                 <h2 class="pb-3">Лучшие молодые преподаватели города</h2>
-                <p class="pt-3 lead">Объяснят сложные темы наглядно и простым языком, используя современные образовательные технологии и гаджеты. Они всегда на связи и готовы ответить на ваши вопросы - например, во ВКонтакте.</p>
+                <p class="pt-3 lead text-muted">Объяснят сложные темы наглядно и простым языком, используя современные образовательные технологии и гаджеты. Они всегда на связи и готовы ответить на ваши вопросы - например, во ВКонтакте.</p>
             </div>
         </div>
         <div class="row pt-4">
@@ -406,31 +416,31 @@
     </div>
 </section>
 
-<section class="bg-library">
-    <div class="container">
-        <div class="row justify-content-center pt-5">
-            <div class="col-10 col-lg-8 pb-5">
-                <h2 class="mt-0 h1">Харченко Виталий</h2>
-                <ul class="list-unstyled pt-3">
-                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Призёр всероссийских олимпиад по физике и математике</li>
-                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2014 года – преподаватель физики категории А в федеральном учебном центре</li>
-                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2016 года – тренирует олимпиадников в СУНЦ УрФУ</li>
-                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Опыт преподавания - с 2011 года</li>
-                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Умеет привить интерес к предмету, развить абстрактное техническое мышление, помочь в выборе ВУЗа и профессии.</li>
-                </ul>
-            </div>
-            <div class="col-12 col-lg-4 align-self-end">
-                <img class="w-100" src="{% static 'img/teachers/харченко-nobg.png' %}" alt="">
-            </div>
-        </div>
-    </div>
-</section>
+{#<section class="bg-library">#}
+{#    <div class="container">#}
+{#        <div class="row justify-content-center pt-5">#}
+{#            <div class="col-10 col-lg-8 pb-5">#}
+{#                <h2 class="mt-0 h1">Харченко Виталий</h2>#}
+{#                <ul class="list-unstyled pt-3">#}
+{#                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Призёр всероссийских олимпиад по физике и математике</li>#}
+{#                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2014 года – преподаватель физики категории А в федеральном учебном центре</li>#}
+{#                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>С 2016 года – тренирует олимпиадников в СУНЦ УрФУ</li>#}
+{#                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Опыт преподавания - с 2011 года</li>#}
+{#                    <li class="py-2"><span class="fas fa-angle-right pr-1"></span>Умеет привить интерес к предмету, развить абстрактное техническое мышление, помочь в выборе ВУЗа и профессии.</li>#}
+{#                </ul>#}
+{#            </div>#}
+{#            <div class="col-12 col-lg-4 align-self-end">#}
+{#                <img class="w-100" src="{% static 'img/teachers/харченко-nobg.png' %}" alt="">#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
 
-<section id="quote" class="py-5 bg-magenta">
+<section class="py-5 bg-magenta">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
-                <p class="lead my-4 d-md-none">"Попади в среду, мотивирующую на постоянное развитие и совершенствование!"</p>
+                <p class="h4 my-4 d-md-none font-weight-bold">"Попади в среду, мотивирующую на постоянное развитие и совершенствование!"</p>
                 <p class="display-4 my-4 d-none d-md-block">"Попади в среду, мотивирующую на постоянное развитие и совершенствование!"</p>
             </div>
         </div>
@@ -453,12 +463,12 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-3 col-md-2 col-lg-12 col-xl-4 pb-lg-3 pb-xl-0"><img src="http://quant.zone/static/images/mentions/orechkin.png" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto mw-100"></div>
+                            <div class="col-3 col-md-2 col-lg-12 col-xl-4 pb-lg-3 pb-xl-0"><img src="{% static 'img/mentions/orechkin.png' %}" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto mw-100"></div>
                             <div class="col-9 col-md-10 col-lg-12 col-xl-8">
                                 <p class="lead mb-1">Артем Орешкин</p>
                                 <p class="mb-1">Выпускник 2017 года</p>
                                 <p class="mb-1">
-                                    <a href="">Отзыв на Facebook</a>
+                                    <a href="https://vk.com/artemoresh" target="_blank">ВКонтакте</a>
                                 </p>
                             </div>
                         </div>
@@ -474,12 +484,12 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-3 col-md-2 col-lg-12 col-xl-4 pb-lg-3 pb-xl-0"><img src="http://quant.zone/static/images/mentions/vikulova.png" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto mw-100"></div>
+                            <div class="col-3 col-md-2 col-lg-12 col-xl-4 pb-lg-3 pb-xl-0"><img src="{% static 'img/mentions/vikulova.png' %}" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto mw-100"></div>
                             <div class="col-9 col-md-10 col-lg-12 col-xl-8">
                                 <p class="lead mb-1">Надежда Викулова</p>
                                 <p class="mb-1">Ученица гимназии №9</p>
                                 <p class="mb-1">
-                                    <a href="">Отзыв на Facebook</a>
+                                    <a href="https://vk.com/vikulova171" target="_blank">ВКонтакте</a>
                                 </p>
                             </div>
                         </div>
@@ -495,12 +505,12 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-3 col-md-2 col-lg-12 col-xl-4 pb-lg-3 pb-xl-0"><img src="http://quant.zone/static/images/mentions/eng_ovshinnikova.png" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto mw-100"></div>
+                            <div class="col-3 col-md-2 col-lg-12 col-xl-4 pb-lg-3 pb-xl-0"><img src="{% static 'img/mentions/eng_ovchinnikova.png' %}" width="180" alt="" class="img-fluid rounded-circle d-block mx-auto mw-100"></div>
                             <div class="col-9 col-md-10 col-lg-12 col-xl-8">
                                 <p class="lead mb-1">Елизавета Овчинникова</p>
                                 <p class="mb-1">Ученица 16-17 года</p>
                                 <p class="mb-1">
-                                    <a href="">Отзыв на Facebook</a>
+                                    <a href="https://vk.com/lizasepo" target="_blank">ВКонтакте</a>
                                 </p>
                             </div>
                         </div>
@@ -511,6 +521,88 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-white pb-5">
+    <a class="anchor" id="feedback"></a>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="text-center">
+                    <h2 class="pt-5">Истории успеха</h2>
+                    <p class="pt-3 text-muted lead">Ученики приходят к нам с различным уровнем начальной подготовки. Вместе с тем мы гордимся тем, что помогаем исполнять мечты каждому!</p>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-5 pb-3">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body p-4 p-md-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="display-4 pb-4">«Мечты сбываются...»</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="{% static 'img/mentions/stories/kluev/kluev.png' %}" width="180" alt="" class="img-fluid rounded-circle mx-auto">
+                                    </div>
+                                    <div class="col-8">
+                                        <p class="lead mb-1">Сергей Клюев <a href="https://vk.com/sega2100" target="_blank"><i class="fab fa-vk"></i></a></p>
+                                        <p class="mb-1 text-muted">МАОУ лицей №12</p>
+                                    </div>
+                                </div>
+                                <ul class="list-unstyled mt-5">
+                                    <li class="h5">
+                                        <i class="fas fa-check text-success"></i> Русский язык - 90 баллов
+                                    </li>
+                                    <li class="h5">
+                                        <i class="fas fa-check text-success"></i> Математика - 90 баллов
+                                    </li>
+                                    <li class="h5">
+                                        <i class="fas fa-check text-success"></i> Физика - 90 баллов
+                                    </li>
+                                </ul>
+                                <p class="lead mb-1 mt-5 font-weight-bold">Поступил в МГТУ имени Баумана</p>
+                                <p class="text-muted pb-4">прикладная механика</p>
+                                <a href="#" class="mb-0 d-none d-md-inline-flex" data-toggle="modal" data-target="#formModal">
+                                    Хочу так же
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="lead">Отзыв мамы</p>
+                                <p class="text-muted">«Спасибо вам огромное за вашу работу. За умение донести
+                                    знания
+                                    до своих учеников. Сергей поступил в МГТУ им. Баумана на прикладную
+                                    механику. Мечты
+                                    сбываются. C общежитием и специальность на которую хотел. Спасибо вам
+                                    большое и всем вашим преподавателям. Вы умеете настроить ребят на нужную
+                                    волну. Я очень вам всем благодарна, это ваша заслуга!»</p>
+                                <p class="text-muted"><a href="https://vk.com/id304535329" target="_blank"><i class="fab fa-vk"></i></a> Ирина Клюева</p>
+                                <p class="lead pt-3">Отзыв ученика</p>
+                                <p class="text-muted">«Все таки в Баумана. Спасибо что подготовил по физике!»</p>
+                                <a href="#" class="mb-0 mt-4 d-md-none" data-toggle="modal" data-target="#formModal">
+                                    Хочу так же
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-magenta">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8 text-center">
+                <p class="h3 font-weight-bold">Преподаватели <span class="text-orange">+</span> Задачи <span class="text-orange">=</span> Результат</p>
             </div>
         </div>
     </div>
@@ -708,12 +800,12 @@
         <div class="row">
             <div class="col-12 text-center pb-5">
                 <h2>
-                    Почему мы <span style="color: #F3833C !important;">лучшие</span>
+                    Почему мы <span class="text-orange">лучшие</span>
                 </h2>
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-lg-6 mt-4 pr-lg-5">
+            <div class="col-lg-6 pr-lg-5">
                 <p class="mb-4">
                     Цель нашей работы - показать ученикам, что образование может быть доступным, быстрым и продуктивным.
                 </p>
@@ -747,7 +839,7 @@
                         <small>На 25% больше, чем в среднем по России</small>
                     </p>
                     <div class="progress w-100">
-                        <div class="progress-bar" style="width: 75%; background-color: #F3833C;"></div>
+                        <div class="progress-bar bg-orange w-75"></div>
                     </div>
                 </div>
                 <div class="progress-item mb-5">
@@ -757,14 +849,14 @@
                         <small>Благодаря системе "перевернутого класса"</small>
                     </p>
                     <div class="progress w-100">
-                        <div class="progress-bar" style="width: 85%; background-color: #F3833C;"></div>
+                        <div class="progress-bar bg-orange" style="width: 85%"></div>
                     </div>
                 </div>
                 <div class="progress-item mb-5">
                     <span>Вовлеченность детей в учебный процесс</span>
                     <p class="h4 float-right text-secondary">100%</p>
                     <div class="progress w-100">
-                        <div class="progress-bar" style="width: 100%; background-color: #F3833C;"></div>
+                        <div class="progress-bar bg-orange w-100"></div>
                     </div>
                 </div>
             </div> <!-- END col-lg-6-->
@@ -828,13 +920,13 @@
     <a class="anchor" id="contacts"></a>
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-7 mb-5 mb-lg-0">
+            <div class="col-md-6 col-lg-7 mb-5 mb-lg-0">
                 <h2 class="display-4">
                     <span class="text-muted" style="color: #F3833C !important;">Квант</span> Готовим к успешной сдаче ЕГЭ
                 </h2>
-                <p class="lead">Наши программы по школьным предметам разработаны для успешной сдачи ЕГЭ с любым уровнем начальной подготовки</p>
+                <p class="lead pt-3">Наши программы по школьным предметам разработаны для успешной сдачи ЕГЭ с любым уровнем начальной подготовки</p>
             </div>
-            <div class="col-lg-5 px-4 text-center">
+            <div class="col-md-6 col-lg-5 pl-4 text-center">
                 <h3 class="h4">Закажите звонок от преподавателя</h3>
                 <form action="" method="POST" class="pt-4">
                     {% csrf_token %}
@@ -843,6 +935,10 @@
                     </div>
                     <div class="form-group">
                         <input type="text" id="id_phone" name="phone" class="form-control form-control-lg" placeholder="Телефон">
+                    </div>
+                    <div class="form-group form-check text-left">
+                        <input type="checkbox" class="form-check-input" checked>
+                        <label class="form-check-label text-muted"><small>Я согласен с условиями обработки персональных данных</small></label>
                     </div>
                     <button type="submit" class="btn btn-secondary btn-lg" style="background-color: #F3833C; border-color: #F3833C">
                         Заказать звонок
@@ -930,7 +1026,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-                            <form action="" method="POST" class="pt-4 px-4 text-center">
+                            <form action="" method="POST" class="pt-4 px-2 text-center">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <input type="text" id="id_name" name="name" class="form-control form-control-lg" placeholder="Ваше имя">
@@ -938,7 +1034,12 @@
                                 <div class="form-group">
                                     <input type="text" id="id_phone" name="phone" class="form-control form-control-lg" placeholder="Телефон">
                                 </div>
-                                <button type="submit" class="btn btn-secondary btn-lg">
+                                <div class="form-group form-check text-left">
+                                    <input type="checkbox" class="form-check-input" checked>
+                                    <label class="form-check-label text-muted">Я согласен с условиями обработки
+                                        персональных данных</label>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-lg">
                                     Заказать звонок
                                 </button>
                                 <p class="pt-3 text-center">

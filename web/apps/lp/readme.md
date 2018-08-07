@@ -3,16 +3,15 @@
 TODO: quiz on lp
 
 - Main landing
-    - Digits (students, years, баллы, teachers)
+    - ✅ Digits (students, years, баллы, teachers)
     - ✅ Price (лучше, чем у репиков), скидки?
-    - Предметы
+    - ✅ Предметы
     - ✅ Teachers (с занимательными фактами) 
-    - Results
-    - Groups or one-on-one
-    - Преимущества
-    - Отзывы общего плана
-    - Заявка (класс, предмет, контакты)
-    - Подобрать курс
+    - ✅ Results
+    - ✅ Преимущества
+    - ✅ Отзывы общего плана
+    - ✅ Заявка (класс, предмет, контакты)
+    - ✅ Подобрать курс
 - Landing for teachers
     - photo
     - достижения

@@ -61,11 +61,29 @@ class Dialog(models.Model):
 
     current_block_pointer = models.IntegerField('block pointer', default=0)
 
-    @property
-    def current_block_id(self):
-        return self.current_block_pointer
+    # check state functions
+    def is_state_default(self):
+        return self.state == 'DEFAULT_BOT_STATE'
+
+    def is_state_need_next(self):
+        return self.state == 'NEED_NEXT_BOT_STATE'
+
+    def is_state_need_answer(self):
+        return self.state == 'WAIT_ANSWER_BOT_STATE'
+
+    # change state functions
+    def change_state_to_default(self):
+        self.state = 'DEFAULT_BOT_STATE'
+
+    def change_state_to_need_next(self):
+        self.state = 'NEED_NEXT_BOT_STATE'
+
+    def change_state_to_need_answer(self):
+        self.state = 'WAIT_ANSWER_BOT_STATE'
 
     def update_pointer(self):
         """Перемещает указатель на следующую задачу в списке"""
         if self.current_block_pointer < self.blocks_ids.count() - 1:
             self.current_block_pointer += 1
+            return self.current_block_pointer
+        return None

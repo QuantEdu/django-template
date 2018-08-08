@@ -138,9 +138,7 @@ def create_answer(data, token, dialog):
             dialog.change_state_to_need_next()
 
         elif dialog.is_state_need_next():
-            # current_block = ChoiceBlock.objects.get(dialog.blocks_ids[dialog.current_block_pointer])
-            print(dialog.blocks_ids)
-            # current_block = ChoiceBlock.objects.annotate(Index('blocks_ids', 0)).get()
+            current_block = ChoiceBlock.objects.get(pk=dialog.blocks_ids[dialog.current_block_pointer])
             message = str(current_block)
             # TODO сформировать клавиатуру из вариантов ответа
             dialog.change_state_to_need_answer()

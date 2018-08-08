@@ -1,7 +1,7 @@
 from . import vkapi
 import json
 
-from django_postgres_extensions.models.expressions import Index
+# from django_postgres_extensions.models.expressions import Index
 
 from .models import Dialog
 from apps.social.models import UserSocialAuth
@@ -139,7 +139,8 @@ def create_answer(data, token, dialog):
 
         elif dialog.is_state_need_next():
             # current_block = ChoiceBlock.objects.get(dialog.blocks_ids[dialog.current_block_pointer])
-            current_block = ChoiceBlock.objects.annotate(Index('blocks_ids', 0)).get()
+            print(dialog.blocks_ids)
+            # current_block = ChoiceBlock.objects.annotate(Index('blocks_ids', 0)).get()
             message = str(current_block)
             # TODO сформировать клавиатуру из вариантов ответа
             dialog.change_state_to_need_answer()

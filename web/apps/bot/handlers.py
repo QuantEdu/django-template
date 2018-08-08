@@ -131,25 +131,28 @@ def create_answer(data, token, dialog):
     # Default values
     message, attachment, keyboard = 'Непонятно', 'photo-167796316_456239017', None
 
-    if dialog.is_state_default():
-        message = 'Привет! Ты только что нажал на кнопку старт! Давай решать задачи :)'
-        dialog.change_state_to_need_next()
+    try:
+        if dialog.is_state_default():
+            message = 'Привет! Ты только что нажал на кнопку старт! Давай решать задачи :)'
+            dialog.change_state_to_need_next()
 
-    elif dialog.is_state_need_next():
-        current_block = ChoiceBlock.objects.get(dialog.blocks_ids[dialog.current_block_pointer])
-        message = str(current_block)
-        # TODO сформировать клавиатуру из вариантов ответа
-        dialog.change_state_to_need_answer()
+        elif dialog.is_state_need_next():
+            current_block = ChoiceBlock.objects.get(dialog.blocks_ids[dialog.current_block_pointer])
+            message = str(current_block)
+            # TODO сформировать клавиатуру из вариантов ответа
+            dialog.change_state_to_need_answer()
 
-    elif dialog.is_state_need_answer():
-        message =  'Я обработал ответ'
-        dialog.change_state_to_need_next()
+        elif dialog.is_state_need_answer():
+            message =  'Я обработал ответ'
+            dialog.change_state_to_need_next()
 
-    else:
-        message = 'Произошло что-то странное'
+        else:
+            message = 'Произошло что-то странное'
 
-    vkapi.send_message(user_id, token, message, attachment, keyboard)
-    print('exit create answer')
+        vkapi.send_message(user_id, token, message, attachment, keyboard)
+        print('exit create answer')
+    except Exception as e:
+        print('create_answer exception', e)
 
 
 def create_dialog(user_id, token):

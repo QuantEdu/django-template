@@ -14,7 +14,7 @@ class DialogManager(models.Manager):
         try:
             vk_auth = UserSocialAuth.objects.get(uid=user_vk_id, provider='vk')
             user = vk_auth.user
-            dialog = self.create(user=user, state='NEED_NEXT_BOT_STATE')
+            dialog = self.create(user=user, state='DEFAULT_BOT_STATE')
             return dialog
         except UserSocialAuth.DoesNotExist:
             # TODO сделать нормально
@@ -83,7 +83,7 @@ class Dialog(models.Model):
 
     def update_pointer(self):
         """Перемещает указатель на следующую задачу в списке"""
-        if self.current_block_pointer < self.blocks_ids.count() - 1:
+        if self.current_block_pointer < self.blocks_ids.size - 1:
             self.current_block_pointer += 1
             return self.current_block_pointer
         return None

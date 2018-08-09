@@ -31,7 +31,7 @@ class DialogManager(models.Manager):
                 provider='vk'
             )
             vk_auth.save()
-            dialog = self.create(user=new_user, state='NEED_NEXT_BOT_STATE')
+            dialog = self.create(user=new_user, state='DEFAULT_BOT_STATE')
             return dialog
 
         except Exception:
@@ -74,16 +74,20 @@ class Dialog(models.Model):
     # change state functions
     def change_state_to_default(self):
         self.state = 'DEFAULT_BOT_STATE'
+        self.save()
 
     def change_state_to_need_next(self):
         self.state = 'NEED_NEXT_BOT_STATE'
+        self.save()
 
     def change_state_to_need_answer(self):
         self.state = 'WAIT_ANSWER_BOT_STATE'
+        self.save()
 
     def update_pointer(self):
         """Перемещает указатель на следующую задачу в списке"""
         if self.current_block_pointer < self.blocks_ids.size - 1:
             self.current_block_pointer += 1
+            self.save()
             return self.current_block_pointer
         return None

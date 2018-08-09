@@ -27,31 +27,18 @@ def callback(request):
 
         # user - bot conversation
         elif data['type'] == 'message_new':
-            if 'payload' in data.keys():
-                user_id = data['user_id']
-                payload = data['payload']
-
-                # Пользователь первый раз начал переписку с сообществом
-                if payload == '{"command":"start"}':
-                    # TODO заполнять данные, кроме id, например first_name, last_name
-                    dialog = handlers.create_dialog(user_id, VK_GROUP_TOKEN)
-                else:
-                    # get dialog to user
-                    dialog = handlers.get_dialog(user_id, VK_GROUP_TOKEN)
-
+            user_id = data['object']['user_id']
+            print(f'user_id: {user_id}')
+            # код ниже, чтобы обработать свою кнопку Начать
+            # потом можно будет выпилить
+            if 'payload' in data['object'].keys() and data['object']['payload'] == '{"command":"start"}':
+                # TODO заполнять данные, кроме id, например first_name, last_name
+                dialog = handlers.create_dialog(user_id, VK_GROUP_TOKEN)
             else:
-                user_id = data['object']['user_id']
-                print(f'user_id: {user_id}')
-                # код ниже, чтобы обработать свою кнопку Начать
-                # потом можно будет выпилить
-                if data['object']['payload'] == '{"command":"start"}':
-                    # TODO заполнять данные, кроме id, например first_name, last_name
-                    dialog = handlers.create_dialog(user_id, VK_GROUP_TOKEN)
-                else:
-                    dialog = handlers.get_dialog(user_id, VK_GROUP_TOKEN)
+                dialog = handlers.get_dialog(user_id, VK_GROUP_TOKEN)
 
-            handlers.create_answer(data['object'], VK_GROUP_TOKEN, dialog)
-            return HttpResponse("ok")
+        handlers.create_answer(data['object'], VK_GROUP_TOKEN, dialog)
+        return HttpResponse("ok")
     else:
         return HttpResponse('not post')
 

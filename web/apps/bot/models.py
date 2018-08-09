@@ -86,7 +86,7 @@ class Dialog(models.Model):
 
     def update_pointer(self):
         """Перемещает указатель на следующую задачу в списке"""
-        if self.current_block_pointer < self.blocks_ids.size - 1:
+        if self.current_block_pointer < len(self.blocks_ids) - 1:
             self.current_block_pointer += 1
             self.save()
             return self.current_block_pointer

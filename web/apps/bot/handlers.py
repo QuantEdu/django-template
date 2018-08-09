@@ -125,7 +125,6 @@ def create_next_block_need_keyboard(one_time=False):
 
 def create_answer(data, token, dialog):
     user_id = data['user_id']
-    payload = data['payload']
 
     print('create_answer ', data)
 
@@ -144,8 +143,9 @@ def create_answer(data, token, dialog):
             dialog.change_state_to_need_answer()
 
         elif dialog.is_state_need_answer():
-            message =  'Я обработал ответ'
+            message = 'Я обработал ответ'
             dialog.change_state_to_need_next()
+            dialog.update_pointer()
 
         else:
             message = 'Произошло что-то странное'

@@ -67,15 +67,15 @@ def create_keyboard_for_block(labels, one_time=True):
     return json.dumps(keyboard, ensure_ascii=False).encode('utf-8')
 
 
-def create_test_keyboard(one_time=True):
+def create_go_keyboard(one_time=True):
     one_button_template = [
         [{
             "action": {
                 "type": "text",
                 "payload": '{"test_button": "1"}',
-                "label": "Тест"
+                "label": "Поехали!"
             },
-            "color": "default"
+            "color": "positive"
         }
         ]
     ]
@@ -135,6 +135,7 @@ def create_answer(data, token, dialog):
         if dialog.is_state_default():
             message = 'Привет! Ты только что нажал на кнопку старт! Давай решать задачи :)'
             dialog.change_state_to_need_next()
+            keyboard = create_go_keyboard()
 
         elif dialog.is_state_need_next():
             current_block = ChoiceBlock.objects.get(pk=dialog.blocks_ids[dialog.current_block_pointer])
@@ -147,8 +148,10 @@ def create_answer(data, token, dialog):
             message = 'Я обработал ответ'
             dialog.change_state_to_need_next()
             # TODO обрабатывать состояние, когда задачи закончились, уметь из него выходить
-            # update_result = dialog.update_pointer()
+            update_result = dialog.update_pointer()
             # if update_result is not None:
+
+            keyboard = create_next_block_need_keyboard()
 
 
         else:

@@ -44,8 +44,8 @@ def create_keyboard_for_block(labels, one_time=True):
                 "label": labels[1]
             },
             "color": "default"
-        }],
-        [{
+        },
+        {
             "action": {
                 "type": "text",
                 "payload": "{'option_button': '3'}",

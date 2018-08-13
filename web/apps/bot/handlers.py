@@ -44,8 +44,8 @@ def create_keyboard_for_block(labels, one_time=True):
                 "label": labels[1]
             },
             "color": "default"
-        },
-        {
+        }],
+        [{
             "action": {
                 "type": "text",
                 "payload": '{"option_button": "3"}',
@@ -139,7 +139,6 @@ def create_answer(data, token, dialog):
         elif dialog.is_state_need_next():
             current_block = ChoiceBlock.objects.get(pk=dialog.blocks_ids[dialog.current_block_pointer])
             message = str(current_block)
-            # TODO сформировать клавиатуру из вариантов ответа
             current_options = current_block.get_options()
             keyboard = create_keyboard_for_block([str(option) for option in current_options])
             dialog.change_state_to_need_answer()
@@ -147,7 +146,10 @@ def create_answer(data, token, dialog):
         elif dialog.is_state_need_answer():
             message = 'Я обработал ответ'
             dialog.change_state_to_need_next()
-            dialog.update_pointer()
+            # TODO обрабатывать состояние, когда задачи закончились, уметь из него выходить
+            # update_result = dialog.update_pointer()
+            # if update_result is not None:
+
 
         else:
             message = 'Произошло что-то странное'

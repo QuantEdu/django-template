@@ -32,7 +32,7 @@ def create_keyboard_for_block(labels, one_time=True):
         [{
             "action": {
                 "type": "text",
-                "payload": "{'option_button': '1'}",
+                "payload": '{"option_button": "1"}',
                 "label": labels[0]
             },
             "color": "default"
@@ -40,7 +40,7 @@ def create_keyboard_for_block(labels, one_time=True):
         {
             "action": {
                 "type": "text",
-                "payload": "{'option_button': '2'}",
+                "payload": '{"option_button": "2"}',
                 "label": labels[1]
             },
             "color": "default"
@@ -48,7 +48,7 @@ def create_keyboard_for_block(labels, one_time=True):
         {
             "action": {
                 "type": "text",
-                "payload": "{'option_button': '3'}",
+                "payload": '{"option_button": "3"}',
                 "label": labels[2]
             },
             "color": "default"
@@ -56,15 +56,15 @@ def create_keyboard_for_block(labels, one_time=True):
         {
             "action": {
                 "type": "text",
-                "payload": "{'option_button': '4'}",
+                "payload": '{"option_button": "4"}',
                 "label": labels[3]
             },
             "color": "default"
         }]
     ]
 
-    keyboard = {"one_time" : one_time, "buttons" : four_buttons_template}
-    return json.dumps(keyboard)
+    keyboard = {"one_time": one_time, "buttons": four_buttons_template}
+    return json.dumps(keyboard, ensure_ascii=False).encode('utf-8')
 
 
 def create_test_keyboard(one_time=True):

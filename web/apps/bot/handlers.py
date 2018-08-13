@@ -29,10 +29,10 @@ DIALOG_FLOW_TOKEN = '281dbfa163e343fdba0368f4857c84d4' # ???
 
 def create_keyboard_for_block(labels, one_time=True):
     four_buttons_template = [
-        {
+        [{
             "action": {
                 "type": "text",
-                "payload": "{\"option_button\": \"1\"}",
+                "payload": "{'option_button': '1'}",
                 "label": labels[0]
             },
             "color": "default"
@@ -40,15 +40,15 @@ def create_keyboard_for_block(labels, one_time=True):
         {
             "action": {
                 "type": "text",
-                "payload": "{\"option_button\": \"2\"}",
+                "payload": "{'option_button': '2'}",
                 "label": labels[1]
             },
             "color": "default"
-        },
-        {
+        }],
+        [{
             "action": {
                 "type": "text",
-                "payload": "{\"option_button\": \"3\"}",
+                "payload": "{'option_button': '3'}",
                 "label": labels[2]
             },
             "color": "default"
@@ -56,11 +56,11 @@ def create_keyboard_for_block(labels, one_time=True):
         {
             "action": {
                 "type": "text",
-                "payload": "{\"option_button\": \"4\"}",
+                "payload": "{'option_button': '4'}",
                 "label": labels[3]
             },
             "color": "default"
-        }
+        }]
     ]
 
     keyboard = {"one_time" : one_time, "buttons" : four_buttons_template}
@@ -129,7 +129,7 @@ def create_answer(data, token, dialog):
     print('create_answer ', data)
 
     # Default values
-    message, attachment, keyboard = 'Непонятно', 'photo-167796316_456239017', None
+    message, attachment, keyboard = 'Непонятно', '', None
 
     try:
         if dialog.is_state_default():
@@ -140,6 +140,8 @@ def create_answer(data, token, dialog):
             current_block = ChoiceBlock.objects.get(pk=dialog.blocks_ids[dialog.current_block_pointer])
             message = str(current_block)
             # TODO сформировать клавиатуру из вариантов ответа
+            current_options = current_block.get_options()
+            keyboard = create_keyboard_for_block([str(option) for option in current_options])
             dialog.change_state_to_need_answer()
 
         elif dialog.is_state_need_answer():

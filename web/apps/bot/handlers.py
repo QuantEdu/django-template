@@ -28,6 +28,7 @@ DIALOG_FLOW_TOKEN = '281dbfa163e343fdba0368f4857c84d4' # ???
 
 
 def create_keyboard_for_block(labels, one_time=True):
+    print(labels)
     four_buttons_template = [
         [{
             "action": {

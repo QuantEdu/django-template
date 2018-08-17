@@ -51,7 +51,7 @@ def create_keyboard_for_block(labels, one_time=True):
         [{
             "action": {
                 "type": "text",
-                "payload": str({"option_button": labels[2][0]}),
+                "payload": str({'option_button': labels[2][0]}),
                 "label": labels[2][1]
             },
             "color": "default"

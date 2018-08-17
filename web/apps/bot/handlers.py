@@ -35,7 +35,7 @@ def create_keyboard_for_block(labels, one_time=True):
         [{
             "action": {
                 "type": "text",
-                "payload": str({"option_button": labels[0][0]}),
+                "payload": str(labels[0][0]),
                 "label": labels[0][1]
             },
             "color": "default"
@@ -43,7 +43,7 @@ def create_keyboard_for_block(labels, one_time=True):
         {
             "action": {
                 "type": "text",
-                "payload": str({"option_button": labels[1][0]}),
+                "payload": str(labels[1][0]),
                 "label": labels[1][1]
             },
             "color": "default"
@@ -51,7 +51,7 @@ def create_keyboard_for_block(labels, one_time=True):
         [{
             "action": {
                 "type": "text",
-                "payload": str({'option_button': labels[2][0]}),
+                "payload": str(labels[2][0]),
                 "label": labels[2][1]
             },
             "color": "default"
@@ -59,7 +59,7 @@ def create_keyboard_for_block(labels, one_time=True):
         {
             "action": {
                 "type": "text",
-                "payload": str({"option_button": labels[3][0]}),
+                "payload": str(labels[3][0]),
                 "label": labels[3][1]
             },
             "color": "default"
@@ -134,6 +134,8 @@ def create_answer(data, token, dialog):
     # Default values
     message, attachment, keyboard = 'Непонятно', '', None
 
+    current_block = None
+
     try:
         if dialog.is_state_default():
             message = 'Привет! Ты только что нажал на кнопку старт! Давай решать задачи :)'
@@ -148,6 +150,9 @@ def create_answer(data, token, dialog):
             dialog.change_state_to_need_answer()
 
         elif dialog.is_state_need_answer():
+            if current_block is not None:
+                print(data["payload"])
+                print([option.pk for option in current_block.get_true_options()])
             message = 'Я обработал ответ'
             dialog.change_state_to_need_next()
             # TODO обрабатывать состояние, когда задачи закончились, уметь из него выходить

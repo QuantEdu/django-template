@@ -109,6 +109,11 @@ class ChoiceBlockResult(BlockResult):
                         self.score += 1
         self.save()
 
+    @classmethod
+    def create(cls, user, block, ans):
+        res = cls(user=user, block=block, answers=ans)
+        return res
+
 
 class FloatBlockResult(BlockResult):
     answer = models.FloatField('Ответ', null=True, default=None)

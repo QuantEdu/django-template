@@ -8,6 +8,7 @@ import traceback
 from .models import Dialog
 from apps.social.models import UserSocialAuth
 from apps.blocks.models import ChoiceBlock, ChoiceBlockOption
+from apps.results.models import ChoiceBlockResult
 
 """
 Прмер клавиатуры, которая прилетает
@@ -151,9 +152,14 @@ def create_answer(data, token, dialog):
 
         elif dialog.is_state_need_answer():
             current_block = ChoiceBlock.objects.get(pk=dialog.blocks_ids[dialog.current_block_pointer])
-            print(data["payload"])
-            print([option.pk for option in current_block.get_true_options()])
-            message = 'Я обработал ответ'
+
+            current_result = ChoiceBlockResult.create(UserSocialAuth.objects.get(uid=str(user_id), provider='vk').user,
+                                     current_block, [int(data["payload"])])
+            current_result.set_score()
+            if current_result.correct():
+                message = 'Верно!'
+            else:
+                message = 'Неверно!'
             dialog.change_state_to_need_next()
             # TODO обрабатывать состояние, когда задачи закончились, уметь из него выходить
             update_result = dialog.update_pointer()

@@ -150,9 +150,9 @@ def create_answer(data, token, dialog):
             dialog.change_state_to_need_answer()
 
         elif dialog.is_state_need_answer():
-            if current_block is not None:
-                print(data["payload"])
-                print([option.pk for option in current_block.get_true_options()])
+            current_block = ChoiceBlock.objects.get(pk=dialog.blocks_ids[dialog.current_block_pointer])
+            print(data["payload"])
+            print([option.pk for option in current_block.get_true_options()])
             message = 'Я обработал ответ'
             dialog.change_state_to_need_next()
             # TODO обрабатывать состояние, когда задачи закончились, уметь из него выходить

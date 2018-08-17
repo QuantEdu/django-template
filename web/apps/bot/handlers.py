@@ -34,7 +34,7 @@ def create_keyboard_for_block(labels, one_time=True):
         [{
             "action": {
                 "type": "text",
-                "payload": f'{"option_button": "labels[0][0]"}',
+                "payload": "{\"option_button\": \"{}\"}".format(labels[0][0]),
                 "label": labels[0][1]
             },
             "color": "default"
@@ -42,7 +42,7 @@ def create_keyboard_for_block(labels, one_time=True):
         {
             "action": {
                 "type": "text",
-                "payload": f'{"option_button": "labels[1][0]"}',
+                "payload": "{\"option_button\": \"{}\"}".format(labels[1][0]),
                 "label": labels[1][1]
             },
             "color": "default"
@@ -50,7 +50,7 @@ def create_keyboard_for_block(labels, one_time=True):
         [{
             "action": {
                 "type": "text",
-                "payload": f'{"option_button": "labels[2][0]"}',
+                "payload": "{\"option_button\": \"{}\"}".format(labels[2][0]),
                 "label": labels[2][1]
             },
             "color": "default"
@@ -58,7 +58,7 @@ def create_keyboard_for_block(labels, one_time=True):
         {
             "action": {
                 "type": "text",
-                "payload": f'{"option_button": "labels[3][0]"}',
+                "payload": "{\"option_button\": \"{}\"}".format(labels[3][0]),
                 "label": labels[3][1]
             },
             "color": "default"

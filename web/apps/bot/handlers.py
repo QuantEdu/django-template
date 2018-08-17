@@ -32,32 +32,32 @@ def create_keyboard_for_block(labels, one_time=True):
         [{
             "action": {
                 "type": "text",
-                "payload": '{"option_button": "1"}',
-                "label": labels[0]
+                "payload": '{"option_button_pk": "{}"}'.format(labels[0][0]),
+                "label": labels[0][1]
             },
             "color": "default"
         },
         {
             "action": {
                 "type": "text",
-                "payload": '{"option_button": "2"}',
-                "label": labels[1]
+                "payload": '{"option_button_pk": "{}"}'.format(labels[1][0]),
+                "label": labels[1][1]
             },
             "color": "default"
         }],
         [{
             "action": {
                 "type": "text",
-                "payload": '{"option_button": "3"}',
-                "label": labels[2]
+                "payload": '{"option_button_pk": "{}"}'.format(labels[2][0]),
+                "label": labels[2][1]
             },
             "color": "default"
         },
         {
             "action": {
                 "type": "text",
-                "payload": '{"option_button": "4"}',
-                "label": labels[3]
+                "payload": '{"option_button_pk": "{}"}'.format(labels[3][0]),
+                "label": labels[3][1]
             },
             "color": "default"
         }]
@@ -141,7 +141,7 @@ def create_answer(data, token, dialog):
             current_block = ChoiceBlock.objects.get(pk=dialog.blocks_ids[dialog.current_block_pointer])
             message = str(current_block)
             current_options = current_block.get_options()
-            keyboard = create_keyboard_for_block([str(option) for option in current_options])
+            keyboard = create_keyboard_for_block([(int(option.pk), str(option)) for option in current_options])
             dialog.change_state_to_need_answer()
 
         elif dialog.is_state_need_answer():

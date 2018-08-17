@@ -1,5 +1,6 @@
 from . import vkapi
 import json
+import sys
 
 # from django_postgres_extensions.models.expressions import Index
 
@@ -161,7 +162,8 @@ def create_answer(data, token, dialog):
         vkapi.send_message(user_id, token, message, attachment, keyboard)
         print('exit create answer')
     except Exception as e:
-        print('create_answer exception', e)
+        type, value, traceback = sys.exc_info()
+        print('create_answer exception', e, value, traceback)
 
 
 def create_dialog(user_id, token):

@@ -17,7 +17,6 @@ VK_GROUP_ID = 167796316
 def callback(request):
     if request.method == 'POST':
         data = json.loads(request.body)
-        print(':)', data)
         if 'type' not in data.keys():
             print('Data: {}'.format(data))
             return HttpResponse('not vk')
@@ -31,7 +30,7 @@ def callback(request):
             print(f'user_id: {user_id}')
             # код ниже, чтобы обработать свою кнопку Начать
             # потом можно будет выпилить
-            if 'payload' in data['object'].keys() and data['object']['payload'] == '{"command":"start"}':
+            if 'payload' in data['object'].keys() and data['object']['payload'] == '{"command":"start"}' or data['object']['body'] == 'start':
                 # TODO заполнять данные, кроме id, например first_name, last_name
                 dialog = handlers.create_dialog(user_id, VK_GROUP_TOKEN)
             else:

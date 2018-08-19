@@ -4,4 +4,5 @@ EMAIL_HOST_USER = 'info@quant.zone'
 EMAIL_HOST_PASSWORD = 'physicum123456'
 EMAIL_SUBJECT_PREFIX = '[QUANT] '
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

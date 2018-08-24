@@ -101,23 +101,23 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <!--<li class="nav-item">-->
-                        <!--<a class="nav-link" href="#video" data-scrollto="video">Видео</a>-->
-                    <!--</li>-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Кто мы?</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#feedback">Отзывы</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#features">Методика</a>
                     </li>
+                    {% comment %}<li class="nav-item">
+                        <a class="nav-link" href="#video" data-scrollto="video">Видео</a>
+                    </li>{% endcomment %}
                     <li class="nav-item">
                         <a class="nav-link" href="#pricing">Стоимость</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#faq">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Кто мы?</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contacts">Контакты</a>
@@ -665,7 +665,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
                 <h2 class="pt-5">Из чего строится обучение</h2>
-                <p class="pt-3 text-white lead">Наша команда непрерывно внедряет в рабочий процесс новые технологии и методики работы</p>
+                <p class="pt-3 lead">Наша команда непрерывно внедряет в рабочий процесс новые технологии и методики работы</p>
             </div>
         </div>
         <div class="row pt-5 align-items-center">
@@ -724,6 +724,23 @@
         </div>
     </div>
 </section>
+
+{#<section class="section py-5 bg-green">#}
+{#    <a class="anchor" id="video"></a>#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-12 text-center">#}
+{#                <h2>Наша экосистема</h2>#}
+{#                <p class="pt-3 lead">Включаясь в развивающий процесс вместе с нами вы получите возможность подготовиться к экзаменам и получить поддержку даже бесплатно. Попробуйте прямо сейчас!</p>#}
+{#            </div>#}
+{#            <div class="col-12 py-4">#}
+{#                <div class="embed-responsive embed-responsive-16by9">#}
+{#                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fuhPNb7rIlE" allowfullscreen></iframe>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
 
 <section class="section bg-white py-5">
     <a class="anchor" id="pricing"></a>
@@ -982,25 +999,6 @@
                 <button type="button" class="btn btn-lg btn-orange my-3 p-3" data-toggle="modal" data-target="#formModal">
                     Получите консультацию
                 </button>
-                {% comment %}<form action="" method="POST" class="pt-4">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <input type="text" id="id_name" name="name" class="form-control form-control-lg" placeholder="Ваше имя">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="id_phone" name="phone" class="form-control form-control-lg" placeholder="Телефон">
-                    </div>
-                    <div class="form-group form-check text-left">
-                        <input type="checkbox" class="form-check-input" checked required>
-                        <label class="form-check-label text-muted"><small>Я согласен с условиями обработки персональных данных</small></label>
-                    </div>
-                    <button type="submit" class="btn btn-orange text-white btn-lg">
-                        Заказать звонок
-                    </button>
-                    <p class="pt-3">
-                        <small class="text-muted">* перезвоним как только отпустим наших детей по домам</small>
-                    </p>
-                </form>{% endcomment %}
             </div>
         </div>
     </div>
@@ -1160,26 +1158,6 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-{#                            <form action="" method="POST" class="pt-4 px-2 text-center">#}
-{#                                {% csrf_token %}#}
-{#                                <div class="form-group">#}
-{#                                    <input type="text" id="id_name" name="name" class="form-control form-control-lg" placeholder="Ваше имя">#}
-{#                                </div>#}
-{#                                <div class="form-group">#}
-{#                                    <input type="text" id="id_phone" name="phone" class="form-control form-control-lg" placeholder="Телефон">#}
-{#                                </div>#}
-{#                                <div class="form-group form-check text-left">#}
-{#                                    <input type="checkbox" class="form-check-input" checked>#}
-{#                                    <label class="form-check-label text-muted">Я согласен с условиями обработки#}
-{#                                        персональных данных</label>#}
-{#                                </div>#}
-{#                                <button type="submit" class="btn btn-success btn-lg">#}
-{#                                    Заказать звонок#}
-{#                                </button>#}
-{#                                <p class="pt-3 text-center">#}
-{#                                    <small class="text-muted">* мы перезвоним, как только отпустим наших детей по домам</small>#}
-{#                                </p>#}
-{#                            </form>#}
                             <script>var amo_forms_params = {"id":323800,"hash":"411cb235df26a023a346cb56cc198800","locale":"ru"};</script><script id="amoforms_script" async="async" charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js"></script>
                         </div>
                     </div>

@@ -7,6 +7,7 @@ var path = {
         js:    'build/js/',
         css:   'build/css/',
         img:   'build/img/',
+        docs:  'build/docs/',
         fonts: 'build/fonts/'
     },
     src: {
@@ -14,6 +15,7 @@ var path = {
         js:    'src/js/main.js',
         style: 'src/style/main.scss',
         img:   'src/img/**/*.*',
+        docs:  'src/docs/**/*.*',
         fonts: 'src/fonts/**/*.*',
         fa:    'node_modules/@fortawesome/fontawesome-free/webfonts/*.*'
     },
@@ -88,6 +90,12 @@ gulp.task('html:build', function () {
         .pipe(browserSync.reload({stream: true})); // перезагрузим сервер
 });
 
+// сбор документов
+gulp.task('docs:build', function () {
+    gulp.src(path.src.docs) // выбор всех html файлов по указанному пути
+        .pipe(gulp.dest(path.build.docs)); // выкладывание готовых файлов
+});
+
 // сбор стилей
 gulp.task('css:build', function () {
     gulp.src(path.src.style) // получим main.scss
@@ -156,6 +164,7 @@ gulp.task('build', [
     'css:build',
     'js:build',
     'fonts:build',
+    'docs:build',
     'image:build'
 ]);
 

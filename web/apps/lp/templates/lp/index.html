@@ -1004,7 +1004,7 @@ _tmr.push({
                 <p class="lead">пройдите бесплатное тестирование, которое займет не больше 30 минут, и получите комментарий преподавателя</p>
             </div>
             <div class="col-md-3 mt-3 mb-3 text-md-right">
-                <a href="http://quant.zone/landings/testing" class="btn btn-outline-light">Перейти к тестированию</a>
+                <a href="#" class="btn btn-outline-light" data-toggle="modal" data-target="#testingModal">Перейти к тестированию</a>
             </div>
         </div>
     </div>
@@ -1168,11 +1168,11 @@ _tmr.push({
                 <div class="col-lg-3 col-md-6 col-6 ml-auto mb-5 mb-lg-0">
                     <h4>Ссылки</h4>
                     <ul class="list-unstyled pt-2">
-                        <li><a class="text-muted" target="_blank" href="https://drive.google.com/file/d/1Q-dX9KuLBs5GEIOr4ZLJlkhUHtx2TYYi/view?usp=sharing">Договор-оферта</a></li>
+                        <li class="mb-1"><a class="text-muted" target="_blank" href="https://drive.google.com/file/d/1Q-dX9KuLBs5GEIOr4ZLJlkhUHtx2TYYi/view?usp=sharing">Договор-оферта</a></li>
                         <!--<li><a class="text-muted" href="#">Политика конфиденциальности</a></li>-->
-                        <li><a class="text-muted" href="http://quant.zone/landings/testing">Бесплатные тестирования</a></li>
+                        <li class="mb-1"><a class="text-muted" href="#" data-toggle="modal" data-target="#testingModal">Бесплатные тестирования</a></li>
                         <!--<li><a class="text-muted" href="#">ЕГЭ-бот</a></li>-->
-                        <li><a class="text-muted" target="_blank" href="https://tochka.com/my/quant">Оплата курсов</a></li>
+                        <li class="mb-1"><a class="text-muted" target="_blank" href="https://tochka.com/my/quant">Оплата курсов</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-6 col-6 ml-auto mb-5 mb-lg-0">
@@ -1626,6 +1626,147 @@ _tmr.push({
                         </div>
                         <div class="col-lg-6 align-self-end">
                             <img class="w-100" src="{% static 'img/teachers/климентьева-nobg.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="testingModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Доступные тестирования</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="row pt-4">
+                            <div class="col py-3">
+                                <p class="lead">11 класс</p>
+                                <p>
+                                    <a href="https://goo.gl/forms/EP8pMg2472R2IJQ72" target="_blank">
+                                        по математике
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/eoTkFZSu6y3HVEQe2" target="_blank">
+                                        по русскому языку
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/qbkNBV49WKtQhdDf2" target="_blank">
+                                        по физике
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/4LiYPDtiRsrFw4pF3" target="_blank">
+                                        по химии
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/mE2vSmFtNb5vn66L2" target="_blank">
+                                        по английскому языку
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/DGDaKuN0aHdfWchD2" target="_blank">
+                                        по обществознанию
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="col py-3">
+                                <p class="lead">9 класс</p>
+                                <p>
+                                    <a href="https://goo.gl/forms/IbFNUsx9ukKL2eq93" target="_blank">
+                                        по математике
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/z8Jlsxyob2Jtc6Lb2" target="_blank">
+                                        по русскому языку
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/N37Q5OC3U7WO0BR63" target="_blank">
+                                        по физике
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/8EKMocIabKOx2jWf1" target="_blank">
+                                        по химии
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="col py-3">
+                                <p class="lead">10 класс</p>
+                                <p>
+                                    <a href="https://goo.gl/forms/29qsoCdNodm6WVKi1" target="_blank">
+                                        Математика
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/eoTkFZSu6y3HVEQe2" target="_blank">
+                                        Русский язык
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/FO0h0twsasP9iYIV2" target="_blank">
+                                        Физика
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/W2urIG0oF90OYjro2" target="_blank">
+                                        Химия
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="col py-3">
+                                <p class="lead">8 класс</p>
+                                <p>
+                                    <a href="https://goo.gl/forms/Y6g7fuNizzCN1EJw2" target="_blank">
+                                        Математика
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/lv2kmCD6cQYwlmOl2" target="_blank">
+                                        Русский язык
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/fyzPnKCZIYs30Dsf1" target="_blank">
+                                        Физика
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/Y3cyE8pZC4LkyHYp2" target="_blank">
+                                        Химия
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="col py-3">
+                                <p class="lead">7 класс</p>
+                                <p>
+                                    <a href="https://goo.gl/forms/eTDIGHejz8RlcGCX2" target="_blank">
+                                        Математика
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/AOB7lzPgbSRwO3LH2" target="_blank">
+                                        Русский язык
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/forms/dNkaG60XPH3waJy33" target="_blank">
+                                        Физика
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

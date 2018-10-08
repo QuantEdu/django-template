@@ -14,11 +14,13 @@ services:
     restart: always
     depends_on:
       - postgres
-#      - redis
     env_file:
       - ./.envs/.production/.web
       - ./.envs/.production/.postgres
     command: /start
+    volumes:
+      - ./web/:/code:z
+      - static:/code/static
 
   postgres:
     build:
@@ -42,13 +44,16 @@ services:
       - web
     volumes:
       - production_caddy:/root/.caddy
-      - ./web/static:/static:ro
-      - ./web/media:/media:ro
+      - static:/var/www/static
+      - ./web/media:/var/www/media
     env_file:
       - ./.envs/.production/.caddy
     ports:
       - "0.0.0.0:80:80"
       - "0.0.0.0:443:443"
 
-#  redis:
-#    image: redis:3.2
+volumes:
+  static:
+  production_postgres_data: {}
+  production_postgres_data_backups: {}
+  production_caddy: {}

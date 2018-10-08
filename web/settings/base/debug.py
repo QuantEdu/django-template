@@ -1,3 +1,5 @@
+import os
+
 MIDDLEWARE += [
    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
@@ -21,10 +23,16 @@ DEBUG_TOOLBAR_PANELS = [
    'debug_toolbar.panels.redirects.RedirectsPanel',
 ]
 
+
 def show_toolbar(request):
     if request.user.is_staff:
         return True
-    return False
+
+    if os.getenv('DJANGO_ENV') == 'production':
+        return False
+    else:
+        return True
+
 
 DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': show_toolbar

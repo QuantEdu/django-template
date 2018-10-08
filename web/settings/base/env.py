@@ -5,7 +5,7 @@ import os
 
 if os.getenv('DJANGO_ENV') == 'prod':
     DEBUG = False
-    ALLOWED_HOSTS = ['.snakeoil.com']
+    ALLOWED_HOSTS = ['dev.quant.study', 'quant.study']
     # ...
 else:
     DEBUG = True

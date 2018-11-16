@@ -144,11 +144,14 @@ def create_answer(data, token, dialog):
             keyboard = create_go_keyboard()
 
         elif dialog.is_state_need_next():
-            current_block = ChoiceBlock.objects.get(pk=dialog.blocks_ids[dialog.current_block_pointer])
-            message = str(current_block)
-            current_options = current_block.get_options()
-            keyboard = create_keyboard_for_block([(int(option.pk), str(option)) for option in current_options])
-            dialog.change_state_to_need_answer()
+            try:
+                current_block = ChoiceBlock.objects.get(pk=dialog.blocks_ids[dialog.current_block_pointer])
+                message = str(current_block)
+                current_options = current_block.get_options()
+                keyboard = create_keyboard_for_block([(int(option.pk), str(option)) for option in current_options])
+                dialog.change_state_to_need_answer()
+            except Exception:
+                message = 'Похоже, для вас больше нет задач на сегодня. Отдыхайте!'
 
         elif dialog.is_state_need_answer():
             current_block = ChoiceBlock.objects.get(pk=dialog.blocks_ids[dialog.current_block_pointer])
@@ -180,6 +183,7 @@ def create_answer(data, token, dialog):
 
 def create_dialog(user_id, token):
     print('handlers.py create_dialog')
+    print('user info: ')
     print(vkapi.get_vk_user_info(user_id, token))
     current_dialog = get_dialog(user_id, token)
     if current_dialog is None:

@@ -91,3 +91,9 @@ class Dialog(models.Model):
             self.save()
             return self.current_block_pointer
         return None
+
+
+class BotService(models.Model):
+    start = models.DateTimeField()
+    end = models.DateField()
+    course = models.ForeignKey(Course, verbose_name="Курс", on_delete=models.CASCADE)

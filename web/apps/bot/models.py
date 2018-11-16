@@ -4,6 +4,7 @@ from django.db import models
 
 from apps.users.models import User
 from apps.social.models import UserSocialAuth
+from apps.course.models import Course
 
 from . import vkapi
 

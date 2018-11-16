@@ -19,4 +19,4 @@ def send_message(user_id, token, message, attachment, keyboard):
 
 def get_vk_user_info(user_id, token):
     print(f'vkapi.py get_vk_user_id by {user_id}')
-    api.users.get(access_token=token, user_ids=str(user_id))
+    api.users.get(access_token=token, user_ids=[str(user_id)], fields=["photo_50", "city", "verified"])

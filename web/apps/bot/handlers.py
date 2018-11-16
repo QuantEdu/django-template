@@ -180,6 +180,7 @@ def create_answer(data, token, dialog):
 
 def create_dialog(user_id, token):
     print('handlers.py create_dialog')
+    print(vkapi.get_vk_user_info(user_id, token))
     current_dialog = get_dialog(user_id, token)
     if current_dialog is None:
         try:
@@ -188,6 +189,7 @@ def create_dialog(user_id, token):
             print('create_dialog exception', e)
             current_dialog = None
     return current_dialog
+
 
 def get_dialog(user_id, token):
     print('handlers.py get_dialog')

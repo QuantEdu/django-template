@@ -23,7 +23,7 @@ def get_vk_user_info(user_id, token):
     print(answer, type(answer))
     try:
         first_name = answer['first_name'].encode('utf-8')
-        last_name = answer['last_name'].encode('utf-8')
+        last_name = answer['last_name']
     except Exception as e:
         print(e)
     print(first_name, last_name)

@@ -20,6 +20,8 @@ def send_message(user_id, token, message, attachment, keyboard):
 def get_vk_user_info(user_id, token):
     print(f'vkapi.py get_vk_user_id by {user_id}')
     answer = api.users.get(access_token=token, user_ids=user_id)[0]
+    print(answer)
     first_name = answer['first_name'].decode('utf-8')
     last_name = answer['last_name'].decode('utf-8')
+    print(first_name, last_name)
     return first_name, last_name

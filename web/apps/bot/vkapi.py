@@ -22,8 +22,8 @@ def get_vk_user_info(user_id, token):
     answer = api.users.get(access_token=token, user_ids=user_id)[0]
     print(answer, type(answer))
     try:
-        first_name = answer['first_name'].decode('utf-8')
-        last_name = answer['last_name'].decode('utf-8')
+        first_name = answer['first_name'].encode('utf-8')
+        last_name = answer['last_name'].encode('utf-8')
     except Exception as e:
         print(e)
     print(first_name, last_name)

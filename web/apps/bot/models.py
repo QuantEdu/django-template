@@ -22,9 +22,13 @@ class DialogManager(models.Manager):
             try:
                 new_user = User.objects.get(email=str(user_vk_id) + '@email.ru')
             except User.DoesNotExist:
-                new_user = User.objects.create_user(email=str(user_vk_id) + '@email.ru',
+                try:
+                    new_user = User.objects.create_user(email=str(user_vk_id) + '@email.ru',
                                                     first_name=first_name,
                                                     last_name=last_name)
+                except Exception as e:
+                    print('try to create user without name\n', e)
+                    new_user = User.objects.create_user(email=str(user_vk_id) + '@email.ru')
 
             # TODO получить данные пользователя от  vk по  vk_id
 

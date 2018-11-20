@@ -10,7 +10,7 @@ from . import vkapi
 
 
 class DialogManager(models.Manager):
-    def create_dialog(self, user_vk_id):
+    def create_dialog(self, user_vk_id, first_name, last_name):
         # Найти пользователя , собрать дефолтные задачи, выставить стэйт
         try:
             vk_auth = UserSocialAuth.objects.get(uid=user_vk_id, provider='vk')
@@ -22,9 +22,12 @@ class DialogManager(models.Manager):
             try:
                 new_user = User.objects.get(email=str(user_vk_id) + '@email.ru')
             except User.DoesNotExist:
-                new_user = User.objects.create_user(email=str(user_vk_id) + '@email.ru')
+                new_user = User.objects.create_user(email=str(user_vk_id) + '@email.ru',
+                                                    first_name=first_name,
+                                                    last_name=last_name)
 
             # TODO получить данные пользователя от  vk по  vk_id
+
 
             vk_auth = UserSocialAuth.objects.create(
                 uid=user_vk_id,

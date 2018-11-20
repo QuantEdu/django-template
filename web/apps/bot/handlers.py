@@ -183,12 +183,11 @@ def create_answer(data, token, dialog):
 
 def create_dialog(user_id, token):
     print('handlers.py create_dialog')
-    print('user info: ')
-    print(vkapi.get_vk_user_info(user_id, token))
+    first_name, last_name = vkapi.get_vk_user_info(user_id, token)
     current_dialog = get_dialog(user_id, token)
     if current_dialog is None:
         try:
-            current_dialog = Dialog.objects.create_dialog(user_id)
+            current_dialog = Dialog.objects.create_dialog(user_id, first_name, last_name)
         except Exception as e:
             print('create_dialog exception', e)
             current_dialog = None

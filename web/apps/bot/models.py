@@ -4,7 +4,7 @@ from django.db import models
 
 from apps.users.models import User
 from apps.social.models import UserSocialAuth
-from apps.course.models import Course
+from apps.lessons.models import Lesson
 
 from . import vkapi
 
@@ -104,4 +104,4 @@ class Dialog(models.Model):
 class BotService(models.Model):
     start = models.DateTimeField()
     end = models.DateField()
-    course = models.ForeignKey(Course, verbose_name="Курс", on_delete=models.CASCADE)
+    course = models.ForeignKey(Lesson, verbose_name="Курс", on_delete=models.CASCADE)

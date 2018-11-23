@@ -3,12 +3,12 @@ from django.db import models
 
 from apps.blocks.models import Block
 from apps.results.models import BlockResult
-from apps.course.models import Course
+from apps.lessons.models import Lesson
 
 
 class Theme(models.Model):
     course = models.ForeignKey(
-        Course,
+        Lesson,
         verbose_name='Курс',
         on_delete=models.CASCADE)
 

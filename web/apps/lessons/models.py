@@ -3,7 +3,8 @@ from django.db import models
 
 from apps.tags.models import SubjectTag
 
-class Course(models.Model):
+
+class Lesson(models.Model):
     subject = models.ForeignKey(
         SubjectTag,
         verbose_name='Предмет',

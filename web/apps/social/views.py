@@ -3,7 +3,7 @@ from django import forms
 from django.shortcuts import redirect, render
 from django.contrib.auth import login, logout
 
-from .models import VKAuth
+from .models import UserSocialAuth
 from apps.users.models import User
 
 
@@ -27,7 +27,7 @@ def vk_complete(request):
     if request.method == 'GET':
         try:
             # if user is authenticated and already have vk integration - do nothing
-            vk_auth = VKAuth.objects.get(uid=uid)
+            vk_auth = UserSocialAuth.objects.get(uid=uid, provider='vk')
             if request.user.is_authenticated:
                 if request.user == vk_auth.user:
                     return redirect('lms:index')
@@ -37,15 +37,13 @@ def vk_complete(request):
             else:
                 login(request, vk_auth.user, backend='django.contrib.auth.backends.ModelBackend')
                 return redirect('lms:index')
-        except VKAuth.DoesNotExist:
+        except UserSocialAuth.DoesNotExist:
             if request.user.is_authenticated:
-                vk_auth = VKAuth.objects.create(
+                vk_auth = UserSocialAuth.objects.create(
                     uid=uid,
                     user=request.user,
-                    hash=hash,
-                    first_name=first_name,
-                    last_name=last_name,
-                    photo=photo
+                    provider='vk',
+                    hash=hash
                 )
                 vk_auth.save()
                 return redirect('lms:index')
@@ -72,9 +70,10 @@ def vk_complete(request):
 
             new_user = User.objects.create_user(email, password, first_name=first_name, last_name=last_name)
 
-            vk_auth = VKAuth.objects.create(
+            vk_auth = UserSocialAuth.objects.create(
                 uid=uid,
                 user=new_user,
+                provider='vk',
                 hash=hash,
                 first_name=first_name,
                 last_name=last_name,

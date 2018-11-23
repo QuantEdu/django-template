@@ -1,9 +1,14 @@
 from . import vkapi
-import apiai
 import json
+import sys
+import traceback
 
+# from django_postgres_extensions.models.expressions import Index
 
-from apps.user.models import Dialog
+from .models import Dialog
+from apps.social.models import UserSocialAuth
+from apps.blocks.models import ChoiceBlock, ChoiceBlockOption
+from apps.results.models import ChoiceBlockResult
 
 """
 Прмер клавиатуры, которая прилетает
@@ -25,52 +30,85 @@ from apps.user.models import Dialog
 DIALOG_FLOW_TOKEN = '281dbfa163e343fdba0368f4857c84d4' # ???
 
 
-def create_keyboard_for_block(labels, one_time=False):
+def create_keyboard_for_block(labels, one_time=True):
+    print(labels)
     four_buttons_template = [
-        {
+        [{
             "action": {
                 "type": "text",
-                "payload": "{\"option_button\": \"1\"}",
-                "label": labels[0]
+                "payload": str(labels[0][0]),
+                "label": labels[0][1]
             },
             "color": "default"
         },
         {
             "action": {
                 "type": "text",
-                "payload": "{\"option_button\": \"2\"}",
-                "label": labels[1]
+                "payload": str(labels[1][0]),
+                "label": labels[1][1]
+            },
+            "color": "default"
+        }],
+        [{
+            "action": {
+                "type": "text",
+                "payload": str(labels[2][0]),
+                "label": labels[2][1]
             },
             "color": "default"
         },
         {
             "action": {
                 "type": "text",
-                "payload": "{\"option_button\": \"3\"}",
-                "label": labels[2]
+                "payload": str(labels[3][0]),
+                "label": labels[3][1]
             },
             "color": "default"
-        },
-        {
+        }]
+    ]
+
+    keyboard = {"one_time": one_time, "buttons": four_buttons_template}
+    return json.dumps(keyboard, ensure_ascii=False).encode('utf-8')
+
+
+def create_go_keyboard(one_time=True):
+    one_button_template = [
+        [{
             "action": {
                 "type": "text",
-                "payload": "{\"option_button\": \"4\"}",
-                "label": labels[3]
+                "payload": '{"test_button": "1"}',
+                "label": "Поехали!"
+            },
+            "color": "positive"
+        }
+        ]
+    ]
+    keyboard = {"one_time": one_time, "buttons": one_button_template}
+    return json.dumps(keyboard, ensure_ascii=False).encode('utf-8')
+
+
+def create_start_keyboard(one_time=True):
+    one_button_template = [
+        [{
+            "action": {
+                "type": "text",
+                "payload": '{"command":"start"}',
+                "label": "Начать"
             },
             "color": "default"
         }
+        ]
     ]
-
-    keyboard = {"one_time" : one_time, "buttons" : four_buttons_template}
-    return json.dumps(keyboard)
+    keyboard = {"one_time": one_time, "buttons": one_button_template}
+    return json.dumps(keyboard, ensure_ascii=False).encode('utf-8')
 
 
 def create_next_block_need_keyboard(one_time=False):
     two_buttons_template = [
-        {
+        [{
             "action": {
                 "type": "text",
-                "payload": "{\"next_block_button\": \"1\"}",
+                "payload": '{"next_block_button": "1"}',
                 "label": "Следующая задача"
             },
             "color": "default"
@@ -78,49 +116,89 @@ def create_next_block_need_keyboard(one_time=False):
         {
             "action": {
                 "type": "text",
-                "payload": "{\"next_block_button\": \"2\"}",
+                "payload": '{"next_block_button": "2"}',
                 "label": "На сегодня хватит"
             },
             "color": "default"
-        }
+        }]
     ]
 
     keyboard = {"one_time": one_time, "buttons": two_buttons_template}
-    return json.dumps(keyboard)
+    return json.dumps(keyboard, ensure_ascii=False).encode('utf-8')
 
 
-def create_answer(data, token):
+def create_answer(data, token, dialog):
     user_id = data['user_id']
-    payload = data['payload']
+
+    print('create_answer ', data)
 
     # Default values
-    message, attachment, keyboard = 'Непонятно', '', ''
+    message, attachment, keyboard = 'Непонятно', '', None
 
-    # Пользователь первый раз начал переписку с сообществом
-    if payload == '{"command":"start"}':
-        # Создать диалог и выставить состояние, отправить приветствие, затем клавиатуру из двух кнопок
-        current_dialog = Dialog.objects.create_dialog(user_id)
-        message = 'Привет! Ты только что нажал на кнопку старт! Давай решать задачи :)'
-        keyboard = create_next_block_need_keyboard()
+    current_block = None
 
-    # print(body)
-    #
-    # if body in ['help', 'помощь']:
-    #     message = 'Привет, я новый бот! Ты выбрал команду help'
-    # elif body in ['задача']:
-    #     message = 'Привет, я новый бот! Ты выбрал команду задача'
-    #     attachment = 'photo-165396328_456239018'
-    # else:
-    #     request = apiai.ApiAI(DIALOG_FLOW_TOKEN).text_request()  # Токен API к Dialogflow
-    #     request.lang = 'ru'  # На каком языке будет послан запрос
-    #     request.session_id = user_id  # ID Сессии диалога (нужно, чтобы потом учить бота)
-    #     request.query = body  # Посылаем запрос к ИИ с сообщением от юзера
-    #     responseJson = json.loads(request.getresponse().read().decode('utf-8'))
-    #     response = responseJson['result']['fulfillment']['speech']  # Разбираем JSON и вытаскиваем ответ
-    #     if response:
-    #         message = response
-    #     else:
-    #         message = 'Привет, я новый бот! Я тебя не понял. Поэтому не шли мне больше {}'.format(body)
+    try:
+        if dialog.is_state_default():
+            message = 'Привет! Ты только что нажал на кнопку старт! Давай решать задачи :)'
+            dialog.change_state_to_need_next()
+            keyboard = create_go_keyboard()
 
-    vkapi.send_message(user_id, token, message, attachment, keyboard)
+        elif dialog.is_state_need_next():
+            try:
+                current_block = ChoiceBlock.objects.get(pk=dialog.blocks_ids[dialog.current_block_pointer])
+                message = str(current_block)
+                current_options = current_block.get_options()
+                keyboard = create_keyboard_for_block([(int(option.pk), str(option)) for option in current_options])
+                dialog.change_state_to_need_answer()
+            except Exception:
+                message = 'Похоже, для вас больше нет задач на сегодня. Отдыхайте!'
 
+        elif dialog.is_state_need_answer():
+            current_block = ChoiceBlock.objects.get(pk=dialog.blocks_ids[dialog.current_block_pointer])
+
+            current_result = ChoiceBlockResult.create(UserSocialAuth.objects.get(uid=str(user_id), provider='vk').user,
+                                     current_block, [int(data["payload"])])
+            current_result.set_score()
+            if current_result.correct():
+                message = 'Верно!'
+            else:
+                message = 'Неверно!'
+            dialog.change_state_to_need_next()
+            # TODO обрабатывать состояние, когда задачи закончились, уметь из него выходить
+            update_result = dialog.update_pointer()
+            # if update_result is not None:
+
+            keyboard = create_next_block_need_keyboard()
+
+
+        else:
+            message = 'Произошло что-то странное'
+
+        vkapi.send_message(user_id, token, message, attachment, keyboard)
+        print('exit create answer')
+    except Exception as e:
+        print('create_answer exception', e)
+        traceback.print_exc()
+
+
+def create_dialog(user_id, token):
+    print('handlers.py create_dialog')
+    first_name, last_name = vkapi.get_vk_user_info(user_id, token)
+    current_dialog = get_dialog(user_id, token)
+    if current_dialog is None:
+        try:
+            current_dialog = Dialog.objects.create_dialog(user_id, first_name, last_name)
+        except Exception as e:
+            print('create_dialog exception', e)
+            current_dialog = None
+    return current_dialog
+
+
+def get_dialog(user_id, token):
+    print('handlers.py get_dialog')
+    try:
+        current_dialog = Dialog.objects.get(user=UserSocialAuth.objects.get(uid=str(user_id), provider='vk').user)
+        return current_dialog
+    except Exception as e:
+        print('get_dialog exception', e)
+        return None

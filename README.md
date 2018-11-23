@@ -22,10 +22,9 @@ docker-compose up
 
 ```
 django-template
+├─ .envs (переменные окружения)
 ├─ docker (Все Dockerfile для сборки проекта)
 ├─ docs (документация проекта и используемых технологий)
-├─ experiments (текущие эксперимент с технологиями)
-├─ src (исходники с фронтендом)
 ├─ web (Python+Django-приложение)
 ├─ .env Файл с переменными окружения
 └─ docker-compose.yml (сборка и запуск docker-контейнеров)
@@ -52,7 +51,7 @@ django-template
 ```shell
 git clone https://github.com/QuantEdu/quant.git
 cd quant/
-docker-compose up
+docker-compose -f local.yml up
 ```
 
 Для работы в Pycharm:

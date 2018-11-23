@@ -108,19 +108,3 @@ class ExamTag(SubjectTag):
 
     def __str__(self):
         return u'{} {} №{} ({})'.format(self.subject.title, self.get_exam_type_display(), self.order, self.exam_year)
-
-
-# Pointer to service
-class ServiceTag(Tag):
-    service = models.ForeignKey(
-        'services.Service',
-        related_name='service_for_tag',
-        max_length=300,
-        on_delete=models.CASCADE)
-
-    class Meta:
-        verbose_name = 'тег-указатель на сервис'
-        verbose_name_plural = 'теги-указатели на сервисы'
-
-    def __str__(self):
-        return self.service.title

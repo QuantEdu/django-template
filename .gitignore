@@ -1,6 +1,9 @@
 # Test environment
 venv/
 
+# Environment
+.env
+
 # Postgres backups
 pg_backups/
 

@@ -1,22 +1,34 @@
 # Django core
 from django.db import models
+from django.contrib.postgres.fields import JSONField
 
 # Our apps
 from apps.users.models import User
 
 
-# Vk authorization
-class VKAuth(models.Model):
-    user = models.ForeignKey(User, verbose_name="Пользователь", on_delete=models.CASCADE)
-    uid = models.CharField( verbose_name="Uid", max_length=60, blank=False)
-    photo = models.CharField(verbose_name="photo", max_length=300, blank=True)
+class UserSocialAuth(models.Model):
+    user = models.ForeignKey(
+        User,
+        related_name='social_auth',
+        on_delete=models.CASCADE
+    )
+    provider = models.CharField(max_length=32)
+    uid = models.CharField(verbose_name="Uid", max_length=60, blank=False)
     hash = models.CharField(verbose_name="hash", max_length=60, blank=True)
-    first_name = models.CharField(verbose_name='first name', max_length=30, blank=True)
-    last_name = models.CharField(verbose_name='last name', max_length=30, blank=True)
-
-    class Meta:
-        verbose_name = 'Авторизация в VK'
-        verbose_name_plural = 'Авторизации в VK'
+    extra_data = JSONField(default=list)
 
     def __str__(self):
-        return self.uid
+        return str(self.user)
+
+    class Meta:
+        verbose_name = 'Авторизация в соцсетях'
+        verbose_name_plural = 'Авторизации в соцсетях'
+
+    # Вернет пользователя, если он существует
+    def get_social_auth(self, provider, uid):
+        try:
+            return self.objects.select_related('user').get(provider=provider, uid=uid)
+        except self.DoesNotExist:
+            return None
+
+    # def allowed_to_disconnect

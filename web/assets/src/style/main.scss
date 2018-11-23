@@ -1,0 +1,18 @@
+// Font awesome
+$fa-font-path:"../fonts";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fa-regular.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fa-brands.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fa-solid.scss";
+.icon-user {
+  @extend .fa;
+  @extend .fa-user;
+}
+
+// Bootstrap custom variables
+@import "theme_v1";
+
+// Bootstrap and its default variables
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import "my";

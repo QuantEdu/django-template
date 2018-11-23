@@ -1,0 +1,100 @@
+// Fonts
+a, p, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    //font-family: 'Montserrat', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+// Landing
+
+.dark-shades {
+    background-color: #19323B !important;
+    color: white !important;
+}
+
+.bg-white {
+    background-color: #FFFFFF !important;
+    color: black !important;
+}
+
+.bg-light {
+    background-color: #F3F7F0 !important;
+    color: black !important;
+}
+
+.bg-orange {
+    background-color: #F3833C !important;
+    color: white !important;
+}
+
+.bg-yellow {
+    background-color: #FFC353 !important;
+    color: #19323C !important;
+}
+
+.bg-green {
+    background-color: #13B084 !important;
+    color: #fff !important;
+}
+
+.bg-blue {
+    background-color: #28A4C1 !important;
+    color: #fff !important;
+}
+
+.bg-dark-blue {
+    background-color: #0A72BF !important;
+    color: #fff !important;
+}
+
+.bg-magenta {
+    background-color: #464B8E !important;
+    color: #fff !important;
+}
+
+.bg-black {
+    background-color: #19323C !important;
+    color: #fff !important;
+}
+
+.bg-library{
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('/static/img/index/background-library.jpg') 0 0 no-repeat;
+    color: #fff !important;
+}
+
+.bg-library-1{
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('/static/img/index/background-library-1.jpg') 0 0 no-repeat;
+    color: #fff !important;
+}
+
+.bg-computer{
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('/static/img/index/background-computer.jpg') 0 0 no-repeat;
+    color: #fff !important;
+}
+
+.display-4 {
+    font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .display-4 {
+        font-size: 3rem;
+    }
+}
+
+.card-deck .card {
+    min-width: 220px;
+}
+
+.card {
+    box-shadow: 0 10px 40px 0 rgba(0,0,0,.14)
+}
+
+
+// For page scroller
+a.anchor {
+    display: block;
+    position: relative;
+    top: -150px;
+    visibility: hidden;
+}

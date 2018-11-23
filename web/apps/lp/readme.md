@@ -1,0 +1,45 @@
+# Landing pages
+
+TODO: quiz on lp
+
+- Main landing
+    - ✅ Digits (students, years, баллы, teachers)
+    - ✅ Price (лучше, чем у репиков), скидки?
+    - ✅ Предметы
+    - ✅ Teachers (с занимательными фактами) 
+    - ✅ Results
+    - ✅ Преимущества
+    - ✅ Отзывы общего плана
+    - ✅ Заявка (класс, предмет, контакты)
+    - ✅ Подобрать курс
+- Landing for teachers
+    - photo
+    - достижения
+    - video
+    - отзывы
+    - истории учеников с университетами, куда они поступили
+    - courses
+    - documents
+    - о себе
+- Landing for courses
+    - search for groups
+- Landing for course
+    - teacher big
+    - about course
+    - start time
+    - map
+    - отзывы
+    - program
+    - price
+    - other courses
+    - some digits
+    - results
+    - form for contacts
+- Landing for events
+- Landing for webinars
+- Landing for fake exams
+- Landing with contact form
+- Landing for repetitors?
+- Landing for proforientation
+- Вакансии
+- Отзывы

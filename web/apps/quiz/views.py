@@ -4,10 +4,10 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, ListView
 
-from apps.blocks.forms import (ChoiceBlockForm, FloatBlockForm,
-                               TextAnswerBlockForm, TextBlockForm)
+from apps.studio.blocks.forms import (ChoiceBlockForm, FloatBlockForm,
+                                      TextAnswerBlockForm, TextBlockForm)
 # Our apps
-from apps.blocks.models import (ChoiceBlock, FloatBlock, TextAnswerBlock,
+from apps.studio.blocks import (ChoiceBlock, FloatBlock, TextAnswerBlock,
                                 TextBlock)
 
 from .models import Quiz, QuizProgress

@@ -7,7 +7,7 @@ import traceback
 
 from .models import Dialog
 from apps.social.models import UserSocialAuth
-from apps.blocks.models import ChoiceBlock, ChoiceBlockOption
+from apps.studio.blocks import ChoiceBlock, ChoiceBlockOption
 from apps.results.models import ChoiceBlockResult
 
 """

@@ -99,7 +99,7 @@ class ChoiceBlockResult(BlockResult):
             self.max_score = 0
             self.score = 0
 
-            import apps.blocks
+            import apps.studio.blocks
             choices = apps.blocks.models.ChoiceBlockOption.objects.filter(choice_block=self.block)
             answers_list_of_int = list(map(int, self.answers))
             for choice in choices:

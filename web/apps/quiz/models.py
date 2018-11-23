@@ -5,7 +5,7 @@ from django.db import models
 from django.utils import timezone
 
 # Our apps
-from apps.blocks.models import Block
+from apps.studio.blocks import Block
 from apps.results.models import BlockResult
 
 

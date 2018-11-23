@@ -2,7 +2,7 @@ from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
 from apps.studio.blocks import Block
-from apps.results.models import BlockResult
+from apps.lms.results import BlockResult
 from apps.lms.lessons.models import Lesson
 
 

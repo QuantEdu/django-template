@@ -8,7 +8,7 @@ import traceback
 from .models import Dialog
 from apps.social.models import UserSocialAuth
 from apps.studio.blocks import ChoiceBlock, ChoiceBlockOption
-from apps.results.models import ChoiceBlockResult
+from apps.lms.results import ChoiceBlockResult
 
 """
 Прмер клавиатуры, которая прилетает

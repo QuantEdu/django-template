@@ -5,7 +5,7 @@
 
 Quant создается как электронная платформа для нашего учебного центра.
 
-Может быть доступна из браузеров и при помощи бота в Telegram.
+Может быть доступна из браузеров и при помощи бота.
 
 ## Installing / Getting started
 
@@ -21,13 +21,13 @@ docker-compose up
 ## Структура проекта
 
 ```
-django-template
+quant
 ├─ .envs (переменные окружения)
 ├─ docker (Все Dockerfile для сборки проекта)
 ├─ docs (документация проекта и используемых технологий)
 ├─ web (Python+Django-приложение)
-├─ .env Файл с переменными окружения
-└─ docker-compose.yml (сборка и запуск docker-контейнеров)
+├─ local.yml (сборка и запуск docker-контейнеров локально)
+└─ production.yml (сборка и запуск docker-контейнеров для деплоя)
 ```
 
 ## Developing
@@ -68,7 +68,6 @@ IP-адрес: 188.127.249.128
 Пользователь: root
 Пароль: oGWRAKrle8so
 ```
-
 
 
 > By [project-guideline](https://github.com/wearehive/project-guidelines/blob/master/README.sample.md)

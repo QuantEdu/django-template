@@ -7,6 +7,7 @@ from apps.lessons.models import Lesson
 
 
 class Theme(models.Model):
+    # TODO: думаю, это лишнее, ибо мы оставляем темы и блоки без жесткой связи с уроками
     lesson = models.ForeignKey(
         Lesson,
         verbose_name='Урок',

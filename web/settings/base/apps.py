@@ -24,6 +24,6 @@ INSTALLED_APPS = [
     'apps.lms',
     'apps.social',
     'apps.users',
-    'apps.lessonslessons',
+    'apps.lessons',
     'apps.themes',
 ]

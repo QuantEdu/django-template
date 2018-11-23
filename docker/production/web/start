@@ -6,6 +6,7 @@ set -o nounset
 
 
 python /code/manage.py collectstatic --noinput
-python manage.py makemigrations users blocks bot lessons lms quiz results services social tags themes users
+python manage.py makemigrations crm.users
+python manage.py makemigrations
 python manage.py migrate
 /usr/local/bin/gunicorn wsgi --bind 0.0.0.0:5000 --chdir=/code

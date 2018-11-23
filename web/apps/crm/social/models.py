@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.postgres.fields import JSONField
 
 # Our apps
-from apps.users.models import User
+from apps.crm.users import User
 
 
 class UserSocialAuth(models.Model):

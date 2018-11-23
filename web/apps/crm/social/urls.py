@@ -1,7 +1,7 @@
 # URLconf
 from django.urls import path
 
-from apps.social import views
+from apps.crm.social import views
 
 
 app_name = 'social'

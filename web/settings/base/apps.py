@@ -25,5 +25,5 @@ INSTALLED_APPS = [
     'apps.social',
     'apps.users',
     'apps.course',
-    'apps.lesson',
+    'apps.themesthemes',
 ]

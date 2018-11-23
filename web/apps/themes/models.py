@@ -5,7 +5,8 @@ from apps.blocks.models import Block
 from apps.results.models import BlockResult
 from apps.course.models import Course
 
-class Lesson(models.Model):
+
+class Theme(models.Model):
     course = models.ForeignKey(
         Course,
         verbose_name='Курс',

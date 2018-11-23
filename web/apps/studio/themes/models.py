@@ -3,7 +3,7 @@ from django.db import models
 
 from apps.studio.blocks import Block
 from apps.results.models import BlockResult
-from apps.lessons.models import Lesson
+from apps.lms.lessons.models import Lesson
 
 
 class Theme(models.Model):

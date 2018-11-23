@@ -4,7 +4,7 @@ from django.db import models
 
 from apps.users.models import User
 from apps.social.models import UserSocialAuth
-from apps.lessons.models import Lesson
+from apps.lms.lessons.models import Lesson
 
 from . import vkapi
 

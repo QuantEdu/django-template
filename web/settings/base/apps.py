@@ -13,7 +13,8 @@ INSTALLED_APPS = [
     'bootstrap4',
 
     # Our apps
-    'apps.blocks',
+    'apps.studio.blocks',
+    'apps.studio.themes',
     'apps.bot',
     'apps.custom_admin',
     'apps.lp',
@@ -21,9 +22,7 @@ INSTALLED_APPS = [
     'apps.services',
     'apps.tags',
     'apps.quiz',
-    'apps.lms',
     'apps.social',
     'apps.users',
     'apps.lessons',
-    'apps.themes',
 ]

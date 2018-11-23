@@ -1,7 +1,7 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
-from apps.tags.models import SubjectTag
+from apps.studio.tags import SubjectTag
 
 
 class Lesson(models.Model):

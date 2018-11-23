@@ -7,9 +7,9 @@ from apps.lessons.models import Lesson
 
 
 class Theme(models.Model):
-    course = models.ForeignKey(
+    lesson = models.ForeignKey(
         Lesson,
-        verbose_name='Курс',
+        verbose_name='Урок',
         on_delete=models.CASCADE)
 
     title = models.CharField(

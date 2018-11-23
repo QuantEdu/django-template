@@ -16,9 +16,9 @@ class Lesson(models.Model):
         blank=False
     )
 
-    lesson_ids = ArrayField(
+    themes_ids = ArrayField(
         models.IntegerField(),
-        verbose_name='Массив из id уроков',
+        verbose_name='Массив из id тем',
         blank=True
     )
 

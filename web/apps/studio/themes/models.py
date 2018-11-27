@@ -7,12 +7,6 @@ from apps.lms.lessons.models import Lesson
 
 
 class Theme(models.Model):
-    # TODO: думаю, это лишнее, ибо мы оставляем темы и блоки без жесткой связи с уроками
-    lesson = models.ForeignKey(
-        Lesson,
-        verbose_name='Урок',
-        on_delete=models.CASCADE)
-
     title = models.CharField(
         verbose_name="Заголовок",
         max_length=60,

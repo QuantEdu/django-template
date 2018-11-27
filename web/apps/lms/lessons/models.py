@@ -5,11 +5,11 @@ from apps.studio.tags import SubjectTag
 
 
 class Lesson(models.Model):
-    subject = models.ForeignKey(
-        SubjectTag,
-        verbose_name='Предмет',
-        on_delete=models.CASCADE)
-
+    # group
+    # classroom
+    # auditory
+    # datetime
+    # duration
     title = models.CharField(
         verbose_name="Заголовок",
         max_length=60,
@@ -22,7 +22,9 @@ class Lesson(models.Model):
         blank=True
     )
 
-    description = models.TextField(
-        verbose_name="Описание",
-        blank=False
-    )
+
+class UserLesson(models.Model):
+    mark = models.CharField()
+    # group
+    # lesson
+    # visit_status

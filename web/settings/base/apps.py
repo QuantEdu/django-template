@@ -15,9 +15,6 @@ INSTALLED_APPS = [
     # Our apps
     'apps.bot',
 
-    'apps.studio.blocks',
-    'apps.studio.themes',
-
     'apps.crm.courses',
     'apps.crm.groups',
     'apps.crm.services',

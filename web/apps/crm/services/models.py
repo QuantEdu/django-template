@@ -4,7 +4,7 @@ from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
 # Our apps
-from apps.studio.tags import GradeTag, SubjectTag
+from apps.studio.tags.models import GradeTag, SubjectTag
 
 
 # Услуга, например курс, телеграм-эстафета итд...

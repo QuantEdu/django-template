@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-from apps.crm.users import User
+from apps.crm.users.models import User
 from apps.lms.lessons.models import Lesson
 
 # Main model for tasks

@@ -6,7 +6,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # External libraries
+    # External librariess
     #  Markdown
     'markdownx',
     #  Bootstrap

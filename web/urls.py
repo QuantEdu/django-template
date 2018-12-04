@@ -43,5 +43,4 @@ urlpatterns = [
     path('bot/', include('apps.bot.urls')),
     path('', include('apps.lp.urls')),
     path('lms/', include('apps.quiz.urls')),
-    path('lms/', include('apps.lms.urls')),
 ]

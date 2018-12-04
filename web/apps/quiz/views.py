@@ -7,7 +7,7 @@ from django.views.generic import DetailView, ListView
 from apps.studio.blocks.forms import (ChoiceBlockForm, FloatBlockForm,
                                       TextAnswerBlockForm, TextBlockForm)
 # Our apps
-from apps.studio.blocks import (ChoiceBlock, FloatBlock, TextAnswerBlock,
+from apps.studio.blocks.models import (ChoiceBlock, FloatBlock, TextAnswerBlock,
                                 TextBlock)
 
 from .models import Quiz, QuizProgress

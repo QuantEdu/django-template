@@ -24,7 +24,7 @@ class Lesson(models.Model):
 
 
 class UserLesson(models.Model):
-    mark = models.CharField()
+    mark = models.IntegerField()
     # group
     # lesson
     # visit_status

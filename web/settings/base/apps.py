@@ -23,6 +23,7 @@ INSTALLED_APPS = [
 
     'apps.custom_admin',
 
+    'apps.lms',
     'apps.lms.lessons',
     'apps.lms.results',
     'apps.lms.tasks',

@@ -19,7 +19,7 @@ services:
       - ./.envs/.production/.postgres
     command: /start
     volumes:
-      - ./web/:/code:z
+      - ./web/:/code:zcd ..
       - static:/code/static
 
   postgres:

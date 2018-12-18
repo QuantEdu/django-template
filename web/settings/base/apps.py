@@ -19,7 +19,7 @@ INSTALLED_APPS = [
     'apps.crm.groups',
     'apps.crm.services',
     'apps.crm.social',
-    'apps.crm.users',
+    'users.apps.UsersConfig',
 
     'apps.custom_admin',
 

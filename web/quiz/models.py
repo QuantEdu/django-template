@@ -5,8 +5,8 @@ from django.db import models
 from django.utils import timezone
 
 # Our apps
-from apps.studio.blocks.models import Block
-from apps.lms.results.models import BlockResult
+from studio.blocks.models import Block
+from lms.results.models import BlockResult
 
 
 # All lessons contains blocks (text, choice, question with float answer)

@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class ResultsConfig(AppConfig):
-    name = "apps.lms.results"
+    name = "lms.results"
     verbose_name = "Результаты"

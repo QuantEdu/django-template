@@ -13,26 +13,25 @@ INSTALLED_APPS = [
     'bootstrap4',
 
     # Our apps
-    'apps.bot',
+    'bot',
 
-    'apps.crm.courses',
-    'apps.crm.groups',
-    'apps.crm.services',
-    'apps.crm.social',
-    'apps.crm.users',
+    'crm.courses',
+    'crm.groups',
+    'crm.services',
+    'crm.social',
+    'crm.users',
 
-    'apps.custom_admin',
+    'custom_admin',
 
-    'apps.lms',
-    'apps.lms.lessons',
-    'apps.lms.results',
-    'apps.lms.tasks',
+    'lms.lessons',
+    'lms.results',
+    'lms.tasks',
 
-    'apps.lp',
+    'lp',
 
-    'apps.quiz',
+    'quiz',
 
-    'apps.studio.blocks',
-    'apps.studio.tags',
-    'apps.studio.themes',
+    'studio.blocks',
+    'studio.tags',
+    'studio.themes',
 ]

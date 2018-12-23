@@ -6,7 +6,7 @@ from model_utils.managers import InheritanceManager
 from markdownx.models import MarkdownxField
 
 # Our apps
-import apps.lms.results.models as result_models
+import lms.results.models as result_models
 
 
 # All lessons contains blocks (text, choice, question with float answer)

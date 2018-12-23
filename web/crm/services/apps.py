@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class ServicesConfig(AppConfig):
-    name = "apps.crm.services"
+    name = "crm.services"
     verbose_name = "Услуги"

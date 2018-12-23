@@ -1,9 +1,9 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
-from apps.studio.blocks.models import Block
-from apps.lms.results.models import BlockResult
-from apps.lms.lessons.models import Lesson
+from studio.blocks.models import Block
+from lms.results.models import BlockResult
+from lms.lessons.models import Lesson
 
 
 class Theme(models.Model):

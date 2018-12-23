@@ -5,9 +5,9 @@ import traceback
 # from django_postgres_extensions.models.expressions import Index
 
 from .models import Dialog
-from apps.crm.social.models import UserSocialAuth
-from apps.studio.blocks.models import ChoiceBlock, ChoiceBlockOption
-from apps.lms.results.models import ChoiceBlockResult
+from crm.social.models import UserSocialAuth
+from studio.blocks.models import ChoiceBlock, ChoiceBlockOption
+from lms.results.models import ChoiceBlockResult
 
 """
 Прмер клавиатуры, которая прилетает

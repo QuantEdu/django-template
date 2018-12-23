@@ -2,9 +2,9 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
-from apps.crm.users.models import User
-from apps.crm.social.models import UserSocialAuth
-from apps.lms.lessons.models import Lesson
+from crm.users.models import User
+from crm.social.models import UserSocialAuth
+from lms.lessons.models import Lesson
 
 from . import vkapi
 

@@ -4,7 +4,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth import login, logout
 
 from .models import UserSocialAuth
-from apps.crm.users.models import User
+from crm.users.models import User
 
 
 class RegistrationForm(forms.Form):

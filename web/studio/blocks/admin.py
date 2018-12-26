@@ -7,7 +7,7 @@ from markdownx.admin import MarkdownxModelAdmin
 from markdownx.widgets import MarkdownxWidget
 
 # Other apps
-from apps.custom_admin.admin import custom_admin
+from custom_admin.admin import custom_admin
 
 # Models
 from .models import (Block, ChoiceBlock, ChoiceBlockOption, FloatBlock,

@@ -1,1 +1,1 @@
-default_app_config = "apps.studio.tags.apps.TagsConfig"
+default_app_config = "studio.tags.apps.TagsConfig"

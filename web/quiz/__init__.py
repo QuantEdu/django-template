@@ -1,1 +1,1 @@
-default_app_config = "apps.quiz.apps.QuizConfig"
+default_app_config = "quiz.apps.QuizConfig"

@@ -1,1 +1,1 @@
-default_app_config = "apps.lms.results.apps.ResultsConfig"
+default_app_config = "lms.results.apps.ResultsConfig"

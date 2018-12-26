@@ -1,1 +1,1 @@
-default_app_config = "apps.crm.social.apps.SocialConfig"
+default_app_config = "crm.social.apps.SocialConfig"

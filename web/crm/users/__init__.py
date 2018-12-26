@@ -1,1 +1,1 @@
-default_app_config = "apps.crm.users.apps.UsersConfig"
+default_app_config = "crm.users.apps.UsersConfig"

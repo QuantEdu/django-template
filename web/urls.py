@@ -21,7 +21,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 # Our own implementations
-from apps.custom_admin.admin import custom_admin
+from custom_admin.admin import custom_admin
 
 urlpatterns = [
     # Core django paths
@@ -31,7 +31,7 @@ urlpatterns = [
     # Login views
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('social/', include('apps.crm.social.urls')),
+    path('social/', include('crm.social.urls')),
 
     # Development
     path('__debug__/', include(debug_toolbar.urls)),
@@ -40,7 +40,7 @@ urlpatterns = [
     path('markdownx/', include('markdownx.urls')),
 
     # Our apps
-    path('bot/', include('apps.bot.urls')),
-    path('', include('apps.lp.urls')),
-    path('lms/', include('apps.quiz.urls')),
+    path('bot/', include('bot.urls')),
+    path('', include('lp.urls')),
+    path('lms/', include('quiz.urls')),
 ]

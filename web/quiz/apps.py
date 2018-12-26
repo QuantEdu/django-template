@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class QuizConfig(AppConfig):
-    name = "apps.quiz"
+    name = "quiz"
     verbose_name = "Тесты"

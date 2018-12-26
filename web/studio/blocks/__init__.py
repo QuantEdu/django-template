@@ -1,1 +1,1 @@
-default_app_config = "apps.studio.blocks.apps.BlocksConfig"
+default_app_config = "studio.blocks.apps.BlocksConfig"

@@ -7,6 +7,9 @@ from django.utils import timezone
 from model_utils.managers import InheritanceManager
 
 
+import studio.blocks
+
+
 # Main model for all results
 class Result(models.Model):
     user = models.ForeignKey(
@@ -99,8 +102,8 @@ class ChoiceBlockResult(BlockResult):
             self.max_score = 0
             self.score = 0
 
-            import apps.studio.blocks
-            choices = apps.blocks.models.ChoiceBlockOption.objects.filter(choice_block=self.block)
+
+            choices = studio.blocks.models.ChoiceBlockOption.objects.filter(choice_block=self.block)
             answers_list_of_int = list(map(int, self.answers))
             for choice in choices:
                 if choice.is_true:

@@ -1,7 +1,7 @@
 # URLconf
 from django.urls import path
 
-from apps.bot import views
+from bot import views
 
 
 app_name = 'bot'

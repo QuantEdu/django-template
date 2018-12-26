@@ -1,7 +1,7 @@
 # URLconf
 from django.urls import path
 
-from apps.quiz import views
+from quiz import views
 
 urlpatterns = [
     path('quizzes/', views.QuizListView.as_view(), name='quiz_list'),

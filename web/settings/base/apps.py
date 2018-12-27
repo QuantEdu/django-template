@@ -15,12 +15,11 @@ INSTALLED_APPS = [
     # Our apps
     'bot',
 
-    'crm',
     'crm.courses',
     'crm.groups',
     'crm.services',
     'crm.social',
-    'crm.users',
+    'crm_users',
 
     'custom_admin',
 

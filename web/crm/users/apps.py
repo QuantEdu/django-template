@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class UsersConfig(AppConfig):
-    name = "crm_users"
+    name = "crm.users"
     verbose_name = "Пользователи"

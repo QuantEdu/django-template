@@ -23,7 +23,7 @@ AUTHENTICATION_BACKENDS = (
     'users.backends.EmailBackend',
 )
 
-AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'crm.users.User'
 
 LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'lms:index'
